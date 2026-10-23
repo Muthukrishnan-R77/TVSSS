@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Valuable Customers — TVS Sensing Solutions</title>
+    <meta name="description" content="Trusted by leading global OEMs across passenger cars, commercial vehicles, two-wheelers, and industrial appliance leaders.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../tvsss-design.css">
+    <link rel="stylesheet" href="../tvsss-global.css">
+    <style>
+        .cust-hero {
+            position: relative;
+            background: #FFFFFF !important;
+            color: #083B5C !important;
+            padding: 40px 0 45px !important;
+            border-bottom: 1px solid #D9EAF0;
+        }
+        .cust-hero-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 55px;
+            align-items: center;
+        }
+        .cust-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .cust-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #10AEE3 !important;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .cust-eyebrow::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 3px;
+            background: #10AEE3;
+            border-radius: 2px;
+        }
+        .cust-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.4rem, 4.5vw, 4rem) !important;
+            font-weight: 700 !important;
+            line-height: 1.05 !important;
+            margin-bottom: 20px;
+        }
+        .cust-subtitle {
+            font-size: 1.125rem !important;
+            line-height: 1.55 !important;
+            color: #24445A !important;
+            font-weight: 400 !important;
+            max-width: 650px;
+            margin-bottom: 32px;
+        }
+        .cust-hero-img-wrap {
+            width: 100%;
+            height: 475px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(6, 59, 92, 0.1);
+            border: 1px solid #D9EAF0;
+            background: #F8FAFC;
+        }
+        .cust-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 991px) {
+            .cust-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+            .cust-hero-img-wrap {
+                height: 350px;
+            }
+        }
+
+        /* Marquee Ribbon */
+        .marquee-section {
+            background: #FFFFFF;
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(8, 127, 193, 0.1);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-track {
+            display: inline-flex;
+            gap: 48px;
+            animation: marquee 35s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-item {
+            height: 48px;
+            display: flex;
+            align-items: center;
+            opacity: 0.85;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        .marquee-item:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.08);
+        }
+        .marquee-item img {
+            max-height: 44px;
+            max-width: 140px;
+            object-fit: contain;
+        }
+
+        /* Category Showcase */
+        .cust-cat-section {
+            padding: 80px 0 40px;
+        }
+        .cust-cat-header {
+            margin-bottom: 36px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            border-bottom: 2px solid rgba(8, 127, 193, 0.12);
+            padding-bottom: 16px;
+        }
+        .cust-cat-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            color: var(--g-deep);
+            font-weight: 700;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .cust-cat-badge {
+            font-size: 0.85rem;
+            font-weight: 700;
+            background: var(--g-light-blue);
+            color: var(--g-blue);
+            padding: 4px 14px;
+            border-radius: 999px;
+        }
+
+        /* Logo Grid Wall */
+        .logo-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        .logo-card {
+            background: #FFFFFF;
+            border-radius: 14px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 20px;
+            border: 1px solid rgba(8, 127, 193, 0.1);
+            box-shadow: 0 4px 16px rgba(6, 59, 92, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .logo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(6, 59, 92, 0.08);
+            border-color: rgba(8, 127, 193, 0.35);
+        }
+        .logo-card img {
+            max-width: 100%;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .logo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Trust Banner */
+        .trust-banner {
+            background: var(--g-pale-blue);
+            border-radius: 20px;
+            padding: 56px;
+            border: 1px solid rgba(8, 127, 193, 0.15);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+        .trust-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            color: var(--g-blue);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .trust-item p {
+            font-size: 0.95rem;
+            color: var(--g-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .logo-wall {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .logo-card {
+                height: 90px;
+                padding: 12px;
+            }
+            .trust-banner {
+                grid-template-columns: 1fr;
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════════════
+         0. TOP CONTACT & SOCIAL MEDIA BAR
+    ══════════════════════════════════════════════ -->
+    <div class="g-topbar" id="gTopbar">
+        <div class="g-topbar__inner">
+            <div class="g-topbar__social">
+                <a href="https://www.facebook.com/TVS-Sensing-Solutions-Private-Limited-102082955438831" target="_blank" rel="noopener noreferrer" class="g-topbar__social-link" aria-label="Facebook">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://twitter.com/TVSSS3" target="_blank" rel="noopener noreferrer" class="g-topbar__social-link" aria-label="Twitter">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/company/tvs-sensing-solutions/" target="_blank" rel="noopener noreferrer" class="g-topbar__social-link" aria-label="LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            <div class="g-topbar__contact">
+                <a href="tel:+914522911444" class="g-topbar__link" aria-label="Call TVS Sensing Solutions">
+                    <span class="g-topbar__label">Office:</span> <span class="g-topbar__value">+91 452-2911444</span>
+                </a>
+                <span class="g-topbar__divider" aria-hidden="true">|</span>
+                <a href="mailto:contact@tvsss.co.in" class="g-topbar__link" aria-label="Email TVS Sensing Solutions">
+                    <span class="g-topbar__label">Mail Id:</span> <span class="g-topbar__value">contact@tvsss.co.in</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         1. MAIN WHITE NAVIGATION BAR (86px)
+    ══════════════════════════════════════════════ -->
+    <header class="g-header" id="gHeader">
+        <div class="g-header__inner">
+            <a href="../index.html" class="g-logo" aria-label="TVS Sensing Solutions Home">
+                <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo">
+                <div class="g-brand-lockup">
+                    <span class="g-brand-name">TVS SENSING SOLUTIONS</span>
+                    <span class="g-brand-tagline">A TVS GROUP COMPANY</span>
+                </div>
+            </a>
+
+            <nav class="g-nav" aria-label="Main Navigation">
+                <a href="../about-us/index.html" class="g-nav__link">About Us</a>
+                <a href="../tvs-group/index.html" class="g-nav__link">TVS Group</a>
+                <a href="../products/index.html" class="g-nav__link">Products &amp; Solutions</a>
+                <a href="../automations/index.html" class="g-nav__link">Automations</a>
+                <a href="../iiot/index.html" class="g-nav__link">IIoT 4.0</a>
+                <a href="../manufacturing-excellence/index.html" class="g-nav__link">Manufacturing Excellence</a>
+                <a href="../media/index.html" class="g-nav__link">Media-TVSS</a>
+                <a href="index.html" class="g-nav__link active">Customers</a>
+                <a href="../careers/index.html" class="g-nav__link">Careers</a>
+                <a href="../reach-us/index.html" class="g-nav__link">Reach Us</a>
+            </nav>
+
+            <button class="g-ham" id="gHam" aria-label="Toggle Navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <nav class="g-mobile-nav" id="gMobileNav" aria-label="Mobile Navigation">
+            <a href="../about-us/index.html" class="g-nav__link">About Us</a>
+            <a href="../tvs-group/index.html" class="g-nav__link">TVS Group</a>
+            <a href="../products/index.html" class="g-nav__link">Products &amp; Solutions</a>
+            <a href="../automations/index.html" class="g-nav__link">Automations</a>
+            <a href="../iiot/index.html" class="g-nav__link">IIoT 4.0</a>
+            <a href="../manufacturing-excellence/index.html" class="g-nav__link">Manufacturing Excellence</a>
+            <a href="../media/index.html" class="g-nav__link">Media-TVSS</a>
+            <a href="index.html" class="g-nav__link active">Customers</a>
+            <a href="../careers/index.html" class="g-nav__link">Careers</a>
+            <a href="../reach-us/index.html" class="g-nav__link">Reach Us</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO -->
+        <section class="cust-hero">
+            <div class="g-container">
+                <div class="cust-hero-grid">
+                    <div class="cust-hero-content" data-g-reveal>
+                        <div class="cust-eyebrow">GLOBAL TRUST &amp; PARTNERSHIPS</div>
+                        <h1 class="cust-title">
+                            <span style="color: #083B5C;">Trusted by Global</span><br>
+                            <span style="color: #10AEE3;">Automotive &amp; Industrial</span><br>
+                            <span style="color: #083B5C;">Leaders</span>
+                        </h1>
+                        <p class="cust-subtitle">
+                            Supplying mission-critical precision sensors, solenoids, switches, and automated systems to tier-1 OEMs and Fortune 500 industrial manufacturers worldwide.
+                        </p>
+                        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                            <a href="#customers-list" class="g-btn g-btn-primary" style="background: #10AEE3 !important; color: #FFFFFF !important; border: none; height: 58px; padding: 0 32px; border-radius: 8px; display: inline-flex; align-items: center; font-weight: 700; text-decoration: none;">Explore Our Customers &rarr;</a>
+                            <a href="../reach-us/index.html" class="g-btn g-btn-outline" style="background: #FFFFFF !important; color: #083B5C !important; border: 1px solid #D9EAF0 !important; height: 58px; padding: 0 32px; border-radius: 8px; display: inline-flex; align-items: center; font-weight: 700; text-decoration: none;">Partner With Us &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="cust-hero-img-wrap" data-g-reveal>
+                        <img src="../wp-content/uploads/2022/02/customers.jpg" alt="TVS Sensing Solutions Global Automotive Manufacturing" class="cust-hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DYNAMIC MARQUEE RIBBON -->
+        <div class="marquee-section" aria-label="Customer Highlights Marquee">
+            <div class="marquee-track">
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/1-1.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/2.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/3.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/4.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/5.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/6.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/7.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/8.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/9.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/10.png" alt="OEM Customer Logo"></div>
+                <!-- Duplicate for continuous loop -->
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/1-1.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/2.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/3.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/4.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/5.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/6.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/7.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/8.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/9.png" alt="OEM Customer Logo"></div>
+                <div class="marquee-item"><img src="../wp-content/uploads/2022/02/10.png" alt="OEM Customer Logo"></div>
+            </div>
+        </div>
+
+        <!-- CATEGORIZED LOGO WALL -->
+        <div class="g-container">
+            <!-- CATEGORY 1: PASSENGER VEHICLES -->
+            <section class="cust-cat-section" data-g-reveal>
+                <div class="cust-cat-header">
+                    <h2 class="cust-cat-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--g-blue);"><path d="M5 17h14v-5l-2-4H7l-2 4v5zm0 0v2a1 1 0 001 1h1a1 1 0 001-1v-2m10 0v2a1 1 0 001 1h1a1 1 0 001-1v-2M7 14h.01M17 14h.01"/></svg>
+                        Automotive &mdash; Passenger Vehicles
+                    </h2>
+                    <span class="cust-cat-badge">Passenger Cars &amp; EVs</span>
+                </div>
+                <div class="logo-wall">
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/1-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/3.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/4.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/5.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/6.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/7.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/8.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/9.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/10.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/11.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/12.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/13.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/14.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/15.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/16.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/17.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/18.png" alt="Customer Logo"></div>
+                </div>
+            </section>
+
+            <!-- CATEGORY 2: COMMERCIAL VEHICLES & OFF-ROAD -->
+            <section class="cust-cat-section" data-g-reveal>
+                <div class="cust-cat-header">
+                    <h2 class="cust-cat-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--g-blue);"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM6 19a2 2 0 100-4 2 2 0 000 4zM18 19a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        Automotive &mdash; Commercial Vehicle and Off-Road
+                    </h2>
+                    <span class="cust-cat-badge">Heavy Duty &amp; Off-Highway</span>
+                </div>
+                <div class="logo-wall">
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/1-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/2-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/3-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/4-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/7.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/5-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/6-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/7-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/8-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/9-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/10-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/11-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/12-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/13-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/15-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/13.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/14-1.png" alt="Customer Logo"></div>
+                </div>
+            </section>
+
+            <!-- CATEGORY 3: TWO WHEELERS -->
+            <section class="cust-cat-section" data-g-reveal>
+                <div class="cust-cat-header">
+                    <h2 class="cust-cat-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--g-blue);"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="17" r="3"/><path d="M12 17h4l-3-7-3 2-2-4H5"/></svg>
+                        Two Wheelers &amp; Micro-Mobility
+                    </h2>
+                    <span class="cust-cat-badge">2W &amp; 3W Electric Mobility</span>
+                </div>
+                <div class="logo-wall">
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/16-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/17-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/18-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/19.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/15-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/12-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/20.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/21.png" alt="Customer Logo"></div>
+                </div>
+            </section>
+
+            <!-- CATEGORY 4: INDUSTRIAL SOLUTIONS / APPLIANCES -->
+            <section class="cust-cat-section" data-g-reveal>
+                <div class="cust-cat-header">
+                    <h2 class="cust-cat-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--g-blue);"><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        Industrial Solutions &amp; Appliances
+                    </h2>
+                    <span class="cust-cat-badge">White Goods &amp; Heavy Automation</span>
+                </div>
+                <div class="logo-wall">
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/1-3.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/2-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/3-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/4-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/5-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/6-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/7-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/8-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/9-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/10-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/11-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/12-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/13-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/14-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/15-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/16-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/17-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/18-2.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/19-1.png" alt="Customer Logo"></div>
+                    <div class="logo-card"><img src="../wp-content/uploads/2022/02/20-1.png" alt="Customer Logo"></div>
+                </div>
+            </section>
+
+            <!-- TRUST METRICS BANNER -->
+            <div class="trust-banner" data-g-reveal>
+                <div class="trust-item">
+                    <h4>100%</h4>
+                    <p>IATF 16949 &amp; ISO 9001 certified plant quality with comprehensive PPAP Level 3 compliance.</p>
+                </div>
+                <div class="trust-item">
+                    <h4>&lt; 5 PPM</h4>
+                    <p>Sustained world-class quality performance across high-volume automotive OEM platforms.</p>
+                </div>
+                <div class="trust-item">
+                    <h4>30+ Yrs</h4>
+                    <p>Decades of continuous OEM supply relationships with zero-line-stoppage delivery track records.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA SECTION -->
+        <section class="g-cta-section">
+            <div class="g-container">
+                <div class="g-cta-box" data-g-reveal>
+                    <h2 class="g-cta-title">Partner with an Industry-Leading Automotive Tier-1 Supplier</h2>
+                    <p class="g-cta-desc">Discover how our engineering knowhow, customized testing rigs, and zero-defect manufacturing can elevate your next mobility platform.</p>
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                        <a href="../reach-us/index.html" class="g-btn g-btn-primary">Initiate OEM Collaboration</a>
+                        <a href="../TVSSS_Catalogue.pdf" class="g-btn g-btn-outline" download target="_blank">Download Product Catalogue</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- GLOBAL FOOTER (No Black, Deep Blue #063B5C) -->
+        <!-- GLOBAL FOOTER (Structured, Balanced, Professional — #063B5C) -->
+    <footer class="g-footer" id="site-footer">
+        <div class="g-container">
+            <!-- TOP: Logo + Company Statement -->
+            <div class="g-footer-top">
+                <div class="g-footer-brand">
+                    <a href="../index.html" class="g-footer-logo-link">
+                        <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo" class="g-footer-logo">
+                    </a>
+                    <p class="g-footer-statement">
+                        TVS Sensing Solutions Private Limited is a global pioneer in precision automotive sensors, custom solenoids, electro-mechanical switches, and Industry 4.0 smart factory technologies. Established in 1994, Madurai, India.
+                    </p>
+                </div>
+            </div>
+
+            <!-- MIDDLE: 5 Structured Columns -->
+            <div class="g-footer-nav-grid">
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Solutions</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../products/index.html">EV Solutions</a></li>
+                        <li><a href="../products/index.html">Sensors &amp; Sensing</a></li>
+                        <li><a href="../products/index.html">Solenoids &amp; Actuators</a></li>
+                        <li><a href="../products/index.html">Electro-Mechanical</a></li>
+                        <li><a href="../products/index.html">Switches &amp; Controls</a></li>
+                        <li><a href="../products/index.html">IIoT 4.0 Products</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Technology</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../manufacturing-excellence/index.html">Class 10k Cleanrooms</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">SMT Component Placement</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Micro-Injection Molding</a></li>
+                        <li><a href="../automations/index.html">Automated Test Benches</a></li>
+                        <li><a href="../iiot/index.html">FOSS IIoT Architecture</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Company</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../about-us/index.html">About Us</a></li>
+                        <li><a href="../tvs-group/index.html">TVS Group</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Manufacturing</a></li>
+                        <li><a href="../media/index.html">Media-TVS</a></li>
+                        <li><a href="../customers/index.html">Customers</a></li>
+                        <li><a href="../careers/index.html">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Resources</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../TVSSS_Catalogue.pdf" download target="_blank">Product Catalogue (PDF)</a></li>
+                        <li><a href="../products/index.html">Engineering Datasheets</a></li>
+                        <li><a href="../automations/index.html">Automation Case Studies</a></li>
+                        <li><a href="../reach-us/index.html">Application Engineering</a></li>
+                        <li><a href="../reach-us/index.html">Request Quotation</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Compliance</h4>
+                    <div class="g-compliance-wrap">
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">General Meeting Notice</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2024-25.pdf" target="_blank" rel="noopener noreferrer">FY 2024&ndash;25</a></li>
+                                <li><a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2023_24.pdf" target="_blank" rel="noopener noreferrer">FY 2023&ndash;24</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">Annual Return</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_Annual_Return_Form_MGT-7-%20FY%202024-25.pdf" target="_blank" rel="noopener noreferrer">FY 2024&ndash;25</a></li>
+                                <li><a href="../compliance/TVSSSPL_%20Annual_Return_Form_MGT-7-%20FY%202023-24_1.pdf" target="_blank" rel="noopener noreferrer">FY 2023&ndash;24</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">Director Resignation Notice</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/Letter_from_Mr_Prem_Pradeep_Director.pdf" target="_blank" rel="noopener noreferrer">Letter from Mr. Prem Pradeep</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">CSR (Corporate Social Responsibility)</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_CSR_Policy.pdf" target="_blank" rel="noopener noreferrer">CSR Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT ROW -->
+            <div class="g-footer-contact-row">
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Headquarters &amp; Plant</span>
+                    <div>Melur Road, Vellaripatti, Madurai &ndash; 625 122, Tamil Nadu, India</div>
+                    <div>Tel: <a href="tel:+914522911444">+91 452-2911444</a> | Email: <a href="mailto:contact@tvsss.co.in">contact@tvsss.co.in</a></div>
+                </div>
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Regional Offices</span>
+                    <div>Chennai: <a href="tel:+914428420384">+91-44-28420384</a> | Noida / Delhi: <a href="tel:+919313370317">+91 9313370317</a></div>
+                    <div>Pune: <a href="mailto:pune@tvsss.co.in">pune@tvsss.co.in</a> | HR Desk: <a href="tel:+918925094815">+91 89250 94815</a></div>
+                </div>
+                <div class="g-footer-contact-item g-footer-action-wrap">
+                    <a href="../reach-us/index.html" class="g-btn g-btn-primary">Reach Us &rarr;</a>
+                </div>
+            </div>
+
+            <!-- BOTTOM: Copyright & Certifications -->
+            <div class="g-footer-bottom">
+                <div>&copy; 2026 TVS Sensing Solutions Private Limited. All Rights Reserved.</div>
+                <div class="g-footer-cert-tags">
+                    <span class="g-cert-tag">IATF 16949</span>
+                    <span class="g-cert-tag">ISO 9001:2015</span>
+                    <span class="g-cert-tag">ISO 14001:2015</span>
+                    <span class="g-cert-tag">ISO 45001:2018</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../tvsss-global.js"></script>
+</body>
+</html>

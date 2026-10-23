@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Job Opening — TVS Sensing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <script src="/admin/admin-layout.js"></script>
+</head>
+<body class="admin-body">
+
+    <div class="admin-layout">
+        <!-- Sidebar placeholder -->
+        <div id="adminSidebarWrap"></div>
+
+        <div class="admin-main">
+            <!-- Topbar placeholder -->
+            <div id="adminTopbarWrap"></div>
+
+            <main class="admin-content">
+
+                <!-- Page Header Title -->
+                <div class="page-header-box">
+                    <div>
+                        <h1 class="page-title">Add New Job Opening</h1>
+                        <p class="page-subtitle">Create a new job opening to be displayed on the website.</p>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="admin-card-container admin-card-inner-padding">
+                    <form id="addCareerForm">
+                        <div class="form-2col-grid">
+                            <!-- Left Column -->
+                            <div>
+                                <div class="form-group-item">
+                                    <label for="jobTitle">Job Title *</label>
+                                    <input type="text" id="jobTitle" class="form-input-text" placeholder="Enter job title" required>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="department">Department *</label>
+                                    <select id="department" class="form-select-box" required>
+                                        <option value="">Select department</option>
+                                        <option value="Engineering & R&D">Engineering & R&D</option>
+                                        <option value="Manufacturing & Quality">Manufacturing & Quality</option>
+                                        <option value="Information Technology">Information Technology</option>
+                                        <option value="Sales & Marketing">Sales & Marketing</option>
+                                        <option value="Human Resources">Human Resources</option>
+                                        <option value="Supply Chain & Procurement">Supply Chain & Procurement</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="location">Location *</label>
+                                    <input type="text" id="location" class="form-input-text" placeholder="Enter location (e.g. Madurai, Tamil Nadu)" required>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="employmentType">Employment Type *</label>
+                                    <select id="employmentType" class="form-select-box" required>
+                                        <option value="">Select employment type</option>
+                                        <option value="Full Time" selected>Full Time</option>
+                                        <option value="Part Time">Part Time</option>
+                                        <option value="Contract">Contract</option>
+                                        <option value="Internship">Internship</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="experienceRequired">Experience Required</label>
+                                    <input type="text" id="experienceRequired" class="form-input-text" placeholder="e.g. 2 - 5 years">
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="numberOfVacancies">Number of Vacancies *</label>
+                                    <input type="number" id="numberOfVacancies" class="form-input-text" placeholder="Enter number of vacancies" min="1" value="1" required>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="applicationDeadline">Application Deadline</label>
+                                    <input type="date" id="applicationDeadline" class="form-input-text">
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div>
+                                <div class="form-group-item">
+                                    <label for="jobDescription">Job Description *</label>
+                                    <textarea id="jobDescription" class="form-textarea-box" style="min-height: 120px;" placeholder="Enter detailed job description" required></textarea>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="eligibility">Eligibility / Qualification *</label>
+                                    <textarea id="eligibility" class="form-textarea-box" placeholder="Enter eligibility and qualification" required></textarea>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="requiredSkills">Required Skills</label>
+                                    <textarea id="requiredSkills" class="form-textarea-box" placeholder="Enter required skills"></textarea>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="responsibilities">Responsibilities</label>
+                                    <textarea id="responsibilities" class="form-textarea-box" placeholder="Enter key responsibilities"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Action Buttons -->
+                        <div class="form-actions-footer">
+                            <a href="/admin/careers/index.html" class="btn-secondary-white">Cancel</a>
+                            <button type="submit" class="btn-primary-blue">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            window.renderAdminLayout('careers', 'Add New Job Opening');
+
+            document.getElementById('addCareerForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                var jobTitle = document.getElementById('jobTitle').value.trim();
+                var department = document.getElementById('department').value;
+                var location = document.getElementById('location').value.trim();
+                var employmentType = document.getElementById('employmentType').value;
+                var experienceRequired = document.getElementById('experienceRequired').value.trim();
+                var numberOfVacancies = document.getElementById('numberOfVacancies').value;
+                var applicationDeadline = document.getElementById('applicationDeadline').value;
+                var jobDescription = document.getElementById('jobDescription').value.trim();
+                var eligibility = document.getElementById('eligibility').value.trim();
+                var requiredSkills = document.getElementById('requiredSkills').value.trim();
+                var responsibilities = document.getElementById('responsibilities').value.trim();
+
+                var bodyObj = {
+                    jobTitle: jobTitle,
+                    department: department,
+                    location: location,
+                    employmentType: employmentType,
+                    experienceRequired: experienceRequired,
+                    numberOfVacancies: parseInt(numberOfVacancies) || 1,
+                    applicationDeadline: applicationDeadline || null,
+                    jobDescription: jobDescription,
+                    eligibility: eligibility,
+                    requiredSkills: requiredSkills,
+                    responsibilities: responsibilities,
+                    isActive: true
+                };
+
+                try {
+                    var response = await fetch(window.TVSS_API.baseUrl + '/careers', {
+                        method: 'POST',
+                        headers: window.TVSS_API.getHeaders(),
+                        body: JSON.stringify(bodyObj)
+                    });
+
+                    if (!response.ok) {
+                        var errData = await response.json();
+                        throw new Error(errData.message || 'Failed to create job opening');
+                    }
+
+                    alert('Job opening created successfully!');
+                    window.location.href = '/admin/careers/index.html';
+                } catch (err) {
+                    alert('Error saving job opening: ' + err.message);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

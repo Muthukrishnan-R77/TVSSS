@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIoT 4.0 Smart Manufacturing | TVS Sensing Solutions</title>
+    <meta name="keywords"
+        content="IIoT 4.0, Industry 4.0, Smart Manufacturing, Predictive Maintenance, Industrial IoT India, TVS Sensing Solutions">
+    <meta name="description"
+        content="Discover TVS Sensing Solutions IIoT 4.0 technology showcase: connecting precision sensing, edge data acquisition, predictive analytics, and automated factory control.">
+    <meta property="og:title" content="IIoT 4.0 Technology Showcase | TVS Sensing Solutions">
+    <meta property="og:description"
+        content="From Sensing to Automation: Intelligent Industry 4.0 solutions for zero-downtime manufacturing.">
+    <meta property="og:url" content="https://tvsss.co.in/iiot/">
+    <meta property="og:image" content="../wp-content/uploads/2022/01/cropped-logo-1-192x192.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../tvsss-design.css">
+    <link rel="stylesheet" href="../tvsss-global.css">
+
+    <style>
+        /* IIoT 4.0 PIXEL-PERFECT HERO & FEATURE STRIP (REFERENCE MATCH) */
+        .iiot-ref-hero {
+            position: relative;
+            width: 100%;
+            min-height: 520px;
+            background: url('../wp-content/uploads/2022/05/iiot_hero_factory.jpg') center right / cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 70px 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .iiot-ref-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg,
+                    #FFFFFF 0%,
+                    rgba(255, 255, 255, 0.98) 28%,
+                    rgba(255, 255, 255, 0.82) 44%,
+                    rgba(255, 255, 255, 0.25) 58%,
+                    rgba(255, 255, 255, 0) 72%);
+            z-index: 1;
+        }
+
+        .iiot-ref-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            box-sizing: border-box;
+        }
+
+        .iiot-ref-hero-grid {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .iiot-ref-hero-content {
+            max-width: 580px;
+            color: #063B5C;
+            text-align: left;
+        }
+
+        .iiot-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #10AEE3 !important;
+            margin-bottom: 14px;
+        }
+
+        .iiot-eyebrow::before {
+            content: "";
+            display: inline-block;
+            width: 28px;
+            height: 2px;
+            background-color: #10AEE3;
+        }
+
+        .iiot-ref-h1 {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(2.8rem, 4.8vw, 4rem);
+            font-weight: 800;
+            color: #063B5C !important;
+            margin: 0 0 18px 0;
+            line-height: 1.06;
+            letter-spacing: -0.015em;
+        }
+
+        .iiot-ref-h1 span {
+            color: #10AEE3 !important;
+        }
+
+        .iiot-ref-p {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+            line-height: 1.6;
+            color: #1E293B !important;
+            font-weight: 500;
+            margin: 0 0 32px 0;
+            max-width: 540px;
+            opacity: 1 !important;
+        }
+
+        .iiot-ref-btns {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .iiot-btn-cyan {
+            background: #10AEE3;
+            color: #FFFFFF !important;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(16, 174, 227, 0.3);
+            transition: all 0.25s ease;
+            border: none;
+        }
+
+        .iiot-btn-cyan:hover {
+            background: #0E99C8;
+            transform: translateY(-2px);
+        }
+
+        .iiot-btn-white {
+            background: #FFFFFF;
+            color: #10AEE3 !important;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            border: 1.5px solid #10AEE3;
+        }
+
+        .iiot-btn-white:hover {
+            background: #F0F9FD;
+            transform: translateY(-2px);
+        }
+
+        /* Digital HUD Cards Container on Right Side */
+        .iiot-hud-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            padding-left: 20px;
+        }
+
+        .iiot-hud-card {
+            background: rgba(4, 28, 48, 0.76);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(16, 174, 227, 0.55);
+            border-radius: 10px;
+            padding: 16px;
+            color: #FFFFFF;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(16, 174, 227, 0.18);
+            transition: all 0.3s ease;
+        }
+
+        .iiot-hud-card:hover {
+            border-color: #10AEE3;
+            box-shadow: 0 12px 32px rgba(16, 174, 227, 0.4), inset 0 0 20px rgba(16, 174, 227, 0.25);
+        }
+
+        /* Smooth Industry 4.0 HUD Entrance & Idle Animations */
+        @keyframes hudEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes drawLine {
+            0% {
+                stroke-dashoffset: 150;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes barGrowUp {
+            0% {
+                transform: scaleY(0);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 8px rgba(16, 174, 227, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 16px rgba(16, 174, 227, 0.7);
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { opacity: 0.75; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes floatCard1 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes floatCard2 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
+        }
+
+        @keyframes pulseGraph {
+            0%, 100% {
+                opacity: 0.85;
+                stroke-width: 2px;
+            }
+            50% {
+                opacity: 1;
+                stroke-width: 2.5px;
+                filter: drop-shadow(0 0 4px #10AEE3);
+            }
+        }
+
+        @keyframes growBar {
+            0%, 100% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(1.15);
+            }
+        }
+
+        .hud-anim-1 { animation: hudEntrance 0.8s ease-out forwards, floatCard1 5s ease-in-out infinite 0.8s; }
+        .hud-anim-2 { animation: hudEntrance 0.8s ease-out 0.15s forwards, floatCard2 6s ease-in-out infinite 0.95s; }
+        .hud-anim-3 { animation: hudEntrance 0.8s ease-out 0.3s forwards, floatCard1 5.5s ease-in-out infinite 1.1s; }
+        .hud-anim-4 { animation: hudEntrance 0.8s ease-out 0.45s forwards, floatCard2 6.5s ease-in-out infinite 1.25s; }
+
+        .hud-graph-path {
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+            animation: drawLine 1.2s ease-out 0.5s forwards, pulseGraph 3s ease-in-out infinite 1.7s;
+        }
+
+        .hud-bar {
+            transform-origin: bottom;
+            transform: scaleY(0);
+            animation: barGrowUp 0.8s ease-out forwards, growBar 2.5s ease-in-out infinite 1.2s;
+        }
+
+        .iiot-hud-header {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #10AEE3;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .iiot-hud-status {
+            display: flex;
+            gap: 6px;
+            font-size: 0.7rem;
+        }
+
+        .iiot-hud-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-green {
+            background: #10B981;
+            box-shadow: 0 0 6px #10B981;
+        }
+
+        .dot-yellow {
+            background: #F59E0B;
+        }
+
+        .dot-red {
+            background: #EF4444;
+        }
+
+        /* FEATURE STRIP IMMEDIATELY BELOW HERO */
+        .iiot-ref-strip {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E2ECF2;
+            padding: 24px 0;
+        }
+
+        .iiot-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .iiot-strip-col {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 0 20px;
+            border-right: 1px solid #E2ECF2;
+        }
+
+        .iiot-strip-col:last-child {
+            border-right: none;
+        }
+
+        .iiot-strip-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #F0F9FD;
+            border: 1.5px solid #10AEE3;
+            color: #10AEE3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .iiot-strip-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #083B5C;
+            margin: 0 0 4px 0;
+            line-height: 1.25;
+        }
+
+        .iiot-strip-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            color: #526E82;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .iiot-ref-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .iiot-hud-grid {
+                padding-left: 0;
+            }
+
+            .iiot-strip-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px 0;
+            }
+
+            .iiot-strip-col:nth-child(2) {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .iiot-strip-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .iiot-strip-col {
+                border-right: none;
+                border-bottom: 1px solid #E2ECF2;
+                padding-bottom: 16px;
+            }
+
+            .iiot-strip-col:last-child {
+                border-bottom: none;
+            }
+
+            .iiot-hud-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 5-Stage Story Pipeline */
+        .pipeline-sec {
+            padding: clamp(5rem, 8vw, 8rem) 2rem;
+            background: var(--g-white);
+            position: relative;
+        }
+
+        .pipeline-track {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        /* Connection line across stages */
+        .pipeline-track::before {
+            content: '';
+            position: absolute;
+            top: 42px;
+            left: 3rem;
+            right: 3rem;
+            height: 3px;
+            background: linear-gradient(to right, var(--g-blue), var(--g-cyan), var(--g-blue2));
+            z-index: 1;
+        }
+
+        .stage-card {
+            background: var(--g-white);
+            border: 1px solid var(--g-border);
+            border-radius: 14px;
+            padding: 2.25rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.35s var(--g-ease), box-shadow 0.35s var(--g-ease), border-color 0.35s ease;
+        }
+
+        .stage-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(8, 127, 193, 0.12);
+            border-color: var(--g-blue);
+        }
+
+        .stage-node {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--g-white);
+            border: 3px solid var(--g-blue);
+            box-shadow: 0 0 0 6px var(--g-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 800;
+            color: var(--g-blue);
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+
+        .stage-badge {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            color: var(--g-cyan);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .stage-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--g-deep);
+            margin-bottom: 0.85rem;
+            line-height: 1.25;
+        }
+
+        .stage-desc {
+            font-size: 0.875rem;
+            line-height: 1.65;
+            color: var(--g-muted);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .stage-pills {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .stage-pill {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--g-deep);
+            background: var(--g-pale);
+            border: 1px solid var(--g-border);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        /* Image & Architecture Section */
+        .iiot-showcase-sec {
+            padding: clamp(5rem, 8vw, 8rem) 2rem;
+            background: var(--g-pale);
+        }
+
+        .iiot-showcase-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4.5rem;
+            align-items: center;
+            max-width: 1520px;
+            margin: 0 auto;
+        }
+
+        .iiot-img-card {
+            background: var(--g-white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--g-border);
+            box-shadow: 0 20px 50px rgba(6, 59, 92, 0.08);
+            position: relative;
+        }
+
+        .iiot-img-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+
+        /* Use Cases Grid */
+        .usecase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3.5rem;
+        }
+
+        .usecase-card {
+            background: var(--g-white);
+            border: 1px solid var(--g-border);
+            border-radius: 12px;
+            padding: 2.25rem 2rem;
+            transition: transform 0.3s var(--g-ease), box-shadow 0.3s ease;
+        }
+
+        .usecase-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(8, 127, 193, 0.1);
+            border-color: var(--g-blue);
+        }
+
+        .usecase-icon {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--g-blue);
+            margin-bottom: 1rem;
+        }
+
+        .usecase-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--g-text);
+            margin-bottom: 0.75rem;
+        }
+
+        .usecase-desc {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--g-muted);
+        }
+
+        @media (max-width: 1300px) {
+            .pipeline-track {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .pipeline-track::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .iiot-showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .pipeline-track {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .usecase-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .pipeline-track {
+                grid-template-columns: 1fr;
+            }
+
+            .usecase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════════════
+         0. TOP CONTACT & SOCIAL MEDIA BAR
+    ══════════════════════════════════════════════ -->
+    <div class="g-topbar" id="gTopbar">
+        <div class="g-topbar__inner">
+            <div class="g-topbar__social">
+                <a href="https://www.facebook.com/TVS-Sensing-Solutions-Private-Limited-102082955438831" target="_blank"
+                    rel="noopener noreferrer" class="g-topbar__social-link" aria-label="Facebook">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://twitter.com/TVSSS3" target="_blank" rel="noopener noreferrer"
+                    class="g-topbar__social-link" aria-label="Twitter">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/tvs-sensing-solutions/" target="_blank"
+                    rel="noopener noreferrer" class="g-topbar__social-link" aria-label="LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="g-topbar__contact">
+                <a href="tel:+914522911444" class="g-topbar__link" aria-label="Call TVS Sensing Solutions">
+                    <span class="g-topbar__label">Office:</span> <span class="g-topbar__value">+91 452-2911444</span>
+                </a>
+                <span class="g-topbar__divider" aria-hidden="true">|</span>
+                <a href="mailto:contact@tvsss.co.in" class="g-topbar__link" aria-label="Email TVS Sensing Solutions">
+                    <span class="g-topbar__label">Mail Id:</span> <span
+                        class="g-topbar__value">contact@tvsss.co.in</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         1. MAIN WHITE NAVIGATION BAR (86px)
+    ══════════════════════════════════════════════ -->
+    <header class="g-header" id="gHeader">
+        <div class="g-header__inner">
+            <a href="../index.html" class="g-logo" aria-label="TVS Sensing Solutions Home">
+                <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo">
+                <div class="g-brand-lockup">
+                    <span class="g-brand-name">TVS SENSING SOLUTIONS</span>
+                    <span class="g-brand-tagline">A TVS GROUP COMPANY</span>
+                </div>
+            </a>
+
+            <nav class="g-nav" aria-label="Main Navigation">
+                <a href="../about-us/index.html" class="g-nav__link">About Us</a>
+                <a href="../tvs-group/index.html" class="g-nav__link">TVS Group</a>
+                <a href="../products/index.html" class="g-nav__link">Products &amp; Solutions</a>
+                <a href="../automations/index.html" class="g-nav__link">Automations</a>
+                <a href="index.html" class="g-nav__link active">IIoT 4.0</a>
+                <a href="../manufacturing-excellence/index.html" class="g-nav__link">Manufacturing Excellence</a>
+                <a href="../media/index.html" class="g-nav__link">Media-TVSS</a>
+                <a href="../customers/index.html" class="g-nav__link">Customers</a>
+                <a href="../careers/index.html" class="g-nav__link">Careers</a>
+                <a href="../reach-us/index.html" class="g-nav__link">Reach Us</a>
+            </nav>
+
+            <button class="g-ham" id="gHam" aria-label="Toggle Navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <nav class="g-mobile-nav" id="gMobileNav" aria-label="Mobile Navigation">
+            <a href="../about-us/index.html" class="g-nav__link">About Us</a>
+            <a href="../tvs-group/index.html" class="g-nav__link">TVS Group</a>
+            <a href="../products/index.html" class="g-nav__link">Products &amp; Solutions</a>
+            <a href="../automations/index.html" class="g-nav__link">Automations</a>
+            <a href="index.html" class="g-nav__link active">IIoT 4.0</a>
+            <a href="../manufacturing-excellence/index.html" class="g-nav__link">Manufacturing Excellence</a>
+            <a href="../media/index.html" class="g-nav__link">Media-TVSS</a>
+            <a href="../customers/index.html" class="g-nav__link">Customers</a>
+            <a href="../careers/index.html" class="g-nav__link">Careers</a>
+            <a href="../reach-us/index.html" class="g-nav__link">Reach Us</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- 1. FULL-WIDTH IIOT 4.0 HERO SECTION (EXACT MATCH FOR REFERENCE SCREENSHOT) -->
+        <section class="iiot-ref-hero" aria-label="IIoT 4.0 Hero">
+            <div class="iiot-ref-container">
+                <div class="iiot-ref-hero-grid">
+                    <!-- LEFT SIDE CONTENT -->
+                    <div class="iiot-ref-hero-content">
+                        <div class="iiot-eyebrow">CONNECTED MANUFACTURING</div>
+                        <h1 class="iiot-ref-h1">
+                            From Sensor to<br>
+                            <span>Smarter Decisions.</span>
+                        </h1>
+                        <p class="iiot-ref-p" style="color: #1E293B !important; opacity: 1 !important; font-weight: 500;">
+                            TVS Sensing Solutions enables smarter manufacturing with IIoT-driven real-time monitoring,
+                            predictive insights and connected operations for higher efficiency, quality and reliability.
+                        </p>
+                        <div class="iiot-ref-btns">
+                            <a href="#pipeline" class="iiot-btn-cyan">Explore IIoT Solutions &rarr;</a>
+                            <a href="../TVSSS_Catalogue.pdf" target="_blank" class="iiot-btn-white">View Brochure (PDF) &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. FEATURE STRIP IMMEDIATELY BELOW HERO -->
+        <section class="iiot-ref-strip" aria-label="Key IIoT Capabilities">
+            <div class="iiot-ref-container">
+                <div class="iiot-strip-grid">
+                    <div class="iiot-strip-col">
+                        <div class="iiot-strip-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="iiot-strip-title">Real-time Visibility</h3>
+                            <p class="iiot-strip-desc">Monitor machines, processes and production performance.</p>
+                        </div>
+                    </div>
+
+                    <div class="iiot-strip-col">
+                        <div class="iiot-strip-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="iiot-strip-title">Predictive Maintenance</h3>
+                            <p class="iiot-strip-desc">Minimize downtime with AI-driven insights.</p>
+                        </div>
+                    </div>
+
+                    <div class="iiot-strip-col">
+                        <div class="iiot-strip-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 2 7 0 6-4.5 11-10 11z">
+                                </path>
+                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="iiot-strip-title">Energy Optimization</h3>
+                            <p class="iiot-strip-desc">Drive sustainable and efficient operations.</p>
+                        </div>
+                    </div>
+
+                    <div class="iiot-strip-col">
+                        <div class="iiot-strip-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <polyline points="9 12 11 14 15 10"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="iiot-strip-title">Quality Assurance</h3>
+                            <p class="iiot-strip-desc">Ensure consistent quality with data-driven control.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             3. THE 5-STAGE VISUAL STORY PIPELINE
+             SENSING -> DATA -> ANALYTICS -> INTELLIGENCE -> AUTOMATION
+        ═══════════════════════════════════════════════════════ -->
+        <section class="pipeline-sec" id="pipeline" aria-label="IIoT Architecture Pipeline">
+            <div class="g-container">
+                <div class="g-sh g-sh--center" data-g-reveal>
+                    <span class="g-eyebrow">End-to-End Technology Flow</span>
+                    <h2 class="g-display g-display--lg">The 5-Stage Smart Architecture</h2>
+                    <p class="g-body" style="max-width: 640px; margin: 1rem auto 0;">
+                        Seamless data flow from high-precision physical sensing to autonomous factory floor response.
+                    </p>
+                </div>
+
+                <div class="pipeline-track">
+                    <!-- Stage 1: Sensing -->
+                    <div class="stage-card" data-g-reveal>
+                        <div class="stage-node">01</div>
+                        <span class="stage-badge">Stage 01</span>
+                        <h3 class="stage-title">Sensing</h3>
+                        <p class="stage-desc">
+                            High-bandwidth triaxial vibration sensors, magnetic resolvers, current transducers, and
+                            thermal probes capturing sub-micron physical shifts.
+                        </p>
+                        <div class="stage-pills">
+                            <span class="stage-pill">Vibration Spectrum</span>
+                            <span class="stage-pill">Thermal Imaging</span>
+                            <span class="stage-pill">Current Signatures</span>
+                        </div>
+                    </div>
+
+                    <!-- Stage 2: Data -->
+                    <div class="stage-card" data-g-reveal data-g-delay="2">
+                        <div class="stage-node">02</div>
+                        <span class="stage-badge">Stage 02</span>
+                        <h3 class="stage-title">Data</h3>
+                        <p class="stage-desc">
+                            Edge computing gateways aggregating raw sensor telemetry with local pre-processing, noise
+                            filtering, and ultra-secure fieldbus serialization.
+                        </p>
+                        <div class="stage-pills">
+                            <span class="stage-pill">Modbus / OPC UA</span>
+                            <span class="stage-pill">LoRaWAN &amp; BLE 5</span>
+                            <span class="stage-pill">Time-Series Buffering</span>
+                        </div>
+                    </div>
+
+                    <!-- Stage 3: Analytics -->
+                    <div class="stage-card" data-g-reveal data-g-delay="3">
+                        <div class="stage-node">03</div>
+                        <span class="stage-badge">Stage 03</span>
+                        <h3 class="stage-title">Analytics</h3>
+                        <p class="stage-desc">
+                            Continuous spectral FFT analysis, pattern matching, baseline deviation scoring, and
+                            statistical variance calculation running on edge-cloud clusters.
+                        </p>
+                        <div class="stage-pills">
+                            <span class="stage-pill">FFT Harmonic Analysis</span>
+                            <span class="stage-pill">Kurtosis Trending</span>
+                            <span class="stage-pill">Dynamic Baselines</span>
+                        </div>
+                    </div>
+
+                    <!-- Stage 4: Intelligence -->
+                    <div class="stage-card" data-g-reveal data-g-delay="4">
+                        <div class="stage-node">04</div>
+                        <span class="stage-badge">Stage 04</span>
+                        <h3 class="stage-title">Intelligence</h3>
+                        <p class="stage-desc">
+                            Machine learning models estimating Remaining Useful Life (RUL), pinpointing bearing fault
+                            stages, and prescribing proactive maintenance windows.
+                        </p>
+                        <div class="stage-pills">
+                            <span class="stage-pill">RUL Prognostics</span>
+                            <span class="stage-pill">Root Cause AI</span>
+                            <span class="stage-pill">Automated Alerts</span>
+                        </div>
+                    </div>
+
+                    <!-- Stage 5: Automation -->
+                    <div class="stage-card" data-g-reveal data-g-delay="5">
+                        <div class="stage-node">05</div>
+                        <span class="stage-badge">Stage 05</span>
+                        <h3 class="stage-title">Automation</h3>
+                        <p class="stage-desc">
+                            Direct closed-loop feedback executing automatic speed derating, line interlocks, ERP spare
+                            parts ordering, and robotic rerouting.
+                        </p>
+                        <div class="stage-pills">
+                            <span class="stage-pill">PLC Interlocking</span>
+                            <span class="stage-pill">Automated Work-Orders</span>
+                            <span class="stage-pill">Zero-Defect Control</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             4. SYSTEM ARCHITECTURE & IMAGE SHOWCASE
+        ═══════════════════════════════════════════════════════ -->
+        <section class="iiot-showcase-sec" aria-label="System Overview">
+            <div class="iiot-showcase-grid">
+                <!-- Left: Real TVSSS IIoT Image -->
+                <div class="iiot-img-card" data-g-reveal>
+                    <img src="../wp-content/uploads/2022/05/IIoT_4.0.jpg" alt="TVS Sensing Solutions IIoT 4.0 Ecosystem"
+                        loading="lazy">
+                </div>
+
+                <!-- Right: Content Specifications -->
+                <div data-g-reveal data-g-delay="2">
+                    <span class="g-eyebrow">Connected Infrastructure</span>
+                    <h2 class="g-display g-display--md" style="margin-bottom: 1.5rem;">
+                        Unifying the Physical &amp; Digital Factory.
+                    </h2>
+                    <p class="g-body" style="margin-bottom: 1.25rem;">
+                        TVS Sensing Solutions IIoT 4.0 platform bridges legacy industrial machinery and cutting-edge
+                        digital enterprise architectures without requiring capital-intensive machine replacements.
+                    </p>
+                    <p class="g-body" style="margin-bottom: 2rem;">
+                        Our non-invasive sensor pods and plug-and-play IoT modules enable rapid deployment across CNC
+                        spindles, stamping presses, paint shops, injection molders, and automated assembly conveyors.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                        <a href="../iot-4-0-products/index.html" class="g-btn-primary">
+                            Explore IIoT Hardware &rarr;
+                        </a>
+                        <a href="../TVSSS_Catalogue.pdf" class="g-btn-outline" target="_blank" rel="noopener">
+                            Download Catalog (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             5. INDUSTRIAL USE CASES
+        ═══════════════════════════════════════════════════════ -->
+        <section class="g-section" aria-label="Industrial Applications">
+            <div class="g-container">
+                <div class="g-sh g-sh--split" data-g-reveal>
+                    <div>
+                        <span class="g-eyebrow">Proven Deployments</span>
+                        <h2 class="g-display g-display--lg">Industrial Use Cases</h2>
+                    </div>
+                    <p class="g-body" style="max-width: 480px;">
+                        Delivering quantifiable ROI through reduced unplanned downtime, optimized energy consumption,
+                        and heightened Overall Equipment Effectiveness (OEE).
+                    </p>
+                </div>
+
+                <div class="usecase-grid">
+                    <div class="usecase-card" data-g-reveal>
+                        <div class="usecase-icon">01 &bull; CNC Spindles</div>
+                        <h3 class="usecase-title">Predictive Maintenance</h3>
+                        <p class="usecase-desc">
+                            Real-time vibration and temperature spectral tracking across high-speed spindle bearings to
+                            identify unbalance, misalignment, and lubrication breakdown weeks before catastrophic
+                            failure.
+                        </p>
+                    </div>
+
+                    <div class="usecase-card" data-g-reveal data-g-delay="2">
+                        <div class="usecase-icon">02 &bull; Power Monitoring</div>
+                        <h3 class="usecase-title">Energy Telemetry</h3>
+                        <p class="usecase-desc">
+                            Sub-metering electrical current, power factor, and harmonic distortion across manufacturing
+                            bays to detect machine idling losses and reduce peak tariff penalties.
+                        </p>
+                    </div>
+
+                    <div class="usecase-card" data-g-reveal data-g-delay="3">
+                        <div class="usecase-icon">03 &bull; Stamping Presses</div>
+                        <h3 class="usecase-title">Tonnage &amp; Tool Life</h3>
+                        <p class="usecase-desc">
+                            Dynamic strain gauge sensing monitoring die impact loads and punch wear to prevent tool
+                            breakage, ensure sheet metal precision, and protect press beds.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             6. FINAL CTA
+        ═══════════════════════════════════════════════════════ -->
+        <section class="g-cta-sec" aria-label="Connect with IIoT Team">
+            <div class="g-cta-sec__grid"></div>
+            <div class="g-cta-sec__bar"></div>
+            <div class="g-cta-sec__inner">
+                <span class="g-eyebrow" data-g-reveal>Smart Factory Pilot</span>
+                <h2 class="g-cta-sec__heading"
+                    style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important;" data-g-reveal
+                    data-g-delay="2">
+                    Deploy Your Industry 4.0<br><em
+                        style="color: #38BDF8 !important; -webkit-text-fill-color: #38BDF8 !important;">Pilot in
+                        Weeks</em>.
+                </h2>
+                <p class="g-body"
+                    style="max-width: 600px; margin: 0 auto 2.5rem auto; color: rgba(255, 255, 255, 0.92) !important; -webkit-text-fill-color: rgba(255, 255, 255, 0.92) !important;"
+                    data-g-reveal data-g-delay="3">
+                    Schedule a demonstration with our IoT systems engineers to configure wireless sensor nodes, edge
+                    gateways, and analytics dashboards for your plant.
+                </p>
+                <div class="g-cta-sec__actions" data-g-reveal data-g-delay="4">
+                    <a href="../reach-us/index.html" class="g-btn-primary">
+                        Request Proof of Concept &rarr;
+                    </a>
+                    <a href="../TVSSS_Catalogue.pdf" class="g-btn-outline" target="_blank" rel="noopener">
+                        Download Technical Whitepaper (PDF) &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════
+         GLOBAL FOOTER (Deep TVS Blue - No Black)
+    ═══════════════════════════════════════════════════════ -->
+    <!-- GLOBAL FOOTER (Structured, Balanced, Professional — #063B5C) -->
+    <footer class="g-footer" id="site-footer">
+        <div class="g-container">
+            <!-- TOP: Logo + Company Statement -->
+            <div class="g-footer-top">
+                <div class="g-footer-brand">
+                    <a href="../index.html" class="g-footer-logo-link">
+                        <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo"
+                            class="g-footer-logo">
+                    </a>
+                    <p class="g-footer-statement">
+                        TVS Sensing Solutions Private Limited is a global pioneer in precision automotive sensors,
+                        custom solenoids, electro-mechanical switches, and Industry 4.0 smart factory technologies.
+                        Established in 1994, Madurai, India.
+                    </p>
+                </div>
+            </div>
+
+            <!-- MIDDLE: 5 Structured Columns -->
+            <div class="g-footer-nav-grid">
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Solutions</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../products/index.html">EV Solutions</a></li>
+                        <li><a href="../products/index.html">Sensors &amp; Sensing</a></li>
+                        <li><a href="../products/index.html">Solenoids &amp; Actuators</a></li>
+                        <li><a href="../products/index.html">Electro-Mechanical</a></li>
+                        <li><a href="../products/index.html">Switches &amp; Controls</a></li>
+                        <li><a href="../products/index.html">IIoT 4.0 Products</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Technology</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../manufacturing-excellence/index.html">Class 10k Cleanrooms</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">SMT Component Placement</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Micro-Injection Molding</a></li>
+                        <li><a href="../automations/index.html">Automated Test Benches</a></li>
+                        <li><a href="../iiot/index.html">FOSS IIoT Architecture</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Company</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../about-us/index.html">About Us</a></li>
+                        <li><a href="../tvs-group/index.html">TVS Group</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Manufacturing</a></li>
+                        <li><a href="../media/index.html">Media-TVS</a></li>
+                        <li><a href="../customers/index.html">Customers</a></li>
+                        <li><a href="../careers/index.html">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Resources</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../TVSSS_Catalogue.pdf" download target="_blank">Product Catalogue (PDF)</a></li>
+                        <li><a href="../products/index.html">Engineering Datasheets</a></li>
+                        <li><a href="../automations/index.html">Automation Case Studies</a></li>
+                        <li><a href="../reach-us/index.html">Application Engineering</a></li>
+                        <li><a href="../reach-us/index.html">Request Quotation</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Compliance</h4>
+                    <div class="g-compliance-wrap">
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">General Meeting Notice</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2024-25.pdf" target="_blank" rel="noopener noreferrer">FY 2024&ndash;25</a></li>
+                                <li><a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2023_24.pdf" target="_blank" rel="noopener noreferrer">FY 2023&ndash;24</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">Annual Return</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_Annual_Return_Form_MGT-7-%20FY%202024-25.pdf" target="_blank" rel="noopener noreferrer">FY 2024&ndash;25</a></li>
+                                <li><a href="../compliance/TVSSSPL_%20Annual_Return_Form_MGT-7-%20FY%202023-24_1.pdf" target="_blank" rel="noopener noreferrer">FY 2023&ndash;24</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">Director Resignation Notice</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/Letter_from_Mr_Prem_Pradeep_Director.pdf" target="_blank" rel="noopener noreferrer">Letter from Mr. Prem Pradeep</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">CSR (Corporate Social Responsibility)</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_CSR_Policy.pdf" target="_blank" rel="noopener noreferrer">CSR Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT ROW -->
+            <div class="g-footer-contact-row">
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Headquarters &amp; Plant</span>
+                    <div>Melur Road, Vellaripatti, Madurai &ndash; 625 122, Tamil Nadu, India</div>
+                    <div>Tel: <a href="tel:+914522911444">+91 452-2911444</a> | Email: <a
+                            href="mailto:contact@tvsss.co.in">contact@tvsss.co.in</a></div>
+                </div>
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Regional Offices</span>
+                    <div>Chennai: <a href="tel:+914428420384">+91-44-28420384</a> | Noida / Delhi: <a
+                            href="tel:+919313370317">+91 9313370317</a></div>
+                    <div>Pune: <a href="mailto:pune@tvsss.co.in">pune@tvsss.co.in</a> | HR Desk: <a
+                            href="tel:+918925094815">+91 89250 94815</a></div>
+                </div>
+                <div class="g-footer-contact-item g-footer-action-wrap">
+                    <a href="../reach-us/index.html" class="g-btn g-btn-primary">Reach Us &rarr;</a>
+                </div>
+            </div>
+
+            <!-- BOTTOM: Copyright & Certifications -->
+            <div class="g-footer-bottom">
+                <div>&copy; 2026 TVS Sensing Solutions Private Limited. All Rights Reserved.</div>
+                <div class="g-footer-cert-tags">
+                    <span class="g-cert-tag">IATF 16949</span>
+                    <span class="g-cert-tag">ISO 9001:2015</span>
+                    <span class="g-cert-tag">ISO 14001:2015</span>
+                    <span class="g-cert-tag">ISO 45001:2018</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../tvsss-global.js"></script>
+</body>
+
+</html>

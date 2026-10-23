@@ -1,0 +1,226 @@
+/* ============================================================
+   TVSSS MODERN — RESPONSIVE STYLES
+   ============================================================ */
+
+/* ── 1440px ── */
+@media (max-width: 1440px) {
+  .hero-heading { font-size: clamp(3rem, 8vw, 7rem); }
+}
+
+/* ── 1280px ── */
+@media (max-width: 1280px) {
+  .container { padding-inline: var(--space-6); }
+  .header-inner { padding-inline: var(--space-6); }
+  .mega-menu-inner { padding-inline: var(--space-6); }
+  .about-content { padding: var(--space-16) var(--space-8) var(--space-16) var(--space-6); }
+  .footer-nav-cols { grid-template-columns: repeat(4,1fr); }
+  .engineering-stages { grid-template-columns: repeat(2,1fr); }
+  .eng-stage:nth-child(2) { border-right: none; }
+  .eng-stage:nth-child(3) { border-top: 1px solid var(--color-border); }
+  .eng-stage:nth-child(4) { border-top: 1px solid var(--color-border); border-right: none; }
+  .cert-grid { grid-template-columns: repeat(3,1fr); }
+}
+
+/* ── 1024px (tablet landscape) ── */
+@media (max-width: 1024px) {
+  :root { --header-height: 70px; }
+
+  /* Header */
+  .primary-nav { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .hero-heading { font-size: clamp(3rem, 9vw, 5.5rem); }
+  .hero-content { padding-inline: var(--space-6); }
+  .hero-scroll-hint span { display: none; }
+
+  /* About */
+  .about-inner { grid-template-columns: 1fr; }
+  .about-content { padding: var(--space-12) var(--space-6); max-width: 100%; margin-left: 0; }
+  .about-image-wrap { min-height: 380px; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3) { border-top: 1px solid var(--color-border); }
+  .stat-item:nth-child(4) { border-top: 1px solid var(--color-border); border-right: none; }
+
+  /* Products */
+  .product-category-item { grid-template-columns: 1fr; min-height: auto; }
+  .product-category-item:nth-child(even) .product-cat-info { order: 1; }
+  .product-category-item:nth-child(even) .product-cat-image { order: 2; }
+  .product-cat-image { min-height: 280px; }
+  .product-cat-info { padding: var(--space-8) var(--space-6); }
+
+  /* Segments */
+  .segment-panel.is-active { grid-template-columns: 1fr; gap: var(--space-8); }
+
+  /* Engineering */
+  .engineering-stages { grid-template-columns: repeat(2,1fr); }
+
+  /* EV */
+  .ev-inner { grid-template-columns: 1fr; gap: var(--space-10); }
+  .ev-section::before { display: none; }
+
+  /* IIoT */
+  .iiot-inner { grid-template-columns: 1fr; gap: var(--space-10); }
+
+  /* Careers */
+  .careers-bg-img { width: 100%; opacity: 0.1; }
+  .careers-content { max-width: 100%; }
+
+  /* Contact */
+  .contact-inner { grid-template-columns: 1fr; gap: var(--space-12); }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr; gap: var(--space-8); }
+  .footer-nav-cols { grid-template-columns: repeat(3,1fr); }
+
+  /* Timeline — switch to vertical */
+  .timeline-scroll-wrap { overflow-x: visible; }
+  .timeline-track { flex-direction: column; align-items: flex-start; min-width: auto; padding-inline: var(--space-6); }
+  .timeline-track::before { top: 0; bottom: 0; left: var(--space-6); right: auto; width: 1px; height: auto; transform: none; }
+  .timeline-item { flex-direction: row; align-items: flex-start; padding-block: var(--space-4); padding-inline: 0; gap: var(--space-6); padding-left: var(--space-8); }
+  .timeline-node { flex-shrink: 0; }
+  .timeline-year { font-size: var(--text-xl); }
+
+  /* Certifications */
+  .cert-grid { grid-template-columns: repeat(3,1fr); }
+
+  /* Manufacturing */
+  .mfg-panel { width: min(85vw, 650px); }
+}
+
+/* ── 768px (tablet portrait) ── */
+@media (max-width: 768px) {
+  .section { padding-block: var(--space-20); }
+  .section--lg { padding-block: var(--space-24); }
+
+  /* Hero */
+  .hero { height: 100svh; }
+  .hero-heading { font-size: clamp(2.5rem, 10vw, 4.5rem); max-width: 100%; }
+  .hero-subtext { font-size: var(--text-sm); max-width: 100%; }
+  .hero-slide-counter { padding: var(--space-3) var(--space-4); }
+  .hero-scroll-hint { display: none; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Products header */
+  .products-header { padding-top: var(--space-12); }
+  .product-cat-number { font-size: clamp(3rem, 10vw, 6rem); }
+
+  /* Manufacturing */
+  .mfg-panel { width: 90vw; height: 60vh; }
+  .mfg-header { padding: var(--space-10) var(--space-6) var(--space-6); flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+
+  /* Engineering */
+  .engineering-stages { grid-template-columns: 1fr; border: none; gap: var(--space-2); }
+  .eng-stage { border: 1px solid var(--color-border); border-right: 1px solid var(--color-border) !important; }
+  .eng-stage::before { display: none; }
+
+  /* EV */
+  .ev-heading { font-size: clamp(3rem, 10vw, 5rem); }
+  .ev-product-grid { grid-template-columns: 1fr; }
+
+  /* IIoT */
+  .iiot-flow-label { font-size: var(--text-2xl); }
+  .iiot-topics { grid-template-columns: 1fr; }
+
+  /* Customers */
+  .customer-logo { height: 36px; }
+  .customer-marquee-track { gap: var(--space-10); }
+
+  /* Footer */
+  .footer-nav-cols { grid-template-columns: repeat(2,1fr); }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+  /* Certifications */
+  .cert-grid { grid-template-columns: repeat(2,1fr); }
+
+  /* Segment tabs */
+  .segment-tab { padding: var(--space-3) var(--space-4); font-size: var(--text-xs); }
+}
+
+/* ── 480px (mobile landscape / large phone) ── */
+@media (max-width: 480px) {
+  :root { --header-height: 64px; }
+
+  .container { padding-inline: var(--space-4); }
+
+  /* Hero */
+  .hero-heading { font-size: clamp(2.2rem, 11vw, 3.5rem); }
+  .hero-content { padding-inline: var(--space-4); }
+  .hero-actions { gap: var(--space-3); }
+  .hero-bottom { display: none; }
+
+  /* Intro strip */
+  .intro-strip-item { font-size: var(--text-xs); }
+
+  /* About */
+  .about-heading-main { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .about-image-wrap { min-height: 280px; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-item { border-right: none; }
+  .stat-item::before { display: block; }
+
+  /* Products */
+  .product-cat-info { padding: var(--space-6) var(--space-4); }
+  .product-cat-title { font-size: var(--text-3xl); }
+
+  /* Certifications */
+  .cert-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Footer */
+  .footer-nav-cols { grid-template-columns: 1fr; gap: var(--space-6); }
+  .footer-top { gap: var(--space-6); }
+
+  /* Contact form */
+  .form-group-row { grid-template-columns: 1fr; }
+
+  /* Careers */
+  .careers-tagline { font-size: clamp(2rem, 10vw, 3.5rem); }
+}
+
+/* ── 390px / 375px (standard phone) ── */
+@media (max-width: 390px) {
+  .hero-heading { font-size: clamp(2rem, 12vw, 3rem); }
+  .mobile-nav-link { font-size: var(--text-xl); }
+  .ev-heading { font-size: clamp(2.5rem, 12vw, 3.5rem); }
+  .iiot-flow-label { font-size: var(--text-xl); }
+  .iiot-flow-num { font-size: var(--text-2xl); }
+  .stat-number { font-size: clamp(2.5rem, 12vw, 4rem); }
+}
+
+/* ── 320px (small legacy phones) ── */
+@media (max-width: 320px) {
+  .hero-heading { font-size: 1.9rem; }
+  .about-heading-main { font-size: 2rem; }
+  .display-xl { font-size: 2rem; }
+}
+
+/* ── Prefers Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .intro-strip-track,
+  .customer-marquee-track {
+    animation: none !important;
+  }
+  .hero-slide img { will-change: auto; }
+}
+
+/* ── Touch device enhancements ── */
+@media (hover: none) and (pointer: coarse) {
+  .img-zoom-wrap img { transition: none; }
+  .product-category-item { cursor: default; }
+  .customer-logo { filter: grayscale(0%) opacity(0.75); }
+  .cert-link { opacity: 1; }
+}

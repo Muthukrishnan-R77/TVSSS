@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Management — TVS Sensing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <script src="/admin/admin-layout.js"></script>
+</head>
+<body class="admin-body">
+
+    <div class="admin-layout">
+        <!-- Sidebar placeholder -->
+        <div id="adminSidebarWrap"></div>
+
+        <div class="admin-main">
+            <!-- Topbar placeholder -->
+            <div id="adminTopbarWrap"></div>
+
+            <main class="admin-content">
+
+                <!-- Page Header Title & + Add Job Opening Button -->
+                <div class="page-header-box">
+                    <div>
+                        <h1 class="page-title">Career Management</h1>
+                        <p class="page-subtitle">Add, edit and manage career opportunities for the website.</p>
+                    </div>
+                    <a href="/admin/careers/new.html" class="btn-primary-blue">+ Add Job Opening</a>
+                </div>
+
+                <!-- Career Table Card -->
+                <div class="admin-card-container">
+                    <!-- Search & Filter Bar -->
+                    <div class="search-filter-row">
+                        <div class="search-input-wrap">
+                            <svg class="search-input-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <input type="text" id="careerSearch" class="admin-search-input" placeholder="Search by job title, department or location...">
+                        </div>
+                        <div class="filter-group-right">
+                            <select id="filterDept" class="admin-select-filter">
+                                <option value="all">All Departments</option>
+                                <option value="Engineering & R&D">R&D</option>
+                                <option value="Manufacturing & Quality">Quality</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="IT">IT</option>
+                            </select>
+                            <select id="filterStatus" class="admin-select-filter">
+                                <option value="all">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Table Wrap -->
+                    <div class="table-wrap">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40px;">#</th>
+                                    <th>Job Title</th>
+                                    <th>Department</th>
+                                    <th>Location</th>
+                                    <th>Vacancies</th>
+                                    <th>Closing Date</th>
+                                    <th>Status</th>
+                                    <th style="text-align: right;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblCareerList">
+                                <tr><td colspan="8" style="text-align: center; color: #94A3B8; padding: 20px;">Loading career openings...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination Row -->
+                    <div class="pagination-row">
+                        <div id="pagText">Showing 1 to 4 of 4 entries</div>
+                        <div class="pagination-pages" id="pagButtons">
+                            <button type="button" class="page-btn active">1</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- View Modal -->
+    <div id="viewCareerModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:999; align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:12px; padding:24px; max-width:640px; width:90%; max-height:85vh; overflow-y:auto;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <h3 style="font-family:'Outfit',sans-serif; font-size:1.25rem; font-weight:700; color:#0B192C;" id="viewModalTitle">Job Details</h3>
+                <button type="button" onclick="closeViewModal()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:#64748B;">&times;</button>
+            </div>
+            <div id="viewModalBody" style="font-size:0.88rem; color:#334155; line-height:1.6;"></div>
+            <div style="text-align:right; margin-top:20px;">
+                <button type="button" onclick="closeViewModal()" class="btn-secondary-white">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var allCareerItems = [];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            window.renderAdminLayout('careers', 'Career Management');
+            loadCareerData();
+
+            document.getElementById('careerSearch').addEventListener('input', applyFilters);
+            document.getElementById('filterDept').addEventListener('change', applyFilters);
+            document.getElementById('filterStatus').addEventListener('change', applyFilters);
+        });
+
+        async function loadCareerData() {
+            try {
+                var response = await fetch(window.TVSS_API.baseUrl + '/careers', {
+                    headers: window.TVSS_API.getHeaders()
+                });
+                if (!response.ok) throw new Error('Failed to fetch careers');
+                var resData = await response.json();
+                allCareerItems = Array.isArray(resData) ? resData : (resData && resData.data ? resData.data : []);
+                applyFilters();
+            } catch (err) {
+                console.error('Error loading careers:', err);
+                document.getElementById('tblCareerList').innerHTML = '<tr><td colspan="8" style="text-align: center; color: #EF4444; padding: 24px;">Unable to load job openings. Please check backend connection.</td></tr>';
+            }
+        }
+
+        function applyFilters() {
+            var searchVal = document.getElementById('careerSearch').value.toLowerCase().trim();
+            var deptVal = document.getElementById('filterDept').value;
+            var statusVal = document.getElementById('filterStatus').value;
+
+            var filtered = allCareerItems.filter(function (c) {
+                var matchSearch = !searchVal || 
+                    c.jobTitle.toLowerCase().includes(searchVal) || 
+                    (c.department && c.department.toLowerCase().includes(searchVal)) || 
+                    (c.location && c.location.toLowerCase().includes(searchVal));
+                
+                var matchDept = deptVal === 'all' || (c.department && c.department.toLowerCase().includes(deptVal.toLowerCase()));
+                var matchStatus = statusVal === 'all' || (statusVal === 'active' && c.isActive) || (statusVal === 'closed' && !c.isActive);
+
+                return matchSearch && matchDept && matchStatus;
+            });
+
+            renderCareerTable(filtered);
+        }
+
+        function renderCareerTable(items) {
+            var tbody = document.getElementById('tblCareerList');
+            document.getElementById('pagText').textContent = 'Showing 1 to ' + items.length + ' of ' + items.length + ' entries';
+
+            if (items.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: #94A3B8; padding: 24px;">No job openings found matching criteria.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = items.map(function (c, idx) {
+                var statusBadge = c.isActive ? '<span class="badge-status active">Active</span>' : '<span class="badge-status closed">Closed</span>';
+                var closingDateStr = c.applicationDeadline ? formatDate(c.applicationDeadline) : 'N/A';
+
+                return '<tr>' +
+                    '<td>' + (idx + 1) + '</td>' +
+                    '<td><strong style="color: #0B192C;">' + escapeHtml(c.jobTitle) + '</strong></td>' +
+                    '<td>' + escapeHtml(c.department || 'General') + '</td>' +
+                    '<td>' + escapeHtml(c.location || 'Madurai') + '</td>' +
+                    '<td>' + (c.numberOfVacancies || 1) + '</td>' +
+                    '<td>' + closingDateStr + '</td>' +
+                    '<td>' + statusBadge + '</td>' +
+                    '<td style="text-align: right;">' +
+                        '<div class="action-btn-group" style="justify-content: flex-end;">' +
+                            '<button type="button" class="icon-action-btn" title="View" onclick="viewCareer(' + c.id + ')">' +
+                                '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>' +
+                            '</button>' +
+                            '<a href="/admin/careers/edit.html?id=' + c.id + '" class="icon-action-btn" title="Edit">' +
+                                '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>' +
+                            '</a>' +
+                            '<label class="toggle-switch" title="Toggle Active Status">' +
+                                '<input type="checkbox" ' + (c.isActive ? 'checked' : '') + ' onchange="toggleActive(' + c.id + ', this.checked)">' +
+                                '<span class="slider-round"></span>' +
+                            '</label>' +
+                            '<button type="button" class="icon-action-btn delete" title="Delete" onclick="deleteCareer(' + c.id + ')">' +
+                                '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>' +
+                            '</button>' +
+                        '</div>' +
+                    '</td>' +
+                '</tr>';
+            }).join('');
+        }
+
+        async function toggleActive(id, isActive) {
+            try {
+                var endpoint = isActive ? '/activate' : '/deactivate';
+                var response = await fetch(window.TVSS_API.baseUrl + '/careers/' + id + endpoint, {
+                    method: 'PATCH',
+                    headers: window.TVSS_API.getHeaders()
+                });
+                if (!response.ok) throw new Error('Failed to update status');
+                loadCareerData();
+            } catch (err) {
+                alert('Error updating status: ' + err.message);
+                loadCareerData();
+            }
+        }
+
+        async function deleteCareer(id) {
+            if (!confirm('Are you sure you want to delete this job opening?')) return;
+            try {
+                var response = await fetch(window.TVSS_API.baseUrl + '/careers/' + id, {
+                    method: 'DELETE',
+                    headers: window.TVSS_API.getHeaders()
+                });
+                if (!response.ok) throw new Error('Failed to delete job opening');
+                loadCareerData();
+            } catch (err) {
+                alert('Error deleting item: ' + err.message);
+            }
+        }
+
+        function viewCareer(id) {
+            var item = allCareerItems.find(function(c) { return c.id === id; });
+            if (!item) return;
+            document.getElementById('viewModalTitle').textContent = item.jobTitle;
+            document.getElementById('viewModalBody').innerHTML =
+                '<p style="margin-bottom:10px;"><strong>Department:</strong> ' + escapeHtml(item.department || 'N/A') + '</p>' +
+                '<p style="margin-bottom:10px;"><strong>Location:</strong> ' + escapeHtml(item.location || 'N/A') + '</p>' +
+                '<p style="margin-bottom:10px;"><strong>Employment Type:</strong> ' + escapeHtml(item.employmentType || 'Full Time') + '</p>' +
+                '<p style="margin-bottom:10px;"><strong>Experience:</strong> ' + escapeHtml(item.experienceRequired || 'N/A') + '</p>' +
+                '<p style="margin-bottom:10px;"><strong>Vacancies:</strong> ' + (item.numberOfVacancies || 1) + '</p>' +
+                '<p style="margin-bottom:10px;"><strong>Description:</strong> ' + escapeHtml(item.jobDescription || 'N/A') + '</p>' +
+                '<p style="margin-bottom:10px;"><strong>Eligibility:</strong> ' + escapeHtml(item.eligibility || 'N/A') + '</p>' +
+                '<p style="margin-bottom:10px;"><strong>Required Skills:</strong> ' + escapeHtml(item.requiredSkills || 'N/A') + '</p>' +
+                '<p style="margin-bottom:10px;"><strong>Responsibilities:</strong> ' + escapeHtml(item.responsibilities || 'N/A') + '</p>';
+            document.getElementById('viewCareerModal').style.display = 'flex';
+        }
+
+        function closeViewModal() {
+            document.getElementById('viewCareerModal').style.display = 'none';
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            var d = new Date(dateStr);
+            if (isNaN(d.getTime())) return dateStr;
+            return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+    </script>
+</body>
+</html>

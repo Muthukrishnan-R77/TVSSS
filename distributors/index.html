@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorized Distributors Directory | TVS Sensing Solutions</title>
+    <meta name="description" content="Find authorized TVS Sensing Solutions distributors across India. Access verified sales contacts, addresses, phone numbers, and regional supply partners.">
+    <link rel="canonical" href="https://tvsss.co.in/distributors/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../tvsss-design.css">
+    <link rel="stylesheet" href="../tvsss-global.css">
+
+    <style>
+        .dist-hero {
+            position: relative;
+            padding: 8rem 2rem 4.5rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 65%, var(--secondary) 100%);
+            color: var(--white);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .dist-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(32, 184, 232, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(32, 184, 232, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .dist-hero__inner {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .dist-hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background: rgba(32, 184, 232, 0.15);
+            border: 1px solid rgba(32, 184, 232, 0.35);
+            border-radius: 999px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .dist-hero__title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+        }
+
+        .dist-hero__lead {
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.88);
+            margin-bottom: 2rem;
+        }
+
+        /* Filter & Search Bar */
+        .dist-filter-sec {
+            background: var(--background);
+            padding: 2.5rem 2rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dist-filter-bar {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .dist-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .dist-tab-btn {
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .dist-tab-btn:hover {
+            border-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .dist-tab-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .dist-search-input {
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+            width: 320px;
+            max-width: 100%;
+            outline: none;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .dist-search-input:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(8, 127, 193, 0.12);
+        }
+
+        /* Distributor Cards Grid */
+        .dist-content-sec {
+            padding: 4rem 2rem 6rem;
+            background: var(--background-secondary);
+        }
+
+        .dist-content-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .region-block {
+            margin-bottom: 4rem;
+        }
+
+        .region-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .region-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .dist-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .dist-card {
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 2.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+            position: relative;
+        }
+
+        .dist-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(6, 59, 92, 0.08);
+            border-color: var(--secondary);
+        }
+
+        .dist-card__region-tag {
+            align-self: flex-start;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--secondary);
+            background: rgba(8, 127, 193, 0.08);
+            padding: 0.3rem 0.65rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .dist-card__name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.25;
+        }
+
+        .dist-card__info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 1.75rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        .dist-info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .dist-info-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            min-width: 70px;
+            flex-shrink: 0;
+        }
+
+        .dist-info-val a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .dist-info-val a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .dist-card__actions {
+            display: flex;
+            gap: 0.75rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .dist-action-btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 0.75rem;
+            font-size: 0.825rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.25s ease;
+        }
+
+        .dist-action-btn--phone {
+            background: rgba(8, 127, 193, 0.1);
+            color: var(--secondary);
+        }
+
+        .dist-action-btn--phone:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .dist-action-btn--email {
+            background: rgba(6, 59, 92, 0.08);
+            color: var(--primary);
+        }
+
+        .dist-action-btn--email:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Become a distributor CTA */
+        .dist-cta-sec {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .dist-cta-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dist-cta-sec h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .dist-cta-sec p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.25rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1100px) {
+            .dist-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .dist-grid {
+                grid-template-columns: 1fr;
+            }
+            .dist-filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .dist-search-input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ═══════════════════════════════════════════════════════
+         GLOBAL HEADER (10 items - TVS Sensing Solutions standard)
+    ═══════════════════════════════════════════════════════ -->
+    <header class="g-header" id="gHeader">
+        <div class="g-header__inner">
+            <a href="../index.html" class="g-logo" aria-label="TVS Sensing Solutions Home">
+                <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo">
+                <div class="g-brand-lockup">
+                    <span class="g-brand-name">TVS SENSING SOLUTIONS</span>
+                    <span class="g-brand-tagline">A TVS Group Company</span>
+                </div>
+            </a>
+
+            <nav class="g-nav" aria-label="Main Navigation">
+                <a href="../about-us/index.html" class="g-nav__link ">About Us</a>
+                <a href="../tvs-group/index.html" class="g-nav__link ">TVS Group</a>
+                <a href="../products/index.html" class="g-nav__link ">Products &amp; Solutions</a>
+                <a href="../automations/index.html" class="g-nav__link ">Automations</a>
+                <a href="../iiot/index.html" class="g-nav__link ">IIoT 4.0</a>
+                <a href="../manufacturing-excellence/index.html" class="g-nav__link ">Manufacturing Excellence</a>
+                <a href="../media/index.html" class="g-nav__link ">Media-TVS</a>
+                <a href="../customers/index.html" class="g-nav__link ">Customers</a>
+                <a href="../careers/index.html" class="g-nav__link ">Careers</a>
+                <a href="../reach-us/index.html" class="g-nav__link">Reach Us</a>
+            <a href="../TVSSS_Catalogue.pdf" download target="_blank" class="g-header-pdf-btn" style="margin: 1rem 0; text-align: center; justify-content: center;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Catalogue PDF</span>
+            </a>
+        </nav>
+
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <a href="../TVSSS_Catalogue.pdf" download target="_blank" class="g-header-pdf-btn desktop-only" title="Download Product Catalogue (PDF)">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Catalogue PDF</span>
+                </a>
+                <button class="g-ham" id="gHam" aria-label="Toggle Navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <nav class="g-mobile-nav" id="gMobileNav" aria-label="Mobile Navigation">
+            <a href="../about-us/index.html" class="g-nav__link ">About Us</a>
+            <a href="../tvs-group/index.html" class="g-nav__link ">TVS Group</a>
+            <a href="../products/index.html" class="g-nav__link ">Products &amp; Solutions</a>
+            <a href="../automations/index.html" class="g-nav__link ">Automations</a>
+            <a href="../iiot/index.html" class="g-nav__link ">IIoT 4.0</a>
+            <a href="../manufacturing-excellence/index.html" class="g-nav__link ">Manufacturing Excellence</a>
+            <a href="../media/index.html" class="g-nav__link ">Media-TVS</a>
+            <a href="../customers/index.html" class="g-nav__link ">Customers</a>
+            <a href="../careers/index.html" class="g-nav__link ">Careers</a>
+            <a href="../reach-us/index.html" class="g-nav__link ">Reach Us</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- HERO -->
+        <section class="dist-hero">
+            <div class="dist-hero__inner">
+                <div class="dist-hero__badge">Authorized Sales Channel</div>
+                <h1 class="dist-hero__title">Our Authorized Distributors</h1>
+                <p class="dist-hero__lead">Connect directly with certified TVS Sensing Solutions distributors across India for genuine parts, local stocking, and immediate application support.</p>
+            </div>
+        </section>
+
+        <!-- FILTER & SEARCH -->
+        <section class="dist-filter-sec">
+            <div class="dist-filter-bar">
+                <div class="dist-tabs" role="tablist">
+                    <button class="dist-tab-btn active" data-region="all">All Regions</button>
+                    <button class="dist-tab-btn" data-region="southern">Southern Region</button>
+                    <button class="dist-tab-btn" data-region="western">Western Region</button>
+                    <button class="dist-tab-btn" data-region="northern">Northern Region</button>
+                </div>
+                <input type="text" id="distSearch" class="dist-search-input" placeholder="Search by city, distributor, contact..." aria-label="Search distributors">
+            </div>
+        </section>
+
+        <!-- CONTENT GRID -->
+        <section class="dist-content-sec">
+            <div class="dist-content-inner">
+                
+                <!-- SOUTHERN REGION -->
+                <div class="region-block" data-region-block="southern">
+                    <h2 class="region-title">Southern Region</h2>
+                    <div class="dist-grid">
+                        
+                        <!-- Sri Krishna Electronics -->
+                        <div class="dist-card g-card" data-keywords="sri krishna electronics coimbatore tamil nadu krishna kumar">
+                            <div>
+                                <span class="dist-card__region-tag">Tamil Nadu</span>
+                                <h3 class="dist-card__name">Sri Krishna Electronics</h3>
+                                <div class="dist-card__info">
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Address:</span>
+                                        <span class="dist-info-val">118-B, First Floor, Variety Hall Road, Coimbatore &ndash; 641 001.</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Contact:</span>
+                                        <span class="dist-info-val">Mr. C. Krishna Kumar</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Mobile:</span>
+                                        <span class="dist-info-val"><a href="tel:+919364413654">+91 93644 13654</a></span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Email:</span>
+                                        <span class="dist-info-val"><a href="mailto:ske.kkr@gmail.com">ske.kkr@gmail.com</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dist-card__actions">
+                                <a href="tel:+919364413654" class="dist-action-btn dist-action-btn--phone">&#128222; Call</a>
+                                <a href="mailto:ske.kkr@gmail.com" class="dist-action-btn dist-action-btn--email">&#9993; Email</a>
+                            </div>
+                        </div>
+
+                        <!-- Balam Electronics -->
+                        <div class="dist-card g-card" data-keywords="balam electronics hyderabad telangana a umesh">
+                            <div>
+                                <span class="dist-card__region-tag">Telangana &amp; AP</span>
+                                <h3 class="dist-card__name">Balam Electronics</h3>
+                                <div class="dist-card__info">
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Address:</span>
+                                        <span class="dist-info-val">1-19-79/153, Plot No. 153, Ayodhya Nagar, ECIL Post, Hyderabad &ndash; 500 062.</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Contact:</span>
+                                        <span class="dist-info-val">Mr. A. Umesh</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Mobile:</span>
+                                        <span class="dist-info-val"><a href="tel:+918978780691">+91 89787 80691</a></span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Email:</span>
+                                        <span class="dist-info-val"><a href="mailto:umesh@balam.co.in">umesh@balam.co.in</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dist-card__actions">
+                                <a href="tel:+918978780691" class="dist-action-btn dist-action-btn--phone">&#128222; Call</a>
+                                <a href="mailto:umesh@balam.co.in" class="dist-action-btn dist-action-btn--email">&#9993; Email</a>
+                            </div>
+                        </div>
+
+                        <!-- DHE Connectronics -->
+                        <div class="dist-card g-card" data-keywords="dhe connectronics bangalore karnataka s r kannan">
+                            <div>
+                                <span class="dist-card__region-tag">Karnataka</span>
+                                <h3 class="dist-card__name">DHE Connectronics</h3>
+                                <div class="dist-card__info">
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Address:</span>
+                                        <span class="dist-info-val">No. 4200, 1st Floor, 1st Main Road, Subramanyanagar, Bangalore &ndash; 560 021.</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Contact:</span>
+                                        <span class="dist-info-val">Mr. S.R. Kannan</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Mobile:</span>
+                                        <span class="dist-info-val"><a href="tel:+919900316890">+91 99003 16890</a></span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Email:</span>
+                                        <span class="dist-info-val"><a href="mailto:dheconnect@yahoo.co.in">dheconnect@yahoo.co.in</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dist-card__actions">
+                                <a href="tel:+919900316890" class="dist-action-btn dist-action-btn--phone">&#128222; Call</a>
+                                <a href="mailto:dheconnect@yahoo.co.in" class="dist-action-btn dist-action-btn--email">&#9993; Email</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- WESTERN REGION -->
+                <div class="region-block" data-region-block="western">
+                    <h2 class="region-title">Western Region</h2>
+                    <div class="dist-grid">
+                        
+                        <!-- VG Electric -->
+                        <div class="dist-card g-card" data-keywords="vg electric mumbai maharashtra vishu makhija vgswitches">
+                            <div>
+                                <span class="dist-card__region-tag">Maharashtra</span>
+                                <h3 class="dist-card__name">VG Electric</h3>
+                                <div class="dist-card__info">
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Address:</span>
+                                        <span class="dist-info-val">27, Amrit Niwas, 2nd Floor, 165, K M Sharma Marg, Lohar Chawl, Mumbai &ndash; 400 002.</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Contact:</span>
+                                        <span class="dist-info-val">Mr. Vishu Makhija</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Phone/Mobile:</span>
+                                        <span class="dist-info-val"><a href="tel:+912240060293">022 40060293</a> / <a href="tel:+919892113089">+91 98921 13089</a></span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Email:</span>
+                                        <span class="dist-info-val"><a href="mailto:sales@vgswitches.com">sales@vgswitches.com</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dist-card__actions">
+                                <a href="tel:+919892113089" class="dist-action-btn dist-action-btn--phone">&#128222; Call</a>
+                                <a href="mailto:sales@vgswitches.com" class="dist-action-btn dist-action-btn--email">&#9993; Email</a>
+                            </div>
+                        </div>
+
+                        <!-- Innovision -->
+                        <div class="dist-card g-card" data-keywords="innovision ahmedabad gujarat vinay elenet">
+                            <div>
+                                <span class="dist-card__region-tag">Gujarat</span>
+                                <h3 class="dist-card__name">Innovision</h3>
+                                <div class="dist-card__info">
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Address:</span>
+                                        <span class="dist-info-val">205, Abhishree Estate, off SP Ring Road, Odhav, B/h GVMM, Ahmedabad &ndash; 382 415.</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Contact:</span>
+                                        <span class="dist-info-val">Mr. Vinay (GST: 24ACYPS5840C1Z9)</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Phone/Mobile:</span>
+                                        <span class="dist-info-val"><a href="tel:+917940034067">079 40034067</a> / <a href="tel:+919327004067">+91 93270 04067</a></span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Email:</span>
+                                        <span class="dist-info-val"><a href="mailto:innovision7@gmail.com">innovision7@gmail.com</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dist-card__actions">
+                                <a href="tel:+919327004067" class="dist-action-btn dist-action-btn--phone">&#128222; Call</a>
+                                <a href="mailto:innovision7@gmail.com" class="dist-action-btn dist-action-btn--email">&#9993; Email</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- NORTHERN REGION -->
+                <div class="region-block" data-region-block="northern">
+                    <h2 class="region-title">Northern &amp; NCR Region</h2>
+                    <div class="dist-grid">
+                        
+                        <!-- TVSSS Regional Office -->
+                        <div class="dist-card g-card" data-keywords="noida delhi ncr north regional office direct">
+                            <div>
+                                <span class="dist-card__region-tag">Direct Regional Office</span>
+                                <h3 class="dist-card__name">TVS Sensing Solutions (Delhi-NCR)</h3>
+                                <div class="dist-card__info">
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Address:</span>
+                                        <span class="dist-info-val">Regional Sales &amp; Technical Support Center, Noida / Delhi-NCR.</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Contact:</span>
+                                        <span class="dist-info-val">Regional Sales Head</span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Mobile:</span>
+                                        <span class="dist-info-val"><a href="tel:+919313370317">+91 93133 70317</a></span>
+                                    </div>
+                                    <div class="dist-info-row">
+                                        <span class="dist-info-label">Email:</span>
+                                        <span class="dist-info-val"><a href="mailto:contact@tvsss.co.in">contact@tvsss.co.in</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dist-card__actions">
+                                <a href="tel:+919313370317" class="dist-action-btn dist-action-btn--phone">&#128222; Call</a>
+                                <a href="mailto:contact@tvsss.co.in" class="dist-action-btn dist-action-btn--email">&#9993; Email</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BECOME A DISTRIBUTOR CTA -->
+        <section class="dist-cta-sec">
+            <div class="dist-cta-inner">
+                <h2>Interested in Becoming an Authorized Channel Partner?</h2>
+                <p>Expand your commercial reach with TVS Sensing Solutions. We provide our distributors with dedicated engineering training, priority factory allocations, and joint marketing support.</p>
+                <a href="../reach-us/index.html" class="g-btn g-btn-primary" style="background: var(--white); color: var(--primary);">Apply for Distributorship &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    
+    <!-- ═══════════════════════════════════════════════════════
+         GLOBAL FOOTER (TVS Sensing Solutions Unified Design)
+    ═══════════════════════════════════════════════════════ -->
+    <footer class="g-footer" id="gFooter">
+        <div class="g-footer__inner">
+            <!-- TOP BRAND ROW -->
+            <div class="g-footer-brand-row">
+                <div class="g-footer-brand-wrap">
+                    <a href="../index.html" class="g-footer-logo-link">
+                        <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo" class="g-footer-logo">
+                    </a>
+                    <p class="g-footer-statement">
+                        TVS Sensing Solutions Private Limited is a global pioneer in precision automotive sensors, custom solenoids, electro-mechanical switches, and Industry 4.0 smart factory technologies. Established in 1994, Madurai, India.
+                    </p>
+                </div>
+            </div>
+
+            <!-- MIDDLE: 5 Structured Columns -->
+            <div class="g-footer-nav-grid">
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Solutions</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../products/index.html">EV Solutions</a></li>
+                        <li><a href="../products/index.html">Sensors &amp; Sensing</a></li>
+                        <li><a href="../products/index.html">Solenoids &amp; Actuators</a></li>
+                        <li><a href="../products/index.html">Electro-Mechanical</a></li>
+                        <li><a href="../products/index.html">Switches &amp; Controls</a></li>
+                        <li><a href="../products/index.html">IIoT 4.0 Products</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Technology</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../manufacturing-excellence/index.html">Class 10k Cleanrooms</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">SMT Component Placement</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Micro-Injection Molding</a></li>
+                        <li><a href="../automations/index.html">Automated Test Benches</a></li>
+                        <li><a href="../iiot/index.html">FOSS IIoT Architecture</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Company</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../about-us/index.html">About Us</a></li>
+                        <li><a href="../tvs-group/index.html">TVS Group</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Manufacturing</a></li>
+                        <li><a href="../media/index.html">Media-TVS</a></li>
+                        <li><a href="../customers/index.html">Customers</a></li>
+                        <li><a href="../careers/index.html">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Resources</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../TVSSS_Catalogue.pdf" download target="_blank">Product Catalogue (PDF)</a></li>
+                        <li><a href="../products/index.html">Engineering Datasheets</a></li>
+                        <li><a href="../automations/index.html">Automation Case Studies</a></li>
+                        <li><a href="../reach-us/index.html">Application Engineering</a></li>
+                        <li><a href="../reach-us/index.html">Request Quotation</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Compliance</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../compliance/TVSSSPL_%20Annual_Return_Form_MGT-7-%20FY%202023-24_1.pdf" target="_blank">Annual Return MGT-7 (23-24)</a></li>
+                        <li><a href="../compliance/TVSSSPL_Annual_Return_Form_MGT-7-%20FY%202024-25.pdf" target="_blank">Annual Return MGT-7 (24-25)</a></li>
+                        <li><a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2024-25.pdf" target="_blank">AGM Notice FY 2024-25</a></li>
+                        <li><a href="../compliance/TVSSSPL_CSR_Policy.pdf" target="_blank">CSR Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTACT ROW -->
+            <div class="g-footer-contact-row">
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Headquarters &amp; Plant</span>
+                    <div>Melur Road, Vellaripatti, Madurai &ndash; 625 122, Tamil Nadu, India</div>
+                    <div>Tel: <a href="tel:+914522911444">+91 452-2911444</a> | Email: <a href="mailto:contact@tvsss.co.in">contact@tvsss.co.in</a></div>
+                </div>
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Regional Offices</span>
+                    <div>Chennai: <a href="tel:+914428420384">+91-44-28420384</a> | Noida / Delhi: <a href="tel:+919313370317">+91 9313370317</a></div>
+                    <div>Pune: <a href="mailto:pune@tvsss.co.in">pune@tvsss.co.in</a> | HR Desk: <a href="tel:+918925094815">+91 89250 94815</a></div>
+                </div>
+                <div class="g-footer-contact-item g-footer-action-wrap">
+                    <a href="../reach-us/index.html" class="g-btn g-btn-primary">Reach Us &rarr;</a>
+                </div>
+            </div>
+
+            <!-- BOTTOM: Copyright & Certifications -->
+            <div class="g-footer-bottom">
+                <div>&copy; 2026 TVS Sensing Solutions Private Limited. All Rights Reserved.</div>
+                <div class="g-footer-cert-tags">
+                    <span class="g-cert-tag">IATF 16949</span>
+                    <span class="g-cert-tag">ISO 9001:2015</span>
+                    <span class="g-cert-tag">ISO 14001:2015</span>
+                    <span class="g-cert-tag">ISO 45001:2018</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../tvsss-global.js"></script>
+
+
+    <!-- Distributor Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.dist-tab-btn');
+            const regionBlocks = document.querySelectorAll('.region-block');
+            const searchInput = document.getElementById('distSearch');
+            const cards = document.querySelectorAll('.dist-card');
+
+            let activeRegion = 'all';
+
+            function filterDistributors() {
+                const query = searchInput.value.toLowerCase().trim();
+
+                regionBlocks.forEach(block => {
+                    const blockRegion = block.getAttribute('data-region-block');
+                    let blockHasVisibleCards = false;
+
+                    const blockCards = block.querySelectorAll('.dist-card');
+                    blockCards.forEach(card => {
+                        const keywords = (card.getAttribute('data-keywords') + ' ' + card.innerText).toLowerCase();
+                        const matchesRegion = (activeRegion === 'all' || activeRegion === blockRegion);
+                        const matchesQuery = !query || keywords.includes(query);
+
+                        if (matchesRegion && matchesQuery) {
+                            card.style.display = 'flex';
+                            blockHasVisibleCards = true;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    block.style.display = blockHasVisibleCards ? 'block' : 'none';
+                });
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    activeRegion = tab.getAttribute('data-region');
+                    filterDistributors();
+                });
+            });
+
+            searchInput.addEventListener('input', filterDistributors);
+        });
+    </script>
+</body>
+</html>

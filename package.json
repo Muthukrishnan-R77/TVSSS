@@ -1,0 +1,25 @@
+{
+  "name": "web_tvsss_live",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev:all": "node ../scripts/dev-all.js",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node backend/src/scripts/seed.js",
+    "test": "node backend/src/scripts/test.js"
+  },
+  "keywords": [],
+  "author": "TVS Sensing Solutions",
+  "license": "ISC",
+  "description": "TVS Sensing Solutions Web & Admin API",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mssql": "^12.7.2",
+    "multer": "^2.4.0"
+  }
+}

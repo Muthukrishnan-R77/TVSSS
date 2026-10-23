@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" width="280" height="64">
+  <!-- Official Blue Square Icon -->
+  <rect x="0" y="4" width="56" height="56" rx="6" fill="#0076B9"/>
+  <g fill="#FFFFFF">
+    <!-- Stylized TVS Emblem -->
+    <path d="M12,18 L16,18 L16,34 L12,34 Z"/>
+    <path d="M16,18 L24,18 L20,34 L16,34 Z" opacity="0.85"/>
+    <path d="M22,18 L34,34 L38,34 L26,18 Z"/>
+    <path d="M34,18 L44,18 L44,22 L38,22 L38,34 L34,34 Z"/>
+    <circle cx="28" cy="40" r="1.8"/>
+  </g>
+  <!-- Typography -->
+  <text x="68" y="32" font-family="'Inter', 'Montserrat', 'Segoe UI', sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="1">TVS</text>
+  <text x="68" y="48" font-family="'Inter', 'Montserrat', 'Segoe UI', sans-serif" font-weight="700" font-size="9" fill="#00A3FF" letter-spacing="2.5">SENSING SOLUTIONS</text>
+</svg>

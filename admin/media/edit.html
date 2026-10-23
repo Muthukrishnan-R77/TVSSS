@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Media — TVS Sensing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <script src="/admin/admin-layout.js"></script>
+</head>
+<body class="admin-body">
+
+    <div class="admin-layout">
+        <!-- Sidebar placeholder -->
+        <div id="adminSidebarWrap"></div>
+
+        <div class="admin-main">
+            <!-- Topbar placeholder -->
+            <div id="adminTopbarWrap"></div>
+
+            <main class="admin-content">
+
+                <!-- Page Header Title -->
+                <div class="page-header-box">
+                    <div>
+                        <h1 class="page-title">Edit Media</h1>
+                        <p class="page-subtitle">Update existing media item information.</p>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="admin-card-container admin-card-inner-padding">
+                    <form id="editMediaForm" enctype="multipart/form-data">
+                        <div class="form-2col-grid">
+                            <!-- Left Column -->
+                            <div>
+                                <div class="form-group-item">
+                                    <label for="mediaTitle">Title *</label>
+                                    <input type="text" id="mediaTitle" class="form-input-text" required>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="shortDescription">Short Description *</label>
+                                    <textarea id="shortDescription" class="form-textarea-box" required></textarea>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label>Media Type *</label>
+                                    <div class="radio-options-row">
+                                        <label class="radio-label-item">
+                                            <input type="radio" name="mediaType" value="Image" onchange="handleTypeChange('Image')"> Image
+                                        </label>
+                                        <label class="radio-label-item">
+                                            <input type="radio" name="mediaType" value="Video" onchange="handleTypeChange('Video')"> Video
+                                        </label>
+                                        <label class="radio-label-item">
+                                            <input type="radio" name="mediaType" value="ExternalLink" onchange="handleTypeChange('ExternalLink')"> External Link
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Upload Section -->
+                                <div class="form-group-item" id="uploadGroup">
+                                    <label id="uploadLabel">Upload Image</label>
+                                    <div class="upload-drop-row">
+                                        <div class="upload-dropzone" onclick="document.getElementById('fileInput').click()">
+                                            <svg width="28" height="28" fill="none" stroke="#0066FF" stroke-width="2" viewBox="0 0 24 24" style="margin-bottom: 6px;"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                                            <div style="font-size: 0.85rem; font-weight: 600; color: #1E293B;">Click to upload or drag and drop</div>
+                                            <div style="font-size: 0.75rem; color: #64748B; margin-top: 2px;" id="uploadHint">JPG, JPEG, PNG, WEBP (Max 5MB)</div>
+                                            <input type="file" id="fileInput" name="mediaFile" style="display: none;" onchange="previewFile(this)">
+                                        </div>
+                                        <div class="upload-preview-box" id="previewBox">
+                                            <img id="imgPreview" src="/1.jpg" alt="Preview">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div>
+                                <div class="form-group-item">
+                                    <label for="publishDate">Publish Date *</label>
+                                    <input type="date" id="publishDate" class="form-input-text" required>
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="externalLink">External Link</label>
+                                    <input type="url" id="externalLink" class="form-input-text" placeholder="Enter external link (if any)">
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="statusSelect">Status *</label>
+                                    <select id="statusSelect" class="form-select-box" required>
+                                        <option value="true">Published</option>
+                                        <option value="false">Unpublished</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Action Buttons -->
+                        <div class="form-actions-footer">
+                            <a href="/admin/media/index.html" class="btn-secondary-white">Cancel</a>
+                            <button type="submit" class="btn-primary-blue">Update</button>
+                        </div>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        var mediaId = null;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            window.renderAdminLayout('media', 'Edit Media');
+
+            var params = new URLSearchParams(window.location.search);
+            mediaId = params.get('id');
+
+            if (!mediaId) {
+                alert('No media ID specified.');
+                window.location.href = '/admin/media/index.html';
+                return;
+            }
+
+            loadMediaDetail();
+
+            document.getElementById('editMediaForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                var title = document.getElementById('mediaTitle').value.trim();
+                var shortDescription = document.getElementById('shortDescription').value.trim();
+                var mediaType = document.querySelector('input[name="mediaType"]:checked').value;
+                var publishDate = document.getElementById('publishDate').value;
+                var externalLink = document.getElementById('externalLink').value.trim();
+                var isPublished = document.getElementById('statusSelect').value === 'true';
+                var fileInput = document.getElementById('fileInput');
+
+                var formData = new FormData();
+                formData.append('title', title);
+                formData.append('shortDescription', shortDescription);
+                formData.append('mediaType', mediaType);
+                formData.append('publishDate', publishDate);
+                formData.append('externalLink', externalLink);
+                formData.append('isPublished', isPublished);
+
+                if (fileInput.files.length > 0) {
+                    formData.append('mediaFile', fileInput.files[0]);
+                }
+
+                try {
+                    var response = await fetch(window.TVSS_API.baseUrl + '/media/' + mediaId, {
+                        method: 'PUT',
+                        headers: window.TVSS_API.getHeaders(true),
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        var errData = await response.json();
+                        throw new Error(errData.message || 'Failed to update media');
+                    }
+
+                    alert('Media updated successfully!');
+                    window.location.href = '/admin/media/index.html';
+                } catch (err) {
+                    alert('Error updating media: ' + err.message);
+                }
+            });
+        });
+
+        async function loadMediaDetail() {
+            try {
+                var response = await fetch(window.TVSS_API.baseUrl + '/media/' + mediaId, {
+                    headers: window.TVSS_API.getHeaders()
+                });
+
+                if (!response.ok) throw new Error('Failed to fetch media details');
+                var data = await response.json();
+
+                document.getElementById('mediaTitle').value = data.title || '';
+                document.getElementById('shortDescription').value = data.shortDescription || '';
+                document.getElementById('publishDate').value = data.publishDate ? data.publishDate.split('T')[0] : '';
+                document.getElementById('externalLink').value = data.externalLink || '';
+                document.getElementById('statusSelect').value = data.isPublished ? 'true' : 'false';
+
+                var radio = document.querySelector('input[name="mediaType"][value="' + data.mediaType + '"]');
+                if (radio) radio.checked = true;
+                handleTypeChange(data.mediaType);
+
+                if (data.filePath || data.thumbnailPath) {
+                    document.getElementById('imgPreview').src = data.thumbnailPath || data.filePath;
+                }
+            } catch (err) {
+                alert('Error loading detail: ' + err.message);
+                window.location.href = '/admin/media/index.html';
+            }
+        }
+
+        function handleTypeChange(type) {
+            var uploadGroup = document.getElementById('uploadGroup');
+            if (type === 'ExternalLink') {
+                uploadGroup.style.display = 'none';
+            } else {
+                uploadGroup.style.display = 'block';
+            }
+        }
+
+        function previewFile(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('imgPreview').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+:root {
+  --primary-blue: #087FC1;
+  --deep-navy: #063B5C;
+  --dark-text: #0A3553;
+  --bright-blue: #008BD2;
+  --cyan: #20B8E8;
+  --white: #FFFFFF;
+  --light-bg: #F5F9FC;
+  --light-blue-bg: #EAF5FA;
+  --border: #D7E7F0;
+  --muted-text: #5F7485;
+}
+
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dark-text);
+}
+
+h1, .h1 { font-size: 40px; line-height: 44px; }
+h2, .h2 { font-size: 32px; line-height: 38px; }
+h3, .h3 { font-size: 26px; line-height: 32px; }
+h4, .h4 { font-size: 22px; line-height: 26px; }
+h5, .h5 { font-size: 18px; line-height: 22px; }
+h6, .h6 { font-size: 16px; line-height: 20px; }
+
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+  color: var(--deep-navy);
+  text-decoration: underline;
+}
+
+.text-center { text-align: center; }
+
+.wrap {
+  min-height: 100%;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.top-bar {
+  height: 4px;
+  background: var(--primary-blue);
+}
+
+.welcome-container {
+  width: 520px;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 60px 0;
+}
+
+.coming-soon-wrap {
+  margin-top: 60px;
+}
+
+.frowny-face {
+  text-align: center;
+  font-size: 100px;
+  color: var(--primary-blue);
+  line-height: 1.1;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.welcome-container h1 {
+  margin-bottom: 1em;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+  color: #FFFFFF;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--deep-navy);
+  border-color: var(--deep-navy);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--muted-text);
+  font-size: 12px;
+}

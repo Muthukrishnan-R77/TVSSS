@@ -1,0 +1,7 @@
+{
+  "php.validate.enable": false,
+  "php.suggest.basic": false,
+  "files.associations": {
+    "*.php": "plaintext"
+  }
+}

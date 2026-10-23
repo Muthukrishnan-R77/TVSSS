@@ -1,0 +1,33 @@
+{
+  "public": ".",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/admin/login", "destination": "/admin/login.html" },
+    { "source": "/admin/dashboard", "destination": "/admin/dashboard.html" },
+    { "source": "/admin/careers", "destination": "/admin/careers/index.html" },
+    { "source": "/admin/careers/new", "destination": "/admin/careers/new.html" },
+    { "source": "/admin/careers/edit", "destination": "/admin/careers/edit.html" },
+    { "source": "/admin/media", "destination": "/admin/media/index.html" },
+    { "source": "/admin/media/new", "destination": "/admin/media/new.html" },
+    { "source": "/admin/media/edit", "destination": "/admin/media/edit.html" },
+    { "source": "/admin/enquiries", "destination": "/admin/enquiries/index.html" },
+    { "source": "/admin/enquiries/index.html", "destination": "/admin/enquiries/index.html" },
+    { "source": "/admin/media-library", "destination": "/admin/media-library/index.html" },
+    { "source": "/admin/settings", "destination": "/admin/settings/index.html" },
+    { "source": "/tvs-group", "destination": "/tvs-group/index.html" },
+    { "source": "/about-us", "destination": "/about-us/index.html" },
+    { "source": "/products", "destination": "/products/index.html" },
+    { "source": "/automations", "destination": "/automations/index.html" },
+    { "source": "/iiot", "destination": "/iiot/index.html" },
+    { "source": "/manufacturing-excellence", "destination": "/manufacturing-excellence/index.html" },
+    { "source": "/media", "destination": "/media/index.html" },
+    { "source": "/media/index", "destination": "/media/index.html" },
+    { "source": "/media/index.html", "destination": "/media/index.html" },
+    { "source": "/media/detail", "destination": "/media/detail.html" },
+    { "source": "/media/detail.html", "destination": "/media/detail.html" },
+    { "source": "/customers", "destination": "/customers/index.html" },
+    { "source": "/careers", "destination": "/careers/index.html" },
+    { "source": "/reach-us", "destination": "/reach-us/index.html" }
+  ]
+}

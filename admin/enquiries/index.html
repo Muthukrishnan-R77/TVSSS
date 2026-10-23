@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Management — TVS Sensing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <script src="/admin/admin-layout.js"></script>
+</head>
+<body class="admin-body">
+
+    <div class="admin-layout">
+        <!-- Sidebar placeholder -->
+        <div id="adminSidebarWrap"></div>
+
+        <div class="admin-main">
+            <!-- Topbar placeholder -->
+            <div id="adminTopbarWrap"></div>
+
+            <main class="admin-content">
+
+                <!-- 1. TABLE LIST VIEW (Default) -->
+                <div id="enquiryListView">
+                    <!-- Page Header Title -->
+                    <div class="page-header-box">
+                        <div>
+                            <h1 class="page-title">Enquiry Management</h1>
+                            <p class="page-subtitle">View and manage enquiries received through the Reach Us page.</p>
+                        </div>
+                    </div>
+
+                    <!-- Enquiry Table Card -->
+                    <div class="admin-card-container">
+                        <!-- Search & Filter Bar -->
+                        <div class="search-filter-row">
+                            <div class="search-input-wrap">
+                                <svg class="search-input-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                <input type="text" id="enquirySearch" class="admin-search-input" placeholder="Search by name, email or subject...">
+                            </div>
+                            <div class="filter-group-right">
+                                <select id="filterStatus" class="admin-select-filter">
+                                    <option value="all">All Status</option>
+                                    <option value="New">New</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Responded">Responded</option>
+                                    <option value="Closed">Closed</option>
+                                </select>
+                                <input type="date" id="filterDate" class="admin-select-filter" style="color: #64748B;">
+                            </div>
+                        </div>
+
+                        <!-- Table Wrap -->
+                        <div class="table-wrap">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40px;">#</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Subject</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th style="text-align: right;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblEnquiryList">
+                                    <tr><td colspan="7" style="text-align: center; color: #94A3B8; padding: 20px;">Loading public enquiries...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination Row -->
+                        <div class="pagination-row">
+                            <div id="pagText">Showing 1 to 4 of 4 entries</div>
+                            <div class="pagination-pages" id="pagButtons">
+                                <button type="button" class="page-btn active">1</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 2. SCREEN 8: VIEW ENQUIRY DETAIL VIEW (Target Screen 8) -->
+                <div id="enquiryDetailView" style="display: none;">
+                    <!-- Page Header Title & Back Button -->
+                    <div class="page-header-box">
+                        <div>
+                            <h1 class="page-title">View Enquiry</h1>
+                        </div>
+                        <button type="button" class="btn-secondary-white" onclick="showListView()">&larr; Back to List</button>
+                    </div>
+
+                    <!-- Detail Card Container -->
+                    <div class="admin-card-container admin-card-inner-padding">
+                        <div class="form-2col-grid">
+                            <!-- Left Column: Enquiry Information -->
+                            <div style="font-size: 0.9rem; line-height: 1.8;">
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: #64748B; font-weight: 500;">Enquiry ID:</span>
+                                    <strong style="color: #0B192C; margin-left: 8px;" id="detailEnqId">#ENQ-00001</strong>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: #64748B; font-weight: 500;">Name:</span>
+                                    <strong style="color: #0B192C; margin-left: 8px;" id="detailName">-</strong>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: #64748B; font-weight: 500;">Email:</span>
+                                    <span style="color: #0066FF; margin-left: 8px;" id="detailEmail">-</span>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: #64748B; font-weight: 500;">Phone:</span>
+                                    <span style="color: #1E293B; margin-left: 8px;" id="detailPhone">-</span>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: #64748B; font-weight: 500;">Company:</span>
+                                    <span style="color: #1E293B; margin-left: 8px;" id="detailCompany">-</span>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: #64748B; font-weight: 500;">Subject:</span>
+                                    <strong style="color: #0B192C; margin-left: 8px;" id="detailSubject">-</strong>
+                                </div>
+                                <div style="margin-bottom: 16px;">
+                                    <span style="color: #64748B; font-weight: 500; display: block; margin-bottom: 4px;">Message:</span>
+                                    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 14px; border-radius: 8px; color: #334155; white-space: pre-wrap;" id="detailMessage">-</div>
+                                </div>
+                                <div>
+                                    <span style="color: #64748B; font-weight: 500;">Submitted Date:</span>
+                                    <span style="color: #475569; margin-left: 8px;" id="detailSubmittedAt">-</span>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Admin Action -->
+                            <div>
+                                <form id="updateEnquiryForm">
+                                    <div class="form-group-item">
+                                        <label for="detailStatus">Status</label>
+                                        <select id="detailStatus" class="form-select-box" style="font-weight: 600;">
+                                            <option value="New">New</option>
+                                            <option value="In Progress">In Progress</option>
+                                            <option value="Responded">Responded</option>
+                                            <option value="Closed">Closed</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group-item">
+                                        <label for="detailRemarks">Admin Remarks</label>
+                                        <textarea id="detailRemarks" class="form-textarea-box" style="min-height: 140px;" placeholder="Enter internal remarks..."></textarea>
+                                    </div>
+
+                                    <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px;">
+                                        <button type="button" class="btn-secondary-white" onclick="showListView()">Cancel</button>
+                                        <button type="submit" class="btn-primary-blue">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        var allEnquiries = [];
+        var activeEnquiryId = null;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            window.renderAdminLayout('enquiries', 'Enquiry Management');
+            loadEnquiryData();
+
+            document.getElementById('enquirySearch').addEventListener('input', applyFilters);
+            document.getElementById('filterStatus').addEventListener('change', applyFilters);
+            document.getElementById('filterDate').addEventListener('change', applyFilters);
+
+            document.getElementById('updateEnquiryForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                if (!activeEnquiryId) return;
+
+                var newStatus = document.getElementById('detailStatus').value;
+                var remarks = document.getElementById('detailRemarks').value.trim();
+
+                try {
+                    var response = await fetch(window.TVSS_API.baseUrl + '/enquiries/' + activeEnquiryId, {
+                        method: 'PUT',
+                        headers: window.TVSS_API.getHeaders(),
+                        body: JSON.stringify({ status: newStatus, adminRemarks: remarks })
+                    });
+
+                    if (!response.ok) throw new Error('Failed to update enquiry status');
+
+                    alert('Enquiry updated successfully!');
+                    loadEnquiryData();
+                    showListView();
+                } catch (err) {
+                    alert('Error updating enquiry: ' + err.message);
+                }
+            });
+
+            // Check if ID in URL query params
+            var params = new URLSearchParams(window.location.search);
+            var qId = params.get('id');
+            if (qId) {
+                viewEnquiryDetail(parseInt(qId));
+            }
+        });
+
+        async function loadEnquiryData() {
+            try {
+                var response = await fetch(window.TVSS_API.baseUrl + '/enquiries', {
+                    headers: window.TVSS_API.getHeaders()
+                });
+                if (!response.ok) throw new Error('Failed to fetch enquiries');
+                allEnquiries = await response.json();
+                applyFilters();
+
+                if (activeEnquiryId) {
+                    var updatedItem = allEnquiries.find(function(e){ return e.id === activeEnquiryId; });
+                    if (updatedItem) populateDetailView(updatedItem);
+                }
+            } catch (err) {
+                console.error('Error loading enquiries:', err);
+                document.getElementById('tblEnquiryList').innerHTML = '<tr><td colspan="7" style="text-align: center; color: #EF4444; padding: 24px;">Unable to load public enquiries. Please check backend connection.</td></tr>';
+            }
+        }
+
+        function applyFilters() {
+            var searchVal = document.getElementById('enquirySearch').value.toLowerCase().trim();
+            var statusVal = document.getElementById('filterStatus').value;
+            var dateVal = document.getElementById('filterDate').value;
+
+            var filtered = allEnquiries.filter(function (e) {
+                var matchSearch = !searchVal || 
+                    e.name.toLowerCase().includes(searchVal) || 
+                    e.email.toLowerCase().includes(searchVal) || 
+                    e.subject.toLowerCase().includes(searchVal);
+
+                var matchStatus = statusVal === 'all' || e.status === statusVal;
+                var matchDate = !dateVal || (e.submittedAt && e.submittedAt.startsWith(dateVal));
+
+                return matchSearch && matchStatus && matchDate;
+            });
+
+            renderEnquiryTable(filtered);
+        }
+
+        function renderEnquiryTable(items) {
+            var tbody = document.getElementById('tblEnquiryList');
+            document.getElementById('pagText').textContent = 'Showing 1 to ' + items.length + ' of ' + items.length + ' entries';
+
+            if (items.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #94A3B8; padding: 24px;">No public enquiries found matching criteria.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = items.map(function (e, idx) {
+                var badgeClass = 'new';
+                if (e.status === 'In Progress') badgeClass = 'in-progress';
+                else if (e.status === 'Responded') badgeClass = 'responded';
+                else if (e.status === 'Closed') badgeClass = 'closed';
+
+                var dateStr = formatDate(e.submittedAt);
+
+                return '<tr>' +
+                    '<td>' + (idx + 1) + '</td>' +
+                    '<td><strong style="color: #0B192C;">' + escapeHtml(e.name) + '</strong></td>' +
+                    '<td>' + escapeHtml(e.email) + '</td>' +
+                    '<td>' + escapeHtml(e.subject) + '</td>' +
+                    '<td>' + dateStr + '</td>' +
+                    '<td><span class="badge-status ' + badgeClass + '">' + escapeHtml(e.status) + '</span></td>' +
+                    '<td style="text-align: right;">' +
+                        '<div class="action-btn-group" style="justify-content: flex-end;">' +
+                            '<button type="button" class="icon-action-btn" title="View Enquiry" onclick="viewEnquiryDetail(' + e.id + ')">' +
+                                '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>' +
+                            '</button>' +
+                            '<button type="button" class="icon-action-btn" title="Edit Remarks / Status" onclick="viewEnquiryDetail(' + e.id + ')">' +
+                                '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>' +
+                            '</button>' +
+                            '<button type="button" class="icon-action-btn delete" title="Delete Enquiry" onclick="deleteEnquiry(' + e.id + ')">' +
+                                '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>' +
+                            '</button>' +
+                        '</div>' +
+                    '</td>' +
+                '</tr>';
+            }).join('');
+        }
+
+        function viewEnquiryDetail(id) {
+            var item = allEnquiries.find(function(e) { return e.id === id; });
+            if (!item) return;
+
+            activeEnquiryId = id;
+            populateDetailView(item);
+
+            document.getElementById('enquiryListView').style.display = 'none';
+            document.getElementById('enquiryDetailView').style.display = 'block';
+        }
+
+        function populateDetailView(item) {
+            var paddedId = String(item.id).padStart(5, '0');
+            document.getElementById('detailEnqId').textContent = '#ENQ-' + paddedId;
+            document.getElementById('detailName').textContent = item.name || '-';
+            document.getElementById('detailEmail').textContent = item.email || '-';
+            document.getElementById('detailPhone').textContent = item.phone || 'N/A';
+            document.getElementById('detailCompany').textContent = item.company || 'N/A';
+            document.getElementById('detailSubject').textContent = item.subject || 'N/A';
+            document.getElementById('detailMessage').textContent = item.message || '';
+            document.getElementById('detailSubmittedAt').textContent = item.submittedAt ? formatDateFull(item.submittedAt) : '-';
+
+            document.getElementById('detailStatus').value = item.status || 'New';
+            document.getElementById('detailRemarks').value = item.adminRemarks || '';
+        }
+
+        function showListView() {
+            activeEnquiryId = null;
+            document.getElementById('enquiryDetailView').style.display = 'none';
+            document.getElementById('enquiryListView').style.display = 'block';
+        }
+
+        async function deleteEnquiry(id) {
+            if (!confirm('Are you sure you want to delete this enquiry?')) return;
+            try {
+                var response = await fetch(window.TVSS_API.baseUrl + '/enquiries/' + id, {
+                    method: 'DELETE',
+                    headers: window.TVSS_API.getHeaders()
+                });
+                if (!response.ok) throw new Error('Failed to delete enquiry');
+                loadEnquiryData();
+            } catch (err) {
+                alert('Error deleting enquiry: ' + err.message);
+            }
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            var d = new Date(dateStr);
+            if (isNaN(d.getTime())) return dateStr;
+            return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+
+        function formatDateFull(dateStr) {
+            if (!dateStr) return '';
+            var d = new Date(dateStr);
+            if (isNaN(d.getTime())) return dateStr;
+            return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) + ' ' + d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        }
+    </script>
+</body>
+</html>

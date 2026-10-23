@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Applications — TVS Sensing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <script src="/admin/admin-layout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body class="admin-body">
+
+    <div class="admin-layout">
+        <!-- Sidebar placeholder -->
+        <div id="adminSidebarWrap"></div>
+
+        <div class="admin-main">
+            <!-- Topbar placeholder -->
+            <div id="adminTopbarWrap"></div>
+
+            <main class="admin-content">
+
+                <!-- Page Header Title -->
+                <div class="page-header-box">
+                    <div>
+                        <h1 class="page-title">Career Applications</h1>
+                        <p class="page-subtitle">View and manage applications received through the Careers page.</p>
+                    </div>
+                </div>
+
+                <!-- Applications Table Card -->
+                <div class="admin-card-container">
+                    <!-- Search & Filter Bar -->
+                    <div class="search-filter-row">
+                        <div class="search-input-wrap" style="max-width: 420px;">
+                            <svg class="search-input-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <input type="text" id="appSearch" class="admin-search-input" placeholder="Search by applicant name, email, phone or job title...">
+                        </div>
+                        <div class="filter-group-right" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                            <select id="filterJob" class="admin-select-filter">
+                                <option value="all">All Jobs</option>
+                            </select>
+                            <select id="filterStatus" class="admin-select-filter">
+                                <option value="all">All Status</option>
+                                <option value="New">New</option>
+                                <option value="Under Review">Under Review</option>
+                                <option value="Shortlisted">Shortlisted</option>
+                                <option value="Interview">Interview</option>
+                                <option value="Selected">Selected</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                            <div class="export-dropdown-wrap" style="position: relative; display: inline-block;">
+                                <button type="button" id="btnExportExcel" onclick="toggleExportMenu(event)" class="btn-primary-blue" style="display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 16px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border-radius: 6px; white-space: nowrap;">
+                                    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                                    <span id="exportBtnText">Export Excel</span>
+                                </button>
+                                <div id="exportMenu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 6px; background: #ffffff; border: 1px solid #E2E8F0; border-radius: 8px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15); z-index: 100; min-width: 220px; padding: 6px 0;">
+                                    <button type="button" class="export-menu-item" onclick="exportApplications('all')" style="width: 100%; text-align: left; padding: 10px 16px; background: none; border: none; font-size: 0.85rem; font-weight: 500; color: #1E293B; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;" onmouseover="this.style.background='#F1F5F9'" onmouseout="this.style.background='none'">
+                                        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                                        Export All Applications
+                                    </button>
+                                    <button type="button" class="export-menu-item" onclick="exportApplications('filtered')" style="width: 100%; text-align: left; padding: 10px 16px; background: none; border: none; font-size: 0.85rem; font-weight: 500; color: #1E293B; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;" onmouseover="this.style.background='#F1F5F9'" onmouseout="this.style.background='none'">
+                                        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+                                        Export Filtered Applications
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table Wrap -->
+                    <div class="table-wrap">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40px;">#</th>
+                                    <th>Applicant Name</th>
+                                    <th>Applied For</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Submitted Date</th>
+                                    <th>Status</th>
+                                    <th style="text-align: right;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblApplicationList">
+                                <tr><td colspan="8" style="text-align: center; color: #94A3B8; padding: 24px;">Loading candidate applications...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination Row -->
+                    <div class="pagination-row">
+                        <div id="pagText">Showing 0 of 0 entries</div>
+                        <div class="pagination-pages" id="pagButtons">
+                            <button type="button" class="page-btn active">1</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Application Details View / Edit Modal -->
+    <div id="viewAppModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); z-index:999; align-items:center; justify-content:center; padding: 20px;">
+        <div style="background:#fff; border-radius:12px; padding:28px; max-width:720px; width:100%; max-height:90vh; overflow-y:auto; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom: 1px solid #E2E8F0; padding-bottom: 14px;">
+                <div>
+                    <h3 style="font-family:'Outfit',sans-serif; font-size:1.35rem; font-weight:700; color:#0B192C; margin:0;" id="modalAppTitle">Application Details</h3>
+                    <div style="font-size:0.82rem; color:#64748B; margin-top:2px;" id="modalSubInfo">Candidate Job Application Record</div>
+                </div>
+                <button type="button" onclick="closeAppModal()" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#64748B; line-height:1;">&times;</button>
+            </div>
+
+            <!-- Modal Body Sections -->
+            <div style="display: grid; gap: 20px;">
+
+                <!-- Applicant & Job Info Cards -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <!-- Applicant Info -->
+                    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 16px;">
+                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0066FF; margin-bottom: 10px;">Applicant Information</div>
+                        <div style="font-size: 0.9rem; line-height: 1.6; color: #1E293B;">
+                            <div><strong>Full Name:</strong> <span id="viewFullName">-</span></div>
+                            <div><strong>Email Address:</strong> <span id="viewEmail">-</span></div>
+                            <div><strong>Phone Number:</strong> <span id="viewPhone">-</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Job Info -->
+                    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 16px;">
+                        <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0066FF; margin-bottom: 10px;">Job Information</div>
+                        <div style="font-size: 0.9rem; line-height: 1.6; color: #1E293B;">
+                            <div><strong>Job Title:</strong> <span id="viewJobTitle">-</span></div>
+                            <div><strong>Department:</strong> <span id="viewDepartment">-</span></div>
+                            <div><strong>Location:</strong> <span id="viewLocation">-</span></div>
+                            <div><strong>Employment Type:</strong> <span id="viewEmploymentType">-</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cover Note -->
+                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 16px;">
+                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0066FF; margin-bottom: 8px;">Application &amp; Cover Note</div>
+                    <div style="font-size: 0.82rem; color: #64748B; margin-bottom: 8px;">Submitted Date: <span id="viewSubmittedDate" style="color: #1E293B; font-weight: 600;">-</span></div>
+                    <div style="font-size: 0.9rem; line-height: 1.6; color: #334155; white-space: pre-line; background: #FFF; padding: 12px; border-radius: 6px; border: 1px solid #E2E8F0;" id="viewCoverNote">No cover note provided.</div>
+                </div>
+
+                <!-- Resume / CV Box -->
+                <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 10px; padding: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 42px; height: 42px; border-radius: 8px; background: #DBEAFE; color: #1E40AF; display: flex; align-items: center; justify-content: center;">
+                            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.92rem; color: #1E293B;" id="viewResumeName">No resume attached</div>
+                            <div style="font-size: 0.8rem; color: #64748B;" id="viewResumeMeta">Candidate uploaded file</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px;" id="resumeActionBtns">
+                        <button type="button" class="btn-secondary-white" id="btnViewResume" style="padding: 6px 14px; font-size: 0.85rem;" disabled>View Resume</button>
+                        <button type="button" class="btn-primary-blue" id="btnDownloadResume" style="padding: 6px 14px; font-size: 0.85rem;" disabled>Download</button>
+                    </div>
+                </div>
+
+                <!-- Admin Status & Remarks Edit Form -->
+                <div style="border-top: 1px solid #E2E8F0; padding-top: 18px;">
+                    <div style="font-size: 0.88rem; font-weight: 700; color: #0B192C; margin-bottom: 12px;">Application Review &amp; Status</div>
+                    <form id="updateAppStatusForm">
+                        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 16px; margin-bottom: 14px;">
+                            <div>
+                                <label for="modalStatusSelect" style="display: block; font-size: 0.82rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Application Status *</label>
+                                <select id="modalStatusSelect" class="form-select-box" style="width: 100%;" required>
+                                    <option value="New">New</option>
+                                    <option value="Under Review">Under Review</option>
+                                    <option value="Shortlisted">Shortlisted</option>
+                                    <option value="Interview">Interview</option>
+                                    <option value="Selected">Selected</option>
+                                    <option value="Rejected">Rejected</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="modalAdminRemarks" style="display: block; font-size: 0.82rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Admin Remarks / Notes</label>
+                                <textarea id="modalAdminRemarks" class="form-textarea-box" style="height: 42px; min-height: 42px; padding: 8px 12px;" placeholder="Add internal review remarks..."></textarea>
+                            </div>
+                        </div>
+                        <div style="text-align: right; display: flex; justify-content: flex-end; gap: 10px;">
+                            <button type="button" onclick="closeAppModal()" class="btn-secondary-white">Cancel</button>
+                            <button type="submit" class="btn-primary-blue" id="btnSaveAppStatus">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var allApplications = [];
+        var activeAppId = null;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            window.renderAdminLayout('career-applications', 'Career Applications');
+            loadJobsFilterOptions();
+            loadApplicationsData();
+
+            document.getElementById('appSearch').addEventListener('input', applyAppFilters);
+            document.getElementById('filterJob').addEventListener('change', applyAppFilters);
+            document.getElementById('filterStatus').addEventListener('change', applyAppFilters);
+
+            document.getElementById('updateAppStatusForm').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                if (!activeAppId) return;
+
+                var newStatus = document.getElementById('modalStatusSelect').value;
+                var remarks = document.getElementById('modalAdminRemarks').value.trim();
+
+                var btn = document.getElementById('btnSaveAppStatus');
+                btn.disabled = true;
+                btn.textContent = 'Saving...';
+
+                try {
+                    var response = await fetch(window.TVSS_API.baseUrl + '/career-applications/' + activeAppId, {
+                        method: 'PUT',
+                        headers: window.TVSS_API.getHeaders(),
+                        body: JSON.stringify({
+                            applicationStatus: newStatus,
+                            adminRemarks: remarks
+                        })
+                    });
+
+                    if (!response.ok) throw new Error('Failed to update application status');
+
+                    alert('Application status updated successfully!');
+                    closeAppModal();
+                    loadApplicationsData();
+                } catch (err) {
+                    alert('Error updating status: ' + err.message);
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = 'Save Changes';
+                }
+            });
+        });
+
+        async function loadJobsFilterOptions() {
+            try {
+                var response = await fetch(window.TVSS_API.baseUrl + '/careers', {
+                    headers: window.TVSS_API.getHeaders()
+                });
+                if (response.ok) {
+                    var jobs = await response.json();
+                    var select = document.getElementById('filterJob');
+                    jobs.forEach(function (j) {
+                        var opt = document.createElement('option');
+                        opt.value = j.id;
+                        opt.textContent = j.jobTitle;
+                        select.appendChild(opt);
+                    });
+                }
+            } catch (e) {
+                console.error('Error loading job filter options:', e);
+            }
+        }
+
+        async function loadApplicationsData() {
+            try {
+                var response = await fetch(window.TVSS_API.baseUrl + '/career-applications', {
+                    headers: window.TVSS_API.getHeaders()
+                });
+                if (!response.ok) throw new Error('Failed to fetch career applications');
+                allApplications = await response.json();
+                applyAppFilters();
+            } catch (err) {
+                console.error('Error loading career applications:', err);
+                document.getElementById('tblApplicationList').innerHTML = '<tr><td colspan="8" style="text-align: center; color: #EF4444; padding: 24px;">Unable to load candidate applications. Please check backend connection.</td></tr>';
+            }
+        }
+
+        function getFilteredApplications() {
+            var searchVal = document.getElementById('appSearch').value.toLowerCase().trim();
+            var jobVal = document.getElementById('filterJob').value;
+            var statusVal = document.getElementById('filterStatus').value;
+
+            return allApplications.filter(function (a) {
+                var matchSearch = !searchVal ||
+                    (a.fullName && a.fullName.toLowerCase().includes(searchVal)) ||
+                    (a.email && a.email.toLowerCase().includes(searchVal)) ||
+                    (a.phone && a.phone.toLowerCase().includes(searchVal)) ||
+                    (a.jobTitle && a.jobTitle.toLowerCase().includes(searchVal));
+
+                var matchJob = jobVal === 'all' || (a.jobId && String(a.jobId) === String(jobVal));
+                var matchStatus = statusVal === 'all' || (a.status && a.status.toLowerCase() === statusVal.toLowerCase());
+
+                return matchSearch && matchJob && matchStatus;
+            });
+        }
+
+        function applyAppFilters() {
+            var filtered = getFilteredApplications();
+            renderApplicationsTable(filtered);
+        }
+
+        function toggleExportMenu(e) {
+            if (e) e.stopPropagation();
+            var menu = document.getElementById('exportMenu');
+            if (menu) {
+                menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+            }
+        }
+
+        document.addEventListener('click', function (e) {
+            var menu = document.getElementById('exportMenu');
+            var btn = document.getElementById('btnExportExcel');
+            if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.style.display = 'none';
+            }
+        });
+
+        async function exportApplications(mode) {
+            var menu = document.getElementById('exportMenu');
+            if (menu) menu.style.display = 'none';
+
+            var btn = document.getElementById('btnExportExcel');
+            var btnText = document.getElementById('exportBtnText');
+
+            var itemsToExport = (mode === 'filtered') ? getFilteredApplications() : allApplications;
+
+            if (!itemsToExport || itemsToExport.length === 0) {
+                alert('No applications found for the selected filters.');
+                return;
+            }
+
+            if (btn) btn.disabled = true;
+            if (btnText) btnText.textContent = 'Preparing Excel...';
+
+            try {
+                var excelRows = itemsToExport.map(function (a, index) {
+                    var row = {
+                        'S.No': index + 1,
+                        'Applicant Name': a.fullName || a.name || 'N/A',
+                        'Applied For': a.jobTitle || 'General Application',
+                        'Email': a.email || 'N/A',
+                        'Phone': a.phone || a.phoneNumber || 'N/A',
+                        'Submitted Date': formatDate(a.submittedDate || a.createdAt),
+                        'Status': a.status || a.applicationStatus || 'New'
+                    };
+
+                    if (a.id || a.applicationId) row['Application ID'] = a.id || a.applicationId;
+                    if (a.department) row['Department'] = a.department;
+                    if (a.location) row['Location'] = a.location;
+                    if (a.employmentType) row['Employment Type'] = a.employmentType;
+                    if (a.qualification) row['Qualification'] = a.qualification;
+                    if (a.experience) row['Experience'] = a.experience;
+                    if (a.currentCompany) row['Current Company'] = a.currentCompany;
+                    if (a.currentCtc) row['Current CTC'] = a.currentCtc;
+                    if (a.expectedCtc) row['Expected CTC'] = a.expectedCtc;
+                    if (a.noticePeriod) row['Notice Period'] = a.noticePeriod;
+                    if (a.coverNote || a.message) row['Cover Note / Message'] = a.coverNote || a.message;
+
+                    var resumeName = a.resumeFileName || (a.resumeFilePath ? a.resumeFilePath.split('/').pop() : null);
+                    if (resumeName) row['Resume File'] = resumeName;
+                    if (a.adminRemarks) row['Admin Remarks'] = a.adminRemarks;
+
+                    return row;
+                });
+
+                var today = new Date();
+                var yyyy = today.getFullYear();
+                var mm = String(today.getMonth() + 1).padStart(2, '0');
+                var dd = String(today.getDate()).padStart(2, '0');
+                var dateStr = yyyy + '-' + mm + '-' + dd;
+
+                var filename = (mode === 'filtered' ? 'Career_Applications_Filtered_' : 'Career_Applications_All_') + dateStr + '.xlsx';
+
+                if (typeof XLSX !== 'undefined') {
+                    var worksheet = XLSX.utils.json_to_sheet(excelRows);
+
+                    var keys = Object.keys(excelRows[0]);
+                    var lastColName = XLSX.utils.encode_col(keys.length - 1);
+                    worksheet['!autofilter'] = { ref: 'A1:' + lastColName + excelRows.length };
+                    worksheet['!views'] = [{ state: 'frozen', ySplit: 1 }];
+
+                    var colWidths = keys.map(function (key) {
+                        var maxLen = key.length;
+                        excelRows.forEach(function (r) {
+                            var val = r[key] != null ? String(r[key]) : '';
+                            if (val.length > maxLen) maxLen = val.length;
+                        });
+                        return { wch: Math.min(Math.max(maxLen + 4, 12), 60) };
+                    });
+                    worksheet['!cols'] = colWidths;
+
+                    var workbook = XLSX.utils.book_new();
+                    XLSX.utils.book_append_sheet(workbook, worksheet, 'Career Applications');
+
+                    XLSX.writeFile(workbook, filename);
+                } else {
+                    downloadCSVFallback(excelRows, filename.replace('.xlsx', '.csv'));
+                }
+
+                setTimeout(function () {
+                    alert('Excel file downloaded successfully.');
+                }, 300);
+
+            } catch (err) {
+                console.error('Export Error:', err);
+                alert('Unable to export applications. Please try again.');
+            } finally {
+                if (btn) btn.disabled = false;
+                if (btnText) btnText.textContent = 'Export Excel';
+            }
+        }
+
+        function downloadCSVFallback(rows, filename) {
+            if (!rows || !rows.length) return;
+            var keys = Object.keys(rows[0]);
+            var csvContent = '\uFEFF' + keys.join(',') + '\n';
+
+            rows.forEach(function (r) {
+                var rowStr = keys.map(function (k) {
+                    var val = r[k] == null ? '' : String(r[k]);
+                    val = val.replace(/"/g, '""');
+                    return '"' + val + '"';
+                }).join(',');
+                csvContent += rowStr + '\n';
+            });
+
+            var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+        }
+
+        function renderApplicationsTable(items) {
+            var tbody = document.getElementById('tblApplicationList');
+            document.getElementById('pagText').textContent = 'Showing 1 to ' + items.length + ' of ' + items.length + ' entries';
+
+            if (items.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: #94A3B8; padding: 24px;">No applications found matching criteria.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = items.map(function (a, idx) {
+                var statusClass = getStatusClass(a.status || a.applicationStatus);
+                var submittedStr = formatDate(a.submittedDate || a.createdAt);
+
+                return '<tr>' +
+                    '<td>' + (idx + 1) + '</td>' +
+                    '<td><strong style="color: #0B192C;">' + escapeHtml(a.fullName || a.name) + '</strong></td>' +
+                    '<td>' + escapeHtml(a.jobTitle || 'General Application') + '</td>' +
+                    '<td><a href="mailto:' + escapeHtml(a.email) + '" style="color: #0066FF; text-decoration: none;">' + escapeHtml(a.email) + '</a></td>' +
+                    '<td>' + escapeHtml(a.phone || a.phoneNumber || 'N/A') + '</td>' +
+                    '<td>' + submittedStr + '</td>' +
+                    '<td><span class="badge-status ' + statusClass + '">' + escapeHtml(a.status || a.applicationStatus || 'New') + '</span></td>' +
+                    '<td style="text-align: right;">' +
+                        '<div class="action-btn-group" style="justify-content: flex-end;">' +
+                            '<button type="button" class="icon-action-btn" title="View Application Details" onclick="viewApplication(' + (a.id || a.applicationId) + ')">' +
+                                '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>' +
+                            '</button>' +
+                            '<button type="button" class="icon-action-btn delete" title="Delete Application" onclick="deleteApplication(' + (a.id || a.applicationId) + ')">' +
+                                '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>' +
+                            '</button>' +
+                        '</div>' +
+                    '</td>' +
+                '</tr>';
+            }).join('');
+        }
+
+        function getStatusClass(status) {
+            if (!status) return 'new';
+            var s = status.toLowerCase();
+            if (s === 'new') return 'new';
+            if (s.includes('review') || s.includes('progress')) return 'under-review';
+            if (s.includes('shortlist')) return 'shortlisted';
+            if (s.includes('interview')) return 'interview';
+            if (s.includes('select')) return 'selected';
+            if (s.includes('reject')) return 'rejected';
+            return 'new';
+        }
+
+        function viewApplication(id) {
+            var app = allApplications.find(function (item) { return (item.id === id || item.applicationId === id); });
+            if (!app) return;
+
+            activeAppId = id;
+            document.getElementById('modalAppTitle').textContent = 'Application #' + id + ' — ' + (app.fullName || app.name);
+            document.getElementById('modalSubInfo').textContent = 'Applied for ' + (app.jobTitle || 'General Position') + ' on ' + formatDate(app.submittedDate || app.createdAt);
+
+            document.getElementById('viewFullName').textContent = app.fullName || app.name || '-';
+            document.getElementById('viewEmail').textContent = app.email || '-';
+            document.getElementById('viewPhone').textContent = app.phone || app.phoneNumber || '-';
+
+            document.getElementById('viewJobTitle').textContent = app.jobTitle || '-';
+            document.getElementById('viewDepartment').textContent = app.department || 'General';
+            document.getElementById('viewLocation').textContent = app.location || 'Madurai, TN';
+            document.getElementById('viewEmploymentType').textContent = app.employmentType || 'Full Time';
+
+            document.getElementById('viewSubmittedDate').textContent = formatDate(app.submittedDate || app.createdAt);
+            document.getElementById('viewCoverNote').textContent = app.coverNote || app.message || 'No cover note provided.';
+
+            var resumeName = app.resumeFileName || (app.resumeFilePath ? app.resumeFilePath.split('/').pop() : null);
+            var btnView = document.getElementById('btnViewResume');
+            var btnDownload = document.getElementById('btnDownloadResume');
+
+            if (resumeName && app.resumeFilePath) {
+                document.getElementById('viewResumeName').textContent = resumeName;
+                document.getElementById('viewResumeMeta').textContent = 'Uploaded CV File';
+
+                var token = window.TVSS_API.getToken();
+                var fallbackViewUrl = window.TVSS_API.baseUrl + '/career-applications/' + id + '/resume?token=' + encodeURIComponent(token || '');
+                var fallbackDownloadUrl = window.TVSS_API.baseUrl + '/career-applications/' + id + '/resume?download=true&token=' + encodeURIComponent(token || '');
+
+                btnView.disabled = false;
+                btnView.onclick = async function() {
+                    try {
+                        var res = await fetch(window.TVSS_API.baseUrl + '/career-applications/' + id + '/resume', {
+                            headers: window.TVSS_API.getHeaders()
+                        });
+                        if (!res.ok) throw new Error('HTTP status ' + res.status);
+                        var blob = await res.blob();
+                        var blobUrl = URL.createObjectURL(blob);
+                        window.open(blobUrl, '_blank');
+                    } catch (e) {
+                        console.error('Error fetching resume blob, falling back to query token URL:', e);
+                        window.open(fallbackViewUrl, '_blank');
+                    }
+                };
+
+                btnDownload.disabled = false;
+                btnDownload.onclick = async function() {
+                    try {
+                        var res = await fetch(window.TVSS_API.baseUrl + '/career-applications/' + id + '/resume?download=true', {
+                            headers: window.TVSS_API.getHeaders()
+                        });
+                        if (!res.ok) throw new Error('HTTP status ' + res.status);
+                        var blob = await res.blob();
+                        var blobUrl = URL.createObjectURL(blob);
+                        var a = document.createElement('a');
+                        a.href = blobUrl;
+                        a.download = resumeName || 'resume.pdf';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        setTimeout(function() { URL.revokeObjectURL(blobUrl); }, 1500);
+                    } catch (e) {
+                        console.error('Error downloading resume blob, falling back to query token URL:', e);
+                        window.location.href = fallbackDownloadUrl;
+                    }
+                };
+            } else {
+                document.getElementById('viewResumeName').textContent = 'No resume attached';
+                document.getElementById('viewResumeMeta').textContent = 'Candidate did not upload a CV file';
+                btnView.disabled = true;
+                btnView.onclick = null;
+                btnDownload.disabled = true;
+                btnDownload.onclick = null;
+            }
+
+            document.getElementById('modalStatusSelect').value = app.status || app.applicationStatus || 'New';
+            document.getElementById('modalAdminRemarks').value = app.adminRemarks || '';
+
+            document.getElementById('viewAppModal').style.display = 'flex';
+        }
+
+        function closeAppModal() {
+            document.getElementById('viewAppModal').style.display = 'none';
+            activeAppId = null;
+        }
+
+        async function deleteApplication(id) {
+            if (!confirm('Are you sure you want to delete this career application?')) return;
+            try {
+                var response = await fetch(window.TVSS_API.baseUrl + '/career-applications/' + id, {
+                    method: 'DELETE',
+                    headers: window.TVSS_API.getHeaders()
+                });
+                if (!response.ok) throw new Error('Failed to delete application');
+                loadApplicationsData();
+            } catch (err) {
+                alert('Error deleting item: ' + err.message);
+            }
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            var d = new Date(dateStr);
+            if (isNaN(d.getTime())) return dateStr;
+            return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+    </script>
+</body>
+</html>

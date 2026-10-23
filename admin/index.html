@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal — TVS Sensing Solutions</title>
+    <script src="/assets/js/api-client.js"></script>
+    <script src="/admin/admin-layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var token = (window.TVSS_API && window.TVSS_API.getToken()) || localStorage.getItem('tvss_admin_token');
+            if (token) {
+                window.location.replace('/admin/dashboard.html');
+            } else {
+                window.location.replace('/admin/login.html');
+            }
+        });
+    </script>
+</head>
+<body style="background-color: #0B304A; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <div style="text-align: center;">
+        <div style="width: 48px; height: 48px; background: #10AEE3; color: #FFFFFF; font-weight: 800; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 16px;">TVS</div>
+        <h2 style="font-size: 1.15rem; font-weight: 600; color: #E2E8F0; margin: 0;">Connecting to Admin Portal...</h2>
+    </div>
+</body>
+</html>

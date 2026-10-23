@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — TVS Sensing Solutions</title>
+    <meta name="description"
+        content="Learn about TVS Sensing Solutions — three decades of precision automotive sensors, smart manufacturing, and Industry 4.0 solutions since 1994.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../tvsss-design.css">
+    <link rel="stylesheet" href="../tvsss-global.css">
+
+    <style>
+        /* ══════════════════════════════════════════════════════════════════
+           EXACT REFERENCE DESIGN STYLES FOR ABOUT US PAGE
+           Matching TVS Corporate Blue Theme (#0076BF, #082F49, #EAF6FC)
+        ══════════════════════════════════════════════════════════════════ */
+
+        :root {
+            --ref-blue: #0076BF;
+            --ref-navy: #082F49;
+            --ref-dark-text: #334155;
+            --ref-muted: #64748B;
+            --ref-light-bg: #F4F9FC;
+            --ref-pale-blue: #EAF6FC;
+            --ref-border: #D9E7EF;
+            --ref-white: #FFFFFF;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            color: var(--ref-dark-text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* ── SECTION HEADER & BLUE ACCENT BAR ───────────────────────── */
+        .au-ref-header {
+            margin-bottom: 32px;
+        }
+
+        .au-ref-blue-line {
+            display: block;
+            width: 38px;
+            height: 3px;
+            background-color: var(--ref-blue);
+            margin-bottom: 12px;
+            border-radius: 2px;
+        }
+
+        .au-ref-title {
+            font-family: 'Space Grotesk', 'Outfit', sans-serif;
+            font-size: clamp(2rem, 3.2vw, 2.6rem);
+            font-weight: 800;
+            color: var(--ref-navy);
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        /* ── 1. HERO SECTION ────────────────────────────────────────── */
+        /* ── 1. ABOUT US HERO SECTION (100% FULL WIDTH BACKGROUND IMAGE HERO) ── */
+        .au-ref-hero {
+            position: relative !important;
+            width: 100% !important;
+            min-height: 540px !important;
+            height: 560px !important;
+            background: #FFFFFF !important;
+            overflow: hidden !important;
+            border-bottom: 1px solid var(--ref-border, #D9E7EF) !important;
+            display: flex !important;
+            align-items: center !important;
+            padding: 0 !important;
+        }
+
+        .au-ref-hero-bg-img {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center right !important;
+            z-index: 1 !important;
+        }
+
+        .au-ref-hero-overlay {
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 2 !important;
+            pointer-events: none !important;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.98) 0%,
+                    rgba(255, 255, 255, 0.92) 22%,
+                    rgba(255, 255, 255, 0.65) 42%,
+                    rgba(255, 255, 255, 0.20) 62%,
+                    rgba(255, 255, 255, 0) 78%) !important;
+        }
+
+        .au-ref-hero-container {
+            position: relative !important;
+            z-index: 3 !important;
+            max-width: 1520px !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 60px 80px !important;
+            box-sizing: border-box !important;
+        }
+
+        .au-ref-hero-left {
+            position: relative !important;
+            z-index: 3 !important;
+            max-width: 580px !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .au-ref-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #0076BF;
+            margin-bottom: 20px;
+        }
+
+        .au-ref-breadcrumb .sep {
+            color: #0076BF;
+            font-weight: 700;
+        }
+
+        .au-ref-breadcrumb .current {
+            color: #0076BF;
+            font-weight: 600;
+        }
+
+        .au-ref-hero-tag {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #0076BF;
+            margin-bottom: 14px;
+        }
+
+        .au-ref-hero-tag-line {
+            width: 24px;
+            height: 2.5px;
+            background-color: #0076BF;
+        }
+
+        .au-ref-hero-h1 {
+            font-family: 'Space Grotesk', 'Outfit', sans-serif !important;
+            font-size: clamp(3rem, 5vw, 4.2rem) !important;
+            font-weight: 800 !important;
+            color: #10AEE3 !important;
+            line-height: 1.02 !important;
+            margin: 0 0 16px 0 !important;
+            letter-spacing: -0.02em !important;
+        }
+
+        .au-ref-hero-subtitle {
+            font-family: 'Outfit', sans-serif !important;
+            font-size: clamp(1.3rem, 2vw, 1.6rem) !important;
+            font-weight: 700 !important;
+            color: #082F49 !important;
+            line-height: 1.28 !important;
+            margin-bottom: 20px !important;
+        }
+
+        .au-hero p.au-ref-hero-desc,
+        .au-ref-hero p.au-ref-hero-desc,
+        .au-ref-hero-desc {
+            font-size: 1.05rem !important;
+            line-height: 1.65 !important;
+            color: #1E293B !important;
+            font-weight: 500 !important;
+            margin: 0 0 32px 0 !important;
+            max-width: 560px !important;
+            opacity: 1 !important;
+        }
+
+        .au-hero-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 10px !important;
+            height: 52px !important;
+            padding: 0 32px !important;
+            background-color: #00A3E0 !important;
+            color: #FFFFFF !important;
+            font-family: 'Space Grotesk', sans-serif !important;
+            font-size: 0.92rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.04em !important;
+            text-transform: uppercase !important;
+            border-radius: 8px !important;
+            text-decoration: none !important;
+            box-shadow: 0 6px 20px rgba(0, 163, 224, 0.35) !important;
+            transition: all 0.25s ease !important;
+            width: fit-content !important;
+        }
+
+        .au-hero-btn:hover {
+            background-color: #008CC2 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 24px rgba(0, 163, 224, 0.5) !important;
+            color: #FFFFFF !important;
+        }
+
+        /* ── 2. OVERVIEW SECTION ────────────────────────────────────── */
+        .au-ref-overview {
+            padding: 70px 0;
+            background: #FFFFFF;
+        }
+
+        .au-ref-overview-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .au-ref-overview-text p {
+            font-size: 1.04rem;
+            line-height: 1.75;
+            color: var(--ref-dark-text);
+            margin: 0 0 20px 0;
+        }
+
+        .au-ref-overview-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .au-ref-overview-visual {
+            position: relative;
+        }
+
+        .au-ref-overview-img-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 16px 36px rgba(8, 47, 73, 0.08);
+            border: 5px solid #EAF6FC;
+            background: var(--ref-pale-blue);
+        }
+
+        .au-ref-overview-img-card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ── 3. VISION SECTION ──────────────────────────────────────── */
+        .au-ref-vision {
+            position: relative;
+            padding: 90px 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F4F9FC 100%);
+            overflow: hidden;
+        }
+
+        .au-ref-vision-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #FFFFFF;
+            border: 1px solid var(--ref-border);
+            box-shadow: 0 20px 48px rgba(8, 47, 73, 0.06);
+            display: grid;
+            grid-template-columns: 55% 45%;
+            min-height: 360px;
+        }
+
+        .au-ref-vision-content {
+            padding: 56px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .au-ref-vision-quote {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            font-size: clamp(1.25rem, 2vw, 1.6rem);
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--ref-navy);
+            margin: 0;
+            font-style: italic;
+        }
+
+        .au-ref-vision-bg-img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 360px;
+        }
+
+        .au-ref-vision-bg-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center right;
+            display: block;
+        }
+
+        .au-ref-vision-bg-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+            z-index: 1;
+        }
+
+        /* ── 4. QUICK FACTS SECTION ─────────────────────────────────── */
+        .au-ref-quickfacts {
+            padding: 80px 0;
+            background: #FFFFFF;
+        }
+
+        .au-ref-facts-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .au-ref-fact-card {
+            background: #FFFFFF;
+            border: 1px solid var(--ref-border);
+            border-radius: 16px;
+            padding: 32px 20px 28px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(8, 47, 73, 0.03);
+        }
+
+        .au-ref-fact-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--ref-blue);
+            box-shadow: 0 16px 36px rgba(0, 118, 191, 0.12);
+            background: var(--ref-pale-blue);
+        }
+
+        .au-ref-fact-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--ref-pale-blue);
+            color: var(--ref-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .au-ref-fact-card:hover .au-ref-fact-icon {
+            background: var(--ref-blue);
+            color: #FFFFFF;
+        }
+
+        .au-ref-fact-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ref-navy);
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        /* Additional Quick Facts Strip */
+        .au-ref-facts-extra-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .au-ref-fact-mini-card {
+            background: var(--ref-light-bg);
+            border: 1px solid var(--ref-border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--ref-navy);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .au-ref-fact-mini-badge {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--ref-blue);
+            flex-shrink: 0;
+        }
+
+        /* ── 5. OUR HISTORY SECTION (EXACT REFERENCE RECREATION) ── */
+        .au-ref-history {
+            padding: 95px 0 105px;
+            background: linear-gradient(180deg, #F4F8FC 0%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        /* Subtle Ambient Background Gradients & Vectors */
+        .au-ref-history::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(0, 118, 191, 0.05) 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .au-history-bg-left {
+            position: absolute;
+            left: -20px;
+            bottom: -20px;
+            width: 340px;
+            height: 280px;
+            opacity: 0.09;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .au-history-bg-right {
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            width: 360px;
+            height: 360px;
+            opacity: 0.09;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .au-history-timeline-wrap {
+            position: relative;
+            width: 100%;
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        .au-history-svg-wrap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 180px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .au-history-wave-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .au-history-v-track {
+            display: none;
+        }
+
+        .au-history-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 14px;
+            align-items: stretch;
+            min-height: 460px;
+        }
+
+        .au-history-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            text-align: center;
+        }
+
+        .au-history-spacer {
+            flex: 1;
+            min-height: 130px;
+        }
+
+        .au-history-node-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90px;
+            position: relative;
+            z-index: 5;
+            margin: 4px 0;
+        }
+
+        .au-history-circle {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            border: 4px solid #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 5px rgba(0, 102, 255, 0.22), 0 10px 24px rgba(0, 102, 255, 0.2);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+            cursor: default;
+        }
+
+        .au-history-circle:hover {
+            transform: scale(1.12);
+            box-shadow: 0 0 0 7px rgba(0, 102, 255, 0.35), 0 14px 28px rgba(0, 102, 255, 0.3);
+        }
+
+        .circle-blue {
+            background: linear-gradient(135deg, #0052CC 0%, #0076BF 100%);
+        }
+
+        .circle-cyan {
+            background: linear-gradient(135deg, #0076BF 0%, #00AEEF 100%);
+        }
+
+        .au-history-year {
+            font-family: 'Space Grotesk', 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: 0.02em;
+            line-height: 1;
+        }
+
+        .au-history-card-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        .col-below .au-history-card-wrap {
+            justify-content: flex-start;
+        }
+
+        .au-history-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 16px 14px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(8, 47, 73, 0.08), 0 2px 6px rgba(8, 47, 73, 0.03);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 115px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            text-align: left;
+        }
+
+        .au-history-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 36px rgba(0, 102, 255, 0.14), 0 4px 10px rgba(8, 47, 73, 0.05);
+        }
+
+        .card-top {
+            border-top: 4px solid #0066FF !important;
+        }
+
+        .card-bottom {
+            border-bottom: 4px solid #00AEEF !important;
+        }
+
+        .au-card-icon-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #EFF6FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .au-history-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            line-height: 1.45;
+            color: #1E293B;
+            font-weight: 600;
+            margin: 0;
+            text-align: left;
+        }
+
+        .au-history-pointer {
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            margin: 4px 0;
+        }
+
+        .pointer-down {
+            border-top: 8px solid #0066FF;
+        }
+
+        .pointer-up {
+            border-bottom: 8px solid #00AEEF;
+        }
+
+        @media (max-width: 1180px) {
+            .au-history-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 24px;
+                min-height: auto;
+            }
+
+            .col-below,
+            .col-above {
+                flex-direction: column;
+            }
+
+            .col-below .au-history-spacer,
+            .col-above .au-history-spacer {
+                display: none;
+            }
+
+            .au-history-svg-wrap {
+                display: none;
+            }
+
+            .card-top,
+            .card-bottom {
+                border-top: 4px solid #0066FF !important;
+                border-bottom: none !important;
+            }
+
+            .pointer-down,
+            .pointer-up {
+                border-top: 8px solid #0066FF;
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .au-ref-history {
+                padding: 60px 0;
+            }
+
+            .au-history-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                position: relative;
+                padding-left: 10px;
+            }
+
+            .au-history-v-track {
+                display: block;
+                position: absolute;
+                left: 42px;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background: linear-gradient(180deg, #0052CC 0%, #00AEEF 100%);
+                z-index: 1;
+            }
+
+            .au-history-col {
+                flex-direction: row !important;
+                align-items: center !important;
+                gap: 16px;
+                text-align: left !important;
+            }
+
+            .au-history-node-wrap {
+                margin: 0 !important;
+            }
+
+            .au-history-card-wrap {
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
+            }
+
+            .au-history-pointer {
+                border-top: 7px solid transparent !important;
+                border-bottom: 7px solid transparent !important;
+                border-right: 8px solid #0066FF !important;
+                border-left: none !important;
+                margin: 0 4px 0 0 !important;
+            }
+
+            .au-history-card {
+                text-align: left;
+                padding: 14px 16px;
+                min-height: auto;
+            }
+
+            .au-history-text {
+                text-align: left;
+                font-size: 0.88rem;
+            }
+        }
+
+        /* ── 6. INTEGRATED MANAGEMENT SYSTEM POLICY SECTION ─────────── */
+        .au-ref-policy {
+            padding: 80px 0;
+            background: #FFFFFF;
+        }
+
+        .au-ref-policy-card {
+            background: var(--ref-light-bg);
+            border: 1px solid var(--ref-border);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 12px 32px rgba(8, 47, 73, 0.04);
+        }
+
+        .au-ref-policy-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .au-ref-policy-lead {
+            font-size: 1.08rem;
+            line-height: 1.75;
+            color: var(--ref-dark-text);
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .au-ref-policy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .au-ref-policy-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #FFFFFF;
+            border: 1px solid var(--ref-border);
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--ref-navy);
+            box-shadow: 0 4px 12px rgba(8, 47, 73, 0.02);
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .au-ref-policy-item:hover {
+            border-color: var(--ref-blue);
+            transform: translateX(4px);
+        }
+
+        .au-ref-policy-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--ref-blue);
+            flex-shrink: 0;
+        }
+
+        /* ── 7. MANUFACTURING CAPABILITIES (ORIGINAL FACILITY DETAILS) ── */
+        .au-ref-capabilities {
+            padding: 80px 0 100px;
+            background: #FFFFFF;
+        }
+
+        .au-ref-cap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .au-ref-cap-card {
+            background: var(--ref-pale-blue);
+            border: 1px solid var(--ref-border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .au-ref-cap-card:hover {
+            transform: translateY(-4px);
+            background: #FFFFFF;
+            box-shadow: 0 12px 32px rgba(8, 47, 73, 0.08);
+            border-color: var(--ref-blue);
+        }
+
+        .au-ref-cap-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--ref-blue);
+            margin-bottom: 8px;
+        }
+
+        .au-ref-cap-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--ref-navy);
+            margin-bottom: 8px;
+        }
+
+        .au-ref-cap-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--ref-muted);
+            margin: 0;
+        }
+
+        /* ── RESPONSIVE MEDIA QUERIES ───────────────────────────────── */
+        @media (max-width: 1200px) {
+            .au-ref-timeline-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .au-ref-timeline-line,
+            .au-ref-timeline-progress {
+                display: none;
+            }
+
+            .au-ref-facts-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .au-ref-hero-grid,
+            .au-ref-overview-grid,
+            .au-ref-policy-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .au-ref-vision-card {
+                grid-template-columns: 1fr;
+            }
+
+            .au-ref-vision-bg-img {
+                height: 240px;
+                min-height: 240px;
+            }
+
+            .au-ref-facts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .au-ref-facts-extra-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .au-ref-cap-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .au-ref-facts-grid,
+            .au-ref-facts-extra-grid,
+            .au-ref-timeline-grid,
+            .au-ref-cap-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .au-ref-hero-h1 {
+                font-size: 2.4rem;
+            }
+
+            .au-ref-policy-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MASTER NAVBAR CONTAINER (Populated & Kept Consistent by tvsss-global.js) -->
+    <div class="g-topbar" id="gTopbar">
+        <div class="g-topbar__inner">
+            <div class="g-topbar__social">
+                <a href="https://www.facebook.com/TVS-Sensing-Solutions-Private-Limited-102082955438831" target="_blank"
+                    rel="noopener noreferrer" class="g-topbar__social-link" aria-label="Facebook">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://twitter.com/TVSSS3" target="_blank" rel="noopener noreferrer"
+                    class="g-topbar__social-link" aria-label="Twitter">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/tvs-sensing-solutions/" target="_blank"
+                    rel="noopener noreferrer" class="g-topbar__social-link" aria-label="LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="g-topbar__contact">
+                <a href="tel:+914522911444" class="g-topbar__link" aria-label="Call TVS Sensing Solutions">
+                    <span class="g-topbar__label">Office:</span> <span class="g-topbar__value">+91 452-2911444</span>
+                </a>
+                <span class="g-topbar__divider" aria-hidden="true">|</span>
+                <a href="mailto:contact@tvsss.co.in" class="g-topbar__link" aria-label="Email TVS Sensing Solutions">
+                    <span class="g-topbar__label">Mail Id:</span> <span
+                        class="g-topbar__value">contact@tvsss.co.in</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header class="g-header" id="gHeader">
+        <div class="g-header__inner">
+            <a href="../index.html" class="g-logo" aria-label="TVS Sensing Solutions Home">
+                <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo">
+                <div class="g-brand-lockup">
+                    <span class="g-brand-name">TVS SENSING SOLUTIONS</span>
+                    <span class="g-brand-tagline">A TVS GROUP COMPANY</span>
+                </div>
+            </a>
+
+            <nav class="g-nav" aria-label="Main Navigation">
+                <a href="index.html" class="g-nav__link active">About Us</a>
+                <a href="../tvs-group/index.html" class="g-nav__link">TVS Group</a>
+                <a href="../products/index.html" class="g-nav__link">Products &amp; Solutions</a>
+                <a href="../automations/index.html" class="g-nav__link">Automations</a>
+                <a href="../iiot/index.html" class="g-nav__link">IIoT 4.0</a>
+                <a href="../manufacturing-excellence/index.html" class="g-nav__link">Manufacturing Excellence</a>
+                <a href="../media/index.html" class="g-nav__link">Media-TVSSS</a>
+                <a href="../customers/index.html" class="g-nav__link">Customers</a>
+                <a href="../careers/index.html" class="g-nav__link">Careers</a>
+                <a href="../reach-us/index.html" class="g-nav__link">Reach Us</a>
+            </nav>
+
+            <button class="g-ham" id="gHam" aria-label="Toggle Navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <nav class="g-mobile-nav" id="gMobileNav" aria-label="Mobile Navigation">
+            <a href="index.html" class="g-nav__link active">About Us</a>
+            <a href="../tvs-group/index.html" class="g-nav__link">TVS Group</a>
+            <a href="../products/index.html" class="g-nav__link">Products &amp; Solutions</a>
+            <a href="../automations/index.html" class="g-nav__link">Automations</a>
+            <a href="../iiot/index.html" class="g-nav__link">IIoT 4.0</a>
+            <a href="../manufacturing-excellence/index.html" class="g-nav__link">Manufacturing Excellence</a>
+            <a href="../media/index.html" class="g-nav__link">Media-TVSSS</a>
+            <a href="../customers/index.html" class="g-nav__link">Customers</a>
+            <a href="../careers/index.html" class="g-nav__link">Careers</a>
+            <a href="../reach-us/index.html" class="g-nav__link">Reach Us</a>
+        </nav>
+    </header>
+
+    <!-- MAIN ABOUT US CONTENT MATCHING REFERENCE DESIGN -->
+    <main>
+
+        <!-- 5. HERO / ABOUT US BANNER -->
+        <section class="au-hero au-ref-hero">
+            <!-- Background Image on Right -->
+            <img src="../images/about_us_hero_industrial.jpg" alt="TVS Sensing Solutions Industrial Manufacturing"
+                class="au-ref-hero-bg-img">
+
+            <!-- Soft Left-to-Right White Gradient Overlay -->
+            <div class="au-ref-hero-overlay"></div>
+
+            <!-- Content Container -->
+            <div class="au-ref-hero-container">
+                <div class="au-ref-hero-left">
+                    <div class="au-ref-breadcrumb">
+                        <span class="sep">&gt;</span>
+                        <span class="current">About Us</span>
+                    </div>
+                    <div class="au-ref-hero-tag">
+                        <span class="au-ref-hero-tag-line"></span>
+                        TVS SENSING SOLUTIONS
+                    </div>
+                    <h1 class="au-ref-hero-h1" style="color: #10AEE3 !important;">About Us</h1>
+                    <div class="au-ref-hero-subtitle">
+                        Engineering Sensing Solutions<br>For A Smarter Tomorrow
+                    </div>
+                    <p class="au-ref-hero-desc"
+                        style="color: #1E293B !important; opacity: 1 !important; visibility: visible !important;">
+                        At TVS Sensing Solutions, we engineer advanced sensing, switching and control solutions that
+                        power a safer, smarter and more connected world.
+                    </p>
+                    <a href="#our-story" class="au-hero-btn">Our Story &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. OVERVIEW SECTION -->
+        <section class="au-ref-overview" id="our-story">
+            <div class="g-container">
+                <div class="au-ref-overview-grid">
+                    <div class="au-ref-overview-text">
+                        <div class="au-ref-header">
+                            <span class="au-ref-blue-line"></span>
+                            <h2 class="au-ref-title">Overview</h2>
+                        </div>
+                        <p>
+                            TVS Sensing Solutions (TVSSS) delivers products and solutions to a gamut of segments
+                            including Automotive, Industrial, Consumer Durable and IT, offering quality solutions and
+                            application support to renowned clients. TVSSS manufactures products of the highest
+                            standards to meet customer requirements through in-house engineering capability.
+                        </p>
+                        <p>
+                            TVSSS has made its mark as key player delivering end to end solutions of IIOT and Industry
+                            4.0 through an ecosystem of trusted &amp; renowned partners and has made its headway in
+                            niche markets by adapting to emerging technologies through partnership approach.
+                        </p>
+                    </div>
+
+                    <div class="au-ref-overview-visual">
+                        <div class="au-ref-overview-img-card">
+                            <img src="../wp-content/uploads/2022/04/Overview-photo-new-1024x683.jpg"
+                                alt="TVS Sensing Solutions Madurai Facility Overview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. VISION SECTION -->
+        <section class="au-ref-vision">
+            <div class="g-container">
+                <div class="au-ref-vision-card">
+                    <div class="au-ref-vision-content">
+                        <div class="au-ref-header">
+                            <span class="au-ref-blue-line"></span>
+                            <h2 class="au-ref-title">Vision</h2>
+                        </div>
+                        <blockquote class="au-ref-vision-quote">
+                            “To enhance human experience by designing and implementing innovative control solutions to
+                            industrial and automotive application”
+                        </blockquote>
+                    </div>
+                    <div class="au-ref-vision-bg-img">
+                        <img src="../images/vision_mountain_bg.jpg" alt="TVS Sensing Solutions Visionary Technology">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. QUICK FACTS SECTION -->
+        <section class="au-ref-quickfacts">
+            <div class="g-container">
+                <div class="au-ref-header">
+                    <span class="au-ref-blue-line"></span>
+                    <h2 class="au-ref-title">Quick Facts</h2>
+                </div>
+
+                <!-- 5 Primary Category Cards (Matching Reference Layout) -->
+                <div class="au-ref-facts-grid">
+                    <div class="au-ref-fact-card">
+                        <div class="au-ref-fact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A2 2 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+                                <circle cx="7" cy="17" r="2" />
+                                <path d="M9 17h6" />
+                                <circle cx="17" cy="17" r="2" />
+                                <path d="M13 6l2-3h3" />
+                            </svg>
+                        </div>
+                        <h3 class="au-ref-fact-title">EV Products</h3>
+                    </div>
+
+                    <div class="au-ref-fact-card">
+                        <div class="au-ref-fact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 12h3l2-5 4 10 3-7 2 4h4" />
+                                <path d="M12 3a9 9 0 0 1 9 9" />
+                                <path d="M12 7a5 5 0 0 1 5 5" />
+                            </svg>
+                        </div>
+                        <h3 class="au-ref-fact-title">Sensors</h3>
+                    </div>
+
+                    <div class="au-ref-fact-card">
+                        <div class="au-ref-fact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="6" width="18" height="12" rx="2" />
+                                <circle cx="12" cy="12" r="3" />
+                                <path d="M12 2v4" />
+                                <path d="M12 18v4" />
+                            </svg>
+                        </div>
+                        <h3 class="au-ref-fact-title">Solenoids</h3>
+                    </div>
+
+                    <div class="au-ref-fact-card">
+                        <div class="au-ref-fact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7" />
+                                <path d="M22 13H2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7z" />
+                                <path d="M6 9h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="au-ref-fact-title">Switches</h3>
+                    </div>
+
+                    <div class="au-ref-fact-card">
+                        <div class="au-ref-fact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="4" width="16" height="16" rx="2" />
+                                <rect x="9" y="9" width="6" height="6" />
+                                <path d="M15 2v2" />
+                                <path d="M15 20v2" />
+                                <path d="M2 15h2" />
+                                <path d="M20 15h2" />
+                                <path d="M9 2v2" />
+                                <path d="M9 20v2" />
+                                <path d="M2 9h2" />
+                                <path d="M20 9h2" />
+                            </svg>
+                        </div>
+                        <h3 class="au-ref-fact-title">Electronic Component Carrier &amp; Custom assemblies</h3>
+                    </div>
+                </div>
+
+                <!-- Preserving ALL Supporting Quick Facts Items from Original Page -->
+                <div class="au-ref-facts-extra-grid">
+                    <div class="au-ref-fact-mini-card">
+                        <span class="au-ref-fact-mini-badge"></span>
+                        Operational since 1994
+                    </div>
+                    <div class="au-ref-fact-mini-card">
+                        <span class="au-ref-fact-mini-badge"></span>
+                        100% export oriented unit in 2005
+                    </div>
+                    <div class="au-ref-fact-mini-card">
+                        <span class="au-ref-fact-mini-badge"></span>
+                        Space: Land 450 K, Built up - 50 K Sqft
+                    </div>
+                    <div class="au-ref-fact-mini-card">
+                        <span class="au-ref-fact-mini-badge"></span>
+                        Employees: (225 – On roll, 150 – Contract)
+                    </div>
+                    <div class="au-ref-fact-mini-card">
+                        <span class="au-ref-fact-mini-badge"></span>
+                        Annual Capacity: 20 million assemblies
+                    </div>
+                    <div class="au-ref-fact-mini-card">
+                        <span class="au-ref-fact-mini-badge"></span>
+                        UL / VDE / ENEC approved for Switch manufacturing
+                    </div>
+                    <div class="au-ref-fact-mini-card">
+                        <span class="au-ref-fact-mini-badge"></span>
+                        4 Sales offices and 10 Distributors
+                    </div>
+                    <div class="au-ref-fact-mini-card">
+                        <span class="au-ref-fact-mini-badge"></span>
+                        IATF 16949 &amp; ISO Certified Manufacturing
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. OUR HISTORY SECTION (EXACT REFERENCE RECREATION) -->
+        <section class="au-ref-history" id="ourHistorySection">
+            <!-- Background Vector Overlay Graphics -->
+            <svg class="au-history-bg-left" viewBox="0 0 200 200" fill="none">
+                <circle cx="20" cy="180" r="140" stroke="#0076BF" stroke-width="1.5" stroke-dasharray="4 4" />
+                <circle cx="20" cy="180" r="100" stroke="#0076BF" stroke-width="1" />
+                <path d="M-40 140 C 20 120 80 160 140 100" stroke="#00AEEF" stroke-width="2" />
+            </svg>
+            <svg class="au-history-bg-right" viewBox="0 0 200 200" fill="none">
+                <circle cx="180" cy="20" r="140" stroke="#0076BF" stroke-width="1.5" stroke-dasharray="4 4" />
+                <circle cx="180" cy="20" r="90" stroke="#00AEEF" stroke-width="1" />
+                <path d="M40 80 C 100 20 160 60 220 0" stroke="#0052CC" stroke-width="2" />
+            </svg>
+
+            <div class="g-container" style="max-width: 1520px; position: relative; z-index: 2;">
+                <div class="au-ref-header">
+                    <span class="au-ref-blue-line"></span>
+                    <h2 class="au-ref-title">Our History</h2>
+                </div>
+
+                <div class="au-history-timeline-wrap">
+                    <!-- SVG Background Sine Wave Line -->
+                    <div class="au-history-svg-wrap">
+                        <svg class="au-history-wave-svg" viewBox="0 0 1200 160" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="auHistoryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#0066FF" />
+                                    <stop offset="25%" stop-color="#0088FF" />
+                                    <stop offset="50%" stop-color="#00AEEF" />
+                                    <stop offset="75%" stop-color="#0066FF" />
+                                    <stop offset="100%" stop-color="#00D2FF" />
+                                </linearGradient>
+                            </defs>
+                            <path
+                                d="M 0,40 C 75,30 75,130 150,130 C 225,130 225,30 300,30 C 375,30 375,130 450,130 C 525,130 525,30 600,30 C 675,30 675,130 750,130 C 825,130 825,30 900,30 C 975,30 975,130 1050,130 C 1125,130 1150,80 1200,80"
+                                fill="none" stroke="url(#auHistoryGrad)" stroke-width="4" stroke-linecap="round" />
+                        </svg>
+                    </div>
+
+                    <!-- Vertical line for mobile -->
+                    <div class="au-history-v-track"></div>
+
+                    <!-- 8 Columns Grid -->
+                    <div class="au-history-grid">
+
+                        <!-- 1. 1994 (ABOVE) -->
+                        <div class="au-history-col col-above" data-g-reveal>
+                            <div class="au-history-card-wrap">
+                                <div class="au-history-card card-top">
+                                    <div class="au-card-icon-box">
+                                        <svg width="18" height="18" fill="none" stroke="#0066FF" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                            <circle cx="12" cy="12" r="3" />
+                                        </svg>
+                                    </div>
+                                    <p class="au-history-text">Establishment of 50:50 JV between Cherry and TVS to
+                                        manufacture micro switches</p>
+                                </div>
+                                <div class="au-history-pointer pointer-down"></div>
+                            </div>
+                            <div class="au-history-node-wrap">
+                                <div class="au-history-circle circle-blue">
+                                    <span class="au-history-year">1994</span>
+                                </div>
+                            </div>
+                            <div class="au-history-spacer"></div>
+                        </div>
+
+                        <!-- 2. 2000 (BELOW) -->
+                        <div class="au-history-col col-below" data-g-reveal>
+                            <div class="au-history-spacer"></div>
+                            <div class="au-history-node-wrap">
+                                <div class="au-history-circle circle-cyan">
+                                    <span class="au-history-year">2000</span>
+                                </div>
+                            </div>
+                            <div class="au-history-card-wrap">
+                                <div class="au-history-pointer pointer-up"></div>
+                                <div class="au-history-card card-bottom">
+                                    <div class="au-card-icon-box">
+                                        <svg width="18" height="18" fill="none" stroke="#0076BF" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path d="M18 20V10M12 20V4M6 20v-6" />
+                                        </svg>
+                                    </div>
+                                    <p class="au-history-text">Newer applications with Reed technology</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. 2005 (ABOVE) -->
+                        <div class="au-history-col col-above" data-g-reveal>
+                            <div class="au-history-card-wrap">
+                                <div class="au-history-card card-top">
+                                    <div class="au-card-icon-box">
+                                        <svg width="18" height="18" fill="none" stroke="#0066FF" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                    </div>
+                                    <p class="au-history-text">Formation of EOU to focus on export opportunities</p>
+                                </div>
+                                <div class="au-history-pointer pointer-down"></div>
+                            </div>
+                            <div class="au-history-node-wrap">
+                                <div class="au-history-circle circle-blue">
+                                    <span class="au-history-year">2005</span>
+                                </div>
+                            </div>
+                            <div class="au-history-spacer"></div>
+                        </div>
+
+                        <!-- 4. 2008 (BELOW) -->
+                        <div class="au-history-col col-below" data-g-reveal>
+                            <div class="au-history-spacer"></div>
+                            <div class="au-history-node-wrap">
+                                <div class="au-history-circle circle-cyan">
+                                    <span class="au-history-year">2008</span>
+                                </div>
+                            </div>
+                            <div class="au-history-card-wrap">
+                                <div class="au-history-pointer pointer-up"></div>
+                                <div class="au-history-card card-bottom">
+                                    <div class="au-card-icon-box">
+                                        <svg width="18" height="18" fill="none" stroke="#0076BF" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M7 11.5V14m0-2.5a2.5 2.5 0 115 0m-5 0h5m0 0V14m0-2.5a2.5 2.5 0 115 0m-5 0h5m0 0V14m0-2.5a2.5 2.5 0 115 0m-5 0h5M18 20l-3-3m0 0l-3 3m3-3v-6" />
+                                        </svg>
+                                    </div>
+                                    <p class="au-history-text">Cherry acquired by ZF; JV renamed ZF Electronics TVS</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. 2012 (ABOVE) -->
+                        <div class="au-history-col col-above" data-g-reveal>
+                            <div class="au-history-card-wrap">
+                                <div class="au-history-card card-top">
+                                    <div class="au-card-icon-box">
+                                        <svg width="18" height="18" fill="none" stroke="#0066FF" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                            <circle cx="12" cy="12" r="3" />
+                                        </svg>
+                                    </div>
+                                    <p class="au-history-text">Identified as engineering support center for ZF global
+                                        sensor requirements and custom products</p>
+                                </div>
+                                <div class="au-history-pointer pointer-down"></div>
+                            </div>
+                            <div class="au-history-node-wrap">
+                                <div class="au-history-circle circle-blue">
+                                    <span class="au-history-year">2012</span>
+                                </div>
+                            </div>
+                            <div class="au-history-spacer"></div>
+                        </div>
+
+                        <!-- 6. 2013 (BELOW) -->
+                        <div class="au-history-col col-below" data-g-reveal>
+                            <div class="au-history-spacer"></div>
+                            <div class="au-history-node-wrap">
+                                <div class="au-history-circle circle-cyan">
+                                    <span class="au-history-year">2013</span>
+                                </div>
+                            </div>
+                            <div class="au-history-card-wrap">
+                                <div class="au-history-pointer pointer-up"></div>
+                                <div class="au-history-card card-bottom">
+                                    <div class="au-card-icon-box">
+                                        <svg width="18" height="18" fill="none" stroke="#0076BF" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                        </svg>
+                                    </div>
+                                    <p class="au-history-text">Business focus placed on India auto and exports</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. 2018 (ABOVE) -->
+                        <div class="au-history-col col-above" data-g-reveal>
+                            <div class="au-history-card-wrap">
+                                <div class="au-history-card card-top">
+                                    <div class="au-card-icon-box">
+                                        <svg width="18" height="18" fill="none" stroke="#0066FF" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                    </div>
+                                    <p class="au-history-text">TVS acquired 100% stake. Renamed as TVS Sensing Solutions
+                                        Private Limited</p>
+                                </div>
+                                <div class="au-history-pointer pointer-down"></div>
+                            </div>
+                            <div class="au-history-node-wrap">
+                                <div class="au-history-circle circle-blue">
+                                    <span class="au-history-year">2018</span>
+                                </div>
+                            </div>
+                            <div class="au-history-spacer"></div>
+                        </div>
+
+                        <!-- 8. 2019 (BELOW) -->
+                        <div class="au-history-col col-below" data-g-reveal>
+                            <div class="au-history-spacer"></div>
+                            <div class="au-history-node-wrap">
+                                <div class="au-history-circle circle-cyan">
+                                    <span class="au-history-year">2019</span>
+                                </div>
+                            </div>
+                            <div class="au-history-card-wrap">
+                                <div class="au-history-pointer pointer-up"></div>
+                                <div class="au-history-card card-bottom">
+                                    <div class="au-card-icon-box">
+                                        <svg width="18" height="18" fill="none" stroke="#00AEEF" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12c-4.32.48-8.48 2.66-11.23 6.13M15.59 14.37L10.5 9.28m0 0a14.98 14.98 0 00-12.12 6.16c4.32.48 8.48 2.66 11.23 6.13m.89-12.29l5.09 5.09" />
+                                        </svg>
+                                    </div>
+                                    <p class="au-history-text">FOSS launched</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. INTEGRATED MANAGEMENT SYSTEM POLICY SECTION -->
+        <section class="au-ref-policy">
+            <div class="g-container">
+                <div class="au-ref-header">
+                    <span class="au-ref-blue-line"></span>
+                    <h2 class="au-ref-title">INTEGRATED MANAGEMENT SYSTEM POLICY</h2>
+                </div>
+
+                <div class="au-ref-policy-card">
+                    <div class="au-ref-policy-grid">
+                        <div class="au-ref-policy-left">
+                            <p class="au-ref-policy-lead">
+                                TVS Sensing Solutions Private Limited., is committed to deliver total customer
+                                satisfaction in all products and services through continuous improvement of processes,
+                                environmental consciousness, occupational health and safety. This is achieved through
+                            </p>
+                        </div>
+
+                        <div class="au-ref-policy-right">
+                            <ul class="au-ref-policy-list">
+                                <li class="au-ref-policy-item">
+                                    <span class="au-ref-policy-dot"></span>
+                                    Conservation of natural resources
+                                </li>
+                                <li class="au-ref-policy-item">
+                                    <span class="au-ref-policy-dot"></span>
+                                    Prevention of pollution and health hazards
+                                </li>
+                                <li class="au-ref-policy-item">
+                                    <span class="au-ref-policy-dot"></span>
+                                    Complying with legal and statutory requirements
+                                </li>
+                                <li class="au-ref-policy-item">
+                                    <span class="au-ref-policy-dot"></span>
+                                    Total employees involvement
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MANUFACTURING & INFRASTRUCTURE EXCELLENCE (Preserving Complete Plant Details) -->
+        <section class="au-ref-capabilities">
+            <div class="g-container">
+                <div class="au-ref-header">
+                    <span class="au-ref-blue-line"></span>
+                    <h2 class="au-ref-title">Manufacturing Infrastructure</h2>
+                </div>
+
+                <div class="au-ref-cap-grid">
+                    <div class="au-ref-cap-card">
+                        <div class="au-ref-cap-num">01</div>
+                        <h3 class="au-ref-cap-title">Micro / High Precision Horizontal Molding</h3>
+                        <p class="au-ref-cap-desc">Specialized micro-injection molding utilizing high-performance
+                            engineering thermoplastics (PBT, PPS, PA66, POM) for precision automotive sensor bodies.</p>
+                    </div>
+
+                    <div class="au-ref-cap-card">
+                        <div class="au-ref-cap-num">02</div>
+                        <h3 class="au-ref-cap-title">High Precision / High Speed Stamping</h3>
+                        <p class="au-ref-cap-desc">High-speed progressive stamping presses for critical electrical
+                            contact parts in Copper, Brass, Beryllium Copper (BeCu), and Silver alloys.</p>
+                    </div>
+
+                    <div class="au-ref-cap-card">
+                        <div class="au-ref-cap-num">03</div>
+                        <h3 class="au-ref-cap-title">Insert Molding</h3>
+                        <p class="au-ref-cap-desc">Integrated insert molding encapsulating high-conductivity terminals,
+                            busbars, and lead frames inside rugged automotive housings.</p>
+                    </div>
+
+                    <div class="au-ref-cap-card">
+                        <div class="au-ref-cap-num">04</div>
+                        <h3 class="au-ref-cap-title">Joining Processes</h3>
+                        <p class="au-ref-cap-desc">Ultrasonic welding, automated laser micro-welding, and precision
+                            resistance welding guaranteeing hermetic seals.</p>
+                    </div>
+
+                    <div class="au-ref-cap-card">
+                        <div class="au-ref-cap-num">05</div>
+                        <h3 class="au-ref-cap-title">Wiring Harness &amp; Connector Assembly</h3>
+                        <p class="au-ref-cap-desc">Automated cut, strip, and crimp wiring harness lines with 100%
+                            pull-force verification and waterproof connector sealing.</p>
+                    </div>
+
+                    <div class="au-ref-cap-card">
+                        <div class="au-ref-cap-num">06</div>
+                        <h3 class="au-ref-cap-title">Low Pressure Molding &amp; Sealing</h3>
+                        <p class="au-ref-cap-desc">Polyamide hot-melt low-pressure molding (LPM) for direct
+                            encapsulation of sensitive electronic PCBA sensors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MASTER FOOTER -->
+    <footer class="g-footer" id="site-footer">
+        <div class="g-container">
+            <div class="g-footer-top">
+                <div class="g-footer-brand">
+                    <a href="../index.html" class="g-footer-logo-link">
+                        <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo"
+                            class="g-footer-logo">
+                    </a>
+                    <p class="g-footer-statement">
+                        TVS Sensing Solutions Private Limited is a global pioneer in precision automotive sensors,
+                        custom solenoids, electro-mechanical switches, and Industry 4.0 smart factory technologies.
+                        Established in 1994, Madurai, India.
+                    </p>
+                </div>
+            </div>
+
+            <div class="g-footer-nav-grid">
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Solutions</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../products/index.html">EV Solutions</a></li>
+                        <li><a href="../products/index.html">Sensors &amp; Sensing</a></li>
+                        <li><a href="../products/index.html">Solenoids &amp; Actuators</a></li>
+                        <li><a href="../products/index.html">Electro-Mechanical</a></li>
+                        <li><a href="../products/index.html">Switches &amp; Controls</a></li>
+                        <li><a href="../products/index.html">IIoT 4.0 Products</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Technology</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../manufacturing-excellence/index.html">Class 10k Cleanrooms</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">SMT Component Placement</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Micro-Injection Molding</a></li>
+                        <li><a href="../automations/index.html">Automated Test Benches</a></li>
+                        <li><a href="../iiot/index.html">FOSS IIoT Architecture</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Company</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="index.html">About Us</a></li>
+                        <li><a href="../tvs-group/index.html">TVS Group</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Manufacturing</a></li>
+                        <li><a href="../media/index.html">Media-TVS</a></li>
+                        <li><a href="../customers/index.html">Customers</a></li>
+                        <li><a href="../careers/index.html">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Resources</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../TVSSS_Catalogue.pdf" download target="_blank">Product Catalogue (PDF)</a></li>
+                        <li><a href="../products/index.html">Engineering Datasheets</a></li>
+                        <li><a href="../automations/index.html">Automation Case Studies</a></li>
+                        <li><a href="../reach-us/index.html">Application Engineering</a></li>
+                        <li><a href="../reach-us/index.html">Request Quotation</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Compliance</h4>
+                    <div class="g-compliance-wrap">
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">General Meeting Notice</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2024-25.pdf"
+                                        target="_blank" rel="noopener noreferrer">FY 2024&ndash;25</a></li>
+                                <li><a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2023_24.pdf"
+                                        target="_blank" rel="noopener noreferrer">FY 2023&ndash;24</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">Annual Return</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_Annual_Return_Form_MGT-7-%20FY%202024-25.pdf"
+                                        target="_blank" rel="noopener noreferrer">FY 2024&ndash;25</a></li>
+                                <li><a href="../compliance/TVSSSPL_%20Annual_Return_Form_MGT-7-%20FY%202023-24_1.pdf"
+                                        target="_blank" rel="noopener noreferrer">FY 2023&ndash;24</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">Director Resignation Notice</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/Letter_from_Mr_Prem_Pradeep_Director.pdf" target="_blank"
+                                        rel="noopener noreferrer">Letter from Mr. Prem Pradeep</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">CSR (Corporate Social Responsibility)</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_CSR_Policy.pdf" target="_blank"
+                                        rel="noopener noreferrer">CSR Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="g-footer-contact-row">
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Headquarters &amp; Plant</span>
+                    <div>Melur Road, Vellaripatti, Madurai &ndash; 625 122, Tamil Nadu, India</div>
+                    <div>Tel: <a href="tel:+914522911444">+91 452-2911444</a> | Email: <a
+                            href="mailto:contact@tvsss.co.in">contact@tvsss.co.in</a></div>
+                </div>
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Regional Offices</span>
+                    <div>Chennai: <a href="tel:+914428420384">+91-44-28420384</a> | Noida / Delhi: <a
+                            href="tel:+919313370317">+91 9313370317</a></div>
+                    <div>Pune: <a href="mailto:pune@tvsss.co.in">pune@tvsss.co.in</a> | HR Desk: <a
+                            href="tel:+918925094815">+91 89250 94815</a></div>
+                </div>
+                <div class="g-footer-contact-item g-footer-action-wrap">
+                    <a href="../reach-us/index.html" class="g-btn g-btn-primary">Reach Us &rarr;</a>
+                </div>
+            </div>
+
+            <div class="g-footer-bottom">
+                <div>&copy; 2026 TVS Sensing Solutions Private Limited. All Rights Reserved.</div>
+                <div class="g-footer-cert-tags">
+                    <span class="g-cert-tag">IATF 16949</span>
+                    <span class="g-cert-tag">ISO 9001:2015</span>
+                    <span class="g-cert-tag">ISO 14001:2015</span>
+                    <span class="g-cert-tag">ISO 45001:2018</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../tvsss-global.js"></script>
+</body>
+
+</html>

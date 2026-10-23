@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TVS Sensing Solutions — Precision sensing, switches, solenoids and EV solutions since 1994. IATF 16949 | ISO 9001 | ISO 14001 | ISO 45001.">
+  <meta property="og:title" content="TVS Sensing Solutions — Precision in Motion">
+  <meta property="og:image" content="assets/images/logo.png">
+  <link rel="canonical" href="https://www.tvsss.co.in/">
+  <link rel="icon" href="assets/images/logo.png">
+  <title>TVS Sensing Solutions — Precision in Motion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+  <header class="site-header site-header--transparent" id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="TVS Sensing Solutions — Home">
+        <img src="assets/images/logo.png" alt="TVS Sensing Solutions" width="150" height="60">
+      </a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <div class="nav-item"><a href="pages/about.html" class="nav-link ">About</a></div>
+        <div class="nav-item" data-mega="mega-solutions">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false" aria-controls="mega-solutions">Solutions<svg class="nav-chevron" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 5l4 4 4-4"/></svg></button>
+        </div>
+        <div class="nav-item" data-mega="mega-technology">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false" aria-controls="mega-technology">Technology<svg class="nav-chevron" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 5l4 4 4-4"/></svg></button>
+        </div>
+        <div class="nav-item" data-mega="mega-company">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false" aria-controls="mega-company">Company<svg class="nav-chevron" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 5l4 4 4-4"/></svg></button>
+        </div>
+        <div class="nav-item"><a href="pages/customers.html" class="nav-link ">Customers</a></div>
+        <div class="nav-item"><a href="pages/careers.html" class="nav-link ">Careers</a></div>
+        <a href="pages/contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mega: Solutions -->
+    <div class="mega-menu" id="mega-solutions" aria-hidden="true">
+      <div class="mega-menu-inner" style="grid-template-columns:1fr 1fr 1fr 1fr">
+        <div class="mega-col"><div class="mega-col-title">Products</div>
+          <a href="pages/sensors.html" class="mega-link">Sensors &amp; Sensing Solutions</a>
+          <a href="pages/switches-controls.html" class="mega-link">Switches &amp; Controls</a>
+          <a href="pages/solenoids.html" class="mega-link">Solenoids</a>
+          <a href="pages/electro-mechanical.html" class="mega-link">Electro Mechanical Assembly</a>
+          <a href="pages/computer-input-devices.html" class="mega-link">Computer Input Devices</a>
+          <a href="pages/ev-solutions.html" class="mega-link">Electric Vehicle Solutions</a>
+          <a href="pages/iot.html" class="mega-link">IoT 4.0 Products</a>
+        </div>
+        <div class="mega-col"><div class="mega-col-title">Applications</div>
+          <a href="pages/products.html#two-wheeler" class="mega-link">Two Wheeler</a>
+          <a href="pages/products.html#passenger-cars" class="mega-link">Passenger Cars</a>
+          <a href="pages/products.html#commercial" class="mega-link">Commercial / Off-Road</a>
+          <a href="pages/products.html#electric-vehicle" class="mega-link">Electric Vehicle</a>
+          <a href="pages/products.html#industrial" class="mega-link">Industrial</a>
+        </div>
+        <div class="mega-col"><div class="mega-col-title">All Solutions</div>
+          <a href="pages/products.html" class="mega-link">View All Products</a>
+          <a href="pages/ev-solutions.html" class="mega-link">EV Solutions</a>
+          <a href="pages/iot.html" class="mega-link">IoT Products</a>
+        </div>
+        <div class="mega-col" style="background:var(--color-light);padding:var(--space-6)"><div class="mega-col-title">Downloads</div>
+          <a href="../TVSSS_Catalogue.pdf" class="mega-link" target="_blank" rel="noopener">Product Catalogue ↗</a>
+          <a href="../TVSSS_CorporateProfile.pdf" class="mega-link" target="_blank" rel="noopener">Corporate Profile ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mega: Technology -->
+    <div class="mega-menu" id="mega-technology" aria-hidden="true">
+      <div class="mega-menu-inner" style="grid-template-columns:1fr 1fr 1fr 1fr">
+        <div class="mega-col"><div class="mega-col-title">Engineering</div>
+          <a href="pages/engineering.html" class="mega-link">Engineering Excellence</a>
+          <a href="pages/manufacturing.html" class="mega-link">Manufacturing Excellence</a>
+        </div>
+        <div class="mega-col"><div class="mega-col-title">Smart Factory</div>
+          <a href="pages/automation.html" class="mega-link">Automation</a>
+          <a href="pages/iiot.html" class="mega-link">IIoT 4.0</a>
+        </div>
+        <div class="mega-col"><div class="mega-col-title">Quality</div>
+          <a href="pages/compliance.html" class="mega-link">Certifications</a>
+          <a href="pages/compliance.html" class="mega-link">Compliance Documents</a>
+        </div>
+        <div class="mega-col"></div>
+      </div>
+    </div>
+
+    <!-- Mega: Company -->
+    <div class="mega-menu" id="mega-company" aria-hidden="true">
+      <div class="mega-menu-inner" style="grid-template-columns:1fr 1fr 1fr 1fr">
+        <div class="mega-col"><div class="mega-col-title">About</div>
+          <a href="pages/about.html" class="mega-link">About TVSSS</a>
+          <a href="pages/about.html#tvs-group" class="mega-link">TVS Group</a>
+          <a href="pages/about.html#journey" class="mega-link">Company Journey</a>
+        </div>
+        <div class="mega-col"><div class="mega-col-title">Resources</div>
+          <a href="pages/media.html" class="mega-link">Media</a>
+          <a href="pages/careers.html" class="mega-link">Careers</a>
+        </div>
+        <div class="mega-col"><div class="mega-col-title">Compliance</div>
+          <a href="pages/compliance.html" class="mega-link">All Documents</a>
+          <a href="../compliance/TVSSSPL_CSR_Policy.pdf" class="mega-link" target="_blank">CSR Policy ↗</a>
+        </div>
+        <div class="mega-col"><div class="mega-col-title">Contact</div>
+          <a href="pages/contact.html" class="mega-link">Reach Us</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <ul>
+      <li class="mobile-nav-item"><a href="pages/about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item">
+        <button class="mobile-nav-link mobile-nav-toggle" aria-expanded="false" aria-controls="mob-solutions">Solutions<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" class="chevron" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg></button>
+        <ul class="mobile-sub-menu" id="mob-solutions">
+          <li><a href="pages/sensors.html" class="mobile-sub-link">Sensors &amp; Sensing Solutions</a></li>
+          <li><a href="pages/switches-controls.html" class="mobile-sub-link">Switches &amp; Controls</a></li>
+          <li><a href="pages/solenoids.html" class="mobile-sub-link">Solenoids</a></li>
+          <li><a href="pages/electro-mechanical.html" class="mobile-sub-link">Electro Mechanical Assembly</a></li>
+          <li><a href="pages/computer-input-devices.html" class="mobile-sub-link">Computer Input Devices</a></li>
+          <li><a href="pages/ev-solutions.html" class="mobile-sub-link">Electric Vehicle Solutions</a></li>
+          <li><a href="pages/iot.html" class="mobile-sub-link">IoT 4.0 Products</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <button class="mobile-nav-link mobile-nav-toggle" aria-expanded="false" aria-controls="mob-tech">Technology<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" class="chevron" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg></button>
+        <ul class="mobile-sub-menu" id="mob-tech">
+          <li><a href="pages/engineering.html" class="mobile-sub-link">Engineering Excellence</a></li>
+          <li><a href="pages/manufacturing.html" class="mobile-sub-link">Manufacturing Excellence</a></li>
+          <li><a href="pages/automation.html" class="mobile-sub-link">Automation</a></li>
+          <li><a href="pages/iiot.html" class="mobile-sub-link">IIoT 4.0</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item"><a href="pages/customers.html" class="mobile-nav-link">Customers</a></li>
+      <li class="mobile-nav-item"><a href="pages/careers.html" class="mobile-nav-link">Careers</a></li>
+      <li class="mobile-nav-item"><a href="pages/contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-cta-wrap">
+      <a href="pages/contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Contact Us</a>
+    </div>
+  </nav>
+<main id="main-content">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" aria-label="Hero — Precision in Motion">
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide is-active">
+        <img src="assets/images/hero-1.png" alt="TVSSS factory assembly line" width="1024" height="866" fetchpriority="high">
+      </div>
+      <div class="hero-slide">
+        <img src="assets/images/hero-2.png" alt="TVSSS precision manufacturing" width="1024" height="867" loading="lazy">
+      </div>
+      <div class="hero-slide">
+        <img src="assets/images/hero-3.png" alt="TVSSS engineering excellence" width="1024" height="867" loading="lazy">
+      </div>
+      <div class="hero-slide">
+        <img src="assets/images/hero-4.png" alt="TVSSS mobility sensing solutions" width="1024" height="867" loading="lazy">
+      </div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-grid-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow" data-animate="fade-up">
+        <div class="hero-eyebrow-line" aria-hidden="true"></div>
+        <span class="hero-eyebrow-text">TVS Sensing Solutions</span>
+      </div>
+      <h1 class="hero-heading" data-animate="fade-up" style="transition-delay:.1s">
+        Precision<br><em>in Motion</em>
+      </h1>
+      <p class="hero-subtext" data-animate="fade-up" style="transition-delay:.2s">
+        Built on trust, quality and customer satisfaction. Engineering advanced sensing solutions for mobility, EV and Industry 4.0 since 1994.
+      </p>
+      <div class="hero-actions" data-animate="fade-up" style="transition-delay:.3s">
+        <a href="pages/products.html" class="btn btn-primary">
+          Explore Solutions
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="TVSSS_CorporateProfile.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Corporate Profile</a>
+      </div>
+    </div>
+    <div class="hero-bottom" aria-hidden="true">
+      <div class="hero-slide-counter">
+        <span class="hero-slide-number" id="hero-slide-num">01 / 04</span>
+        <div class="hero-slide-dots" role="tablist" aria-label="Hero slides">
+          <button class="hero-dot is-active" aria-label="Slide 1" role="tab"></button>
+          <button class="hero-dot" aria-label="Slide 2" role="tab"></button>
+          <button class="hero-dot" aria-label="Slide 3" role="tab"></button>
+          <button class="hero-dot" aria-label="Slide 4" role="tab"></button>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <div class="scroll-mouse" aria-hidden="true"></div>
+        <span>Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INTRO STRIP ═══ -->
+  <div class="intro-strip" aria-label="Key capabilities">
+    <div class="intro-strip-track" aria-hidden="true">
+      <div class="intro-strip-item">Sensing<span class="intro-strip-divider"></span>Engineering<span class="intro-strip-divider"></span>Mobility<span class="intro-strip-divider"></span>Manufacturing<span class="intro-strip-divider"></span>Industry 4.0<span class="intro-strip-divider"></span>Electric Vehicle<span class="intro-strip-divider"></span>Precision<span class="intro-strip-divider"></span>Quality</div>
+      <div class="intro-strip-item">Sensing<span class="intro-strip-divider"></span>Engineering<span class="intro-strip-divider"></span>Mobility<span class="intro-strip-divider"></span>Manufacturing<span class="intro-strip-divider"></span>Industry 4.0<span class="intro-strip-divider"></span>Electric Vehicle<span class="intro-strip-divider"></span>Precision<span class="intro-strip-divider"></span>Quality</div>
+    </div>
+  </div>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="about-section" id="about" aria-labelledby="about-heading">
+    <div class="about-inner">
+      <div class="about-content">
+        <div class="meta-line" data-animate="fade-up">EST. 1994 · MADURAI, INDIA</div>
+        <h2 class="about-heading-main" data-animate="fade-up" id="about-heading" style="transition-delay:.1s">About<br>TVSSS</h2>
+        <p class="about-body" data-animate="fade-up" style="transition-delay:.2s">TVS Sensing Solutions Private Limited is a member of the TVS Group — one of India's largest automotive conglomerates. Founded in 1994, TVSSS designs, develops and manufactures precision sensing solutions, switches, solenoids and electro-mechanical assemblies for global automotive and industrial customers.</p>
+        <p class="about-body" data-animate="fade-up" style="transition-delay:.25s">With state-of-the-art assembly lines, in-house design and manufacturing facilities, and a culture built on trust, quality and customer satisfaction, TVSSS serves leading global OEMs across two-wheeler, passenger car, commercial vehicle, electric vehicle and industrial segments.</p>
+        <div style="margin-top:var(--space-8)" data-animate="fade-up" style="transition-delay:.3s">
+          <a href="pages/about.html" class="btn-arrow">Our Story<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+      <div class="about-image-wrap" data-animate="clip-reveal">
+        <img src="assets/images/about.jpg" alt="TVS Sensing Solutions factory — precision manufacturing in Madurai" width="860" height="1080" loading="lazy">
+        <div class="about-est"><span class="about-est-year">1994</span><span class="about-est-label">Established</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATISTICS ═══ -->
+  <section class="stats-section" aria-labelledby="stats-heading">
+    <div class="container">
+      <div class="meta-line" data-animate="fade-up" style="margin-bottom:var(--space-8)">By the Numbers</div>
+      <div class="stats-grid" data-animate="stagger" role="list">
+        <div class="stat-item" role="listitem">
+          <div class="stat-number" data-count="20" data-suffix="M+">0</div>
+          <div class="stat-label">Assemblies Annual Capacity</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-number" data-count="375" data-suffix="+">0</div>
+          <div class="stat-label">Employees</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-number">1994</div>
+          <div class="stat-label">Operational Since</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-number" data-count="10" data-suffix="">0</div>
+          <div class="stat-label">Global Distributors</div>
+          <div class="cert-badges" style="margin-top:var(--space-4)">
+            <span class="cert-badge">IATF 16949</span>
+            <span class="cert-badge">ISO 9001</span>
+            <span class="cert-badge">ISO 14001</span>
+            <span class="cert-badge">ISO 45001</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRODUCTS ═══ -->
+  <section class="products-section" id="solutions" aria-labelledby="products-heading">
+    <div class="products-header">
+      <div class="meta-line" data-animate="fade-up">Product Portfolio</div>
+      <h2 class="display-lg" id="products-heading" data-animate="fade-up" style="color:var(--color-navy);letter-spacing:-.03em;text-transform:uppercase;margin-top:var(--space-4)">Products &amp;<br>Solutions</h2>
+    </div>
+    <div class="product-categories" role="list" aria-label="Product categories">
+      <article class="product-category-item" role="listitem" tabindex="0">
+        <div class="product-cat-info">
+          <div class="product-cat-number" aria-hidden="true">01</div>
+          <div class="label label--muted" style="margin-bottom:var(--space-3)">Sensing</div>
+          <h3 class="product-cat-title">Sensors &amp; Sensing Solutions</h3>
+          <p class="product-cat-desc">Precision sensing technologies including wheel speed sensors, position sensors, reed sensors — engineered for automotive and industrial reliability.</p>
+          <a href="pages/sensors.html" class="btn-arrow">Explore<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+        </div>
+        <div class="product-cat-image"><img src="assets/products/sensors.jpg" alt="Sensors and Sensing Solutions" width="1024" height="1024" loading="lazy"></div>
+      </article>
+      <article class="product-category-item" role="listitem" tabindex="0">
+        <div class="product-cat-info">
+          <div class="product-cat-number" aria-hidden="true">02</div>
+          <div class="label label--muted" style="margin-bottom:var(--space-3)">Control</div>
+          <h3 class="product-cat-title">Switches &amp; Controls</h3>
+          <p class="product-cat-desc">Miniature and sub-miniature switching assemblies built for demanding automotive environments — hood, key, door latch switches and more.</p>
+          <a href="pages/switches-controls.html" class="btn-arrow">Explore<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+        </div>
+        <div class="product-cat-image"><img src="assets/products/switches.jpg" alt="Switches and Controls" width="1024" height="1024" loading="lazy"></div>
+      </article>
+      <article class="product-category-item" role="listitem" tabindex="0">
+        <div class="product-cat-info">
+          <div class="product-cat-number" aria-hidden="true">03</div>
+          <div class="label label--muted" style="margin-bottom:var(--space-3)">Actuation</div>
+          <h3 class="product-cat-title">Solenoids</h3>
+          <p class="product-cat-desc">High-performance solenoid assemblies — ESO valves, fuel injector coils, cold-start advance solenoids — engineered for precision actuation.</p>
+          <a href="pages/solenoids.html" class="btn-arrow">Explore<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+        </div>
+        <div class="product-cat-image"><img src="assets/products/solenoids.jpg" alt="Solenoids" width="1024" height="1024" loading="lazy"></div>
+      </article>
+      <article class="product-category-item" role="listitem" tabindex="0">
+        <div class="product-cat-info">
+          <div class="product-cat-number" aria-hidden="true">04</div>
+          <div class="label label--muted" style="margin-bottom:var(--space-3)">Electric Vehicle</div>
+          <h3 class="product-cat-title">Electric Vehicle Solutions</h3>
+          <p class="product-cat-desc">Next-generation sensing and control systems purpose-built for electric vehicles — ABS sensors, DC-DC converters, TPMS, thermistor assemblies and more.</p>
+          <a href="pages/ev-solutions.html" class="btn-arrow">Explore<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+        </div>
+        <div class="product-cat-image"><img src="assets/products/ev.jpg" alt="Electric Vehicle Solutions" width="1024" height="1024" loading="lazy"></div>
+      </article>
+      <article class="product-category-item" role="listitem" tabindex="0">
+        <div class="product-cat-info">
+          <div class="product-cat-number" aria-hidden="true">05</div>
+          <div class="label label--muted" style="margin-bottom:var(--space-3)">Integration</div>
+          <h3 class="product-cat-title">Electro Mechanical Assembly</h3>
+          <p class="product-cat-desc">Integrated electro-mechanical solutions including wiring harnesses, coil assemblies and housing actuators.</p>
+          <a href="pages/electro-mechanical.html" class="btn-arrow">Explore<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+        </div>
+        <div class="product-cat-image"><img src="assets/products/electromech.jpg" alt="Electro Mechanical Assembly" width="1024" height="1024" loading="lazy"></div>
+      </article>
+      <article class="product-category-item" role="listitem" tabindex="0">
+        <div class="product-cat-info">
+          <div class="product-cat-number" aria-hidden="true">06</div>
+          <div class="label label--muted" style="margin-bottom:var(--space-3)">Industry 4.0</div>
+          <h3 class="product-cat-title">IoT 4.0 Products</h3>
+          <p class="product-cat-desc">Smart connected products and computer input devices for Industry 4.0, industrial IoT and intelligent automation.</p>
+          <a href="pages/iot.html" class="btn-arrow">Explore<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+        </div>
+        <div class="product-cat-image"><img src="assets/products/iot.jpg" alt="IoT 4.0 Products" width="1024" height="1024" loading="lazy"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══ SEGMENTS ═══ -->
+  <section class="segments-section" id="segments" aria-labelledby="segments-heading">
+    <div class="container">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6);margin-bottom:var(--space-12)">
+        <div>
+          <div class="meta-line" data-animate="fade-up">Applications</div>
+          <h2 class="display-md" id="segments-heading" data-animate="fade-up" style="color:var(--color-navy);text-transform:uppercase;margin-top:var(--space-4)">Solutions Across<br>Mobility</h2>
+        </div>
+        <a href="TVSSS_Catalogue.pdf" class="btn btn-ghost-dark" target="_blank" rel="noopener" data-animate="fade-up">Download Catalogue</a>
+      </div>
+      <div class="segment-tabs" role="tablist" aria-label="Application segments">
+        <button class="segment-tab is-active" role="tab" aria-selected="true"  aria-controls="panel-two-wheeler" id="tab-two-wheeler">Two Wheeler</button>
+        <button class="segment-tab" role="tab" aria-selected="false" aria-controls="panel-passenger"   id="tab-passenger">Passenger Cars</button>
+        <button class="segment-tab" role="tab" aria-selected="false" aria-controls="panel-commercial"  id="tab-commercial">Commercial / Off-Road</button>
+        <button class="segment-tab" role="tab" aria-selected="false" aria-controls="panel-ev"          id="tab-ev">Electric Vehicle</button>
+        <button class="segment-tab" role="tab" aria-selected="false" aria-controls="panel-industrial"  id="tab-industrial">Industrial</button>
+      </div>
+      <div class="segment-panel is-active" id="panel-two-wheeler" role="tabpanel" aria-labelledby="tab-two-wheeler">
+        <div class="segment-image"><img src="assets/images/industry/industry-two-wheeler.jpg" alt="Two Wheeler segment" width="400" height="300" loading="lazy" style="object-fit: cover;"></div>
+        <div><h3 class="segment-products-title">Two Wheeler</h3>
+          <ul class="segment-product-list">
+            <li class="segment-product-item">ABS wheel speed sensor</li><li class="segment-product-item">Speed / direction sensor</li><li class="segment-product-item">Brake / clutch switch</li><li class="segment-product-item">E-bike speed sensor</li><li class="segment-product-item">Glove-box solenoid</li><li class="segment-product-item">Seat-latch solenoid</li><li class="segment-product-item">Steering-lock control solenoid</li><li class="segment-product-item">Gear-position sensor</li><li class="segment-product-item">Stop-lamp switch</li><li class="segment-product-item">USB charger</li>
+          </ul>
+        </div>
+      </div>
+      <div class="segment-panel" id="panel-passenger" role="tabpanel" aria-labelledby="tab-passenger">
+        <div class="segment-image"><img src="assets/images/industry/industry-four-wheeler.jpg" alt="Passenger Car segment" width="400" height="300" loading="lazy" style="object-fit: cover;"></div>
+        <div><h3 class="segment-products-title">Passenger Cars</h3>
+          <ul class="segment-product-list">
+            <li class="segment-product-item">Turbocharger actuator</li><li class="segment-product-item">ABS wheel speed sensor</li><li class="segment-product-item">Wiring harness</li><li class="segment-product-item">Tailgate latch assembly</li><li class="segment-product-item">Central locking switch</li><li class="segment-product-item">Key reminder switch</li><li class="segment-product-item">Door latch switch</li><li class="segment-product-item">Electronic component carrier</li><li class="segment-product-item">Hood latch switch</li><li class="segment-product-item">Commutator assembly</li>
+          </ul>
+        </div>
+      </div>
+      <div class="segment-panel" id="panel-commercial" role="tabpanel" aria-labelledby="tab-commercial">
+        <div class="segment-image"><img src="assets/images/industry/industry-commercial.jpg" alt="Commercial / Off-Road segment" width="400" height="300" loading="lazy" style="object-fit: cover;"></div>
+        <div><h3 class="segment-products-title">Commercial / Off-Road</h3>
+          <ul class="segment-product-list">
+            <li class="segment-product-item">Linear-position sensor</li><li class="segment-product-item">Speed / direction sensor</li><li class="segment-product-item">Solenoid assemblies</li><li class="segment-product-item">Cold-advance solenoid</li><li class="segment-product-item">Fuel-injector coil</li><li class="segment-product-item">Engine shut-off solenoid</li><li class="segment-product-item">Intake throttle valve cover</li><li class="segment-product-item">PTO switch</li><li class="segment-product-item">Passive wheel-speed sensor</li>
+          </ul>
+        </div>
+      </div>
+      <div class="segment-panel" id="panel-ev" role="tabpanel" aria-labelledby="tab-ev">
+        <div class="segment-image"><img src="assets/products/ev.jpg" alt="Electric Vehicle segment" width="400" height="300" loading="lazy" style="object-fit: cover;"></div>
+        <div><h3 class="segment-products-title">Electric Vehicle</h3>
+          <ul class="segment-product-list">
+            <li class="segment-product-item">ABS wheel-speed sensor</li><li class="segment-product-item">DC-DC converter</li><li class="segment-product-item">E-throttle position sensor</li><li class="segment-product-item">Side-stand sensor</li><li class="segment-product-item">USB charger</li><li class="segment-product-item">Boot-light switch</li><li class="segment-product-item">Thermistor assembly</li><li class="segment-product-item">Battery-temperature sensor</li><li class="segment-product-item">Speed / direction sensor</li><li class="segment-product-item">Battery-charge-lock solenoid</li><li class="segment-product-item">Acoustic vehicle monitoring system</li><li class="segment-product-item">Tyre-pressure system sensor</li>
+          </ul>
+        </div>
+      </div>
+      <div class="segment-panel" id="panel-industrial" role="tabpanel" aria-labelledby="tab-industrial">
+        <div class="segment-image"><img src="assets/images/industry/industry-industrial.jpg" alt="Industrial segment" width="400" height="300" loading="lazy" style="object-fit: cover;"></div>
+        <div><h3 class="segment-products-title">Industrial</h3>
+          <ul class="segment-product-list">
+            <li class="segment-product-item">ATEX reed sensor</li><li class="segment-product-item">Float sensor</li><li class="segment-product-item">Speed / direction sensor</li><li class="segment-product-item">Door curtain sensor</li><li class="segment-product-item">Rocker switches</li><li class="segment-product-item">Plastic reed sensor</li><li class="segment-product-item">Snap-action micro switches</li><li class="segment-product-item">Angular sensor</li><li class="segment-product-item">Elevator door switch</li><li class="segment-product-item">Position sensor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MANUFACTURING ═══ -->
+  <section class="manufacturing-section" id="manufacturing" aria-labelledby="mfg-heading">
+    <div class="mfg-header">
+      <div>
+        <div class="meta-line label--light" data-animate="fade-up" style="color:rgba(255,255,255,.5)">State-of-the-Art Facilities</div>
+        <h2 class="display-md text-white" id="mfg-heading" data-animate="fade-up" style="text-transform:uppercase;margin-top:var(--space-4)">Manufacturing<br>Excellence</h2>
+      </div>
+      <div class="mfg-instruction" data-animate="fade-up">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10h14M11 6l4 4-4 4"/></svg>
+        Drag to explore
+      </div>
+    </div>
+    <div class="mfg-scroll-container" aria-label="Manufacturing capabilities">
+      <div class="mfg-horizontal-track">
+        <div class="mfg-panel"><img src="assets/images/factory.jpg" alt="Micro precision horizontal molding" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">01 / 12</div><h3 class="mfg-panel-title">Micro / High Precision<br>Horizontal Molding</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/machine2.jpg" alt="High precision stamping" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">02 / 12</div><h3 class="mfg-panel-title">High Precision /<br>High Speed Stamping</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/mfg1.jpg" alt="Insert molding vertical" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">03 / 12</div><h3 class="mfg-panel-title">Insert Molding<br>— Vertical</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/mfg4.jpg" alt="Joining process soldering" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">04 / 12</div><h3 class="mfg-panel-title">Joining Process<br>Soldering / Pulse Heat</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/factory.jpg" alt="Ultrasonic welding" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">05 / 12</div><h3 class="mfg-panel-title">Ultrasonic<br>Welding</h3></div></div>
+        <div class="mfg-panel"><img src="assets/products/wiring-harness.jpg" alt="Wiring harness" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">06 / 12</div><h3 class="mfg-panel-title">Wiring<br>Harness</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/machine.jpg" alt="Low pressure molding" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">07 / 12</div><h3 class="mfg-panel-title">Low Pressure<br>Molding</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/mfg4.jpg" alt="End of line testers" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">08 / 12</div><h3 class="mfg-panel-title">End of Line<br>Testers</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/mfg1.jpg" alt="Tooling" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">09 / 12</div><h3 class="mfg-panel-title">Tooling</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/machine2.jpg" alt="Coil winding" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">10 / 12</div><h3 class="mfg-panel-title">Coil<br>Winding</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/machine.jpg" alt="Laser printing" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">11 / 12</div><h3 class="mfg-panel-title">Laser<br>Printing</h3></div></div>
+        <div class="mfg-panel"><img src="assets/images/factory.jpg" alt="Potting and dispensing" width="800" height="600" loading="lazy"><div class="mfg-panel-overlay" aria-hidden="true"></div><div class="mfg-panel-content"><div class="mfg-panel-num">12 / 12</div><h3 class="mfg-panel-title">Potting &amp;<br>Dispensing</h3></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ENGINEERING ═══ -->
+  <section class="engineering-section" id="engineering" aria-labelledby="eng-heading">
+    <div class="container">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--space-6);margin-bottom:var(--space-16)">
+        <div>
+          <div class="meta-line" data-animate="fade-up">In-House Design</div>
+          <h2 class="display-md text-navy" id="eng-heading" data-animate="fade-up" style="text-transform:uppercase;margin-top:var(--space-4)">Engineering<br>Excellence</h2>
+        </div>
+        <a href="pages/engineering.html" class="btn btn-ghost-dark" data-animate="fade-up">Learn More</a>
+      </div>
+      <div class="engineering-stages" data-animate="stagger" role="list">
+        <div class="eng-stage" role="listitem"><div class="eng-stage-num" aria-hidden="true">01</div><h3 class="eng-stage-title">Application Engineering</h3><p class="eng-stage-desc">Deep understanding of customer requirements, application environments, and performance specifications to define the right sensing solution.</p></div>
+        <div class="eng-stage" role="listitem"><div class="eng-stage-num" aria-hidden="true">02</div><h3 class="eng-stage-title">Testing &amp; Validation</h3><p class="eng-stage-desc">Rigorous testing protocols ensuring products meet and exceed international automotive quality standards across all operating conditions.</p></div>
+        <div class="eng-stage" role="listitem"><div class="eng-stage-num" aria-hidden="true">03</div><h3 class="eng-stage-title">Tooling &amp; Prototype</h3><p class="eng-stage-desc">In-house tooling capabilities enabling rapid prototyping and precise manufacturing readiness — from concept to production-ready component.</p></div>
+        <div class="eng-stage" role="listitem"><div class="eng-stage-num" aria-hidden="true">04</div><h3 class="eng-stage-title">Design Concepts &amp; Innovation</h3><p class="eng-stage-desc">Continuous innovation driving next-generation sensing solutions for the evolving demands of electric mobility and Industry 4.0.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EV ═══ -->
+  <section class="ev-section" id="ev" aria-labelledby="ev-heading">
+    <div class="container">
+      <div class="ev-inner">
+        <div>
+          <div class="meta-line label--light" data-animate="fade-up" style="color:rgba(32, 184, 232,.7)">Next Generation Mobility</div>
+          <h2 class="ev-heading" id="ev-heading" data-animate="fade-up">Electric<br><em>Mobility</em></h2>
+          <p class="ev-subtext" data-animate="fade-up" style="transition-delay:.1s">As the automotive industry transitions to electric mobility, TVSSS delivers a comprehensive portfolio of EV-specific sensing and control solutions engineered for next-generation vehicles.</p>
+          <div style="margin-top:var(--space-8)" data-animate="fade-up" style="transition-delay:.2s">
+            <a href="pages/ev-solutions.html" class="btn-arrow btn-arrow--white">EV Solutions<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+        <div class="ev-product-grid" data-animate="stagger">
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">ABS Wheel-Speed Sensor</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">DC-DC Converter</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">E-Throttle Position Sensor</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">Side-Stand Sensor</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">Thermistor Assembly</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">Battery-Temperature Sensor</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">Tyre-Pressure System Sensor</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">Battery-Charge-Lock Solenoid</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">Acoustic Vehicle Alerting System</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">USB Charger</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">Boot-Light Switch</span></div>
+          <div class="ev-product-card"><div class="ev-product-dot" aria-hidden="true"></div><span class="ev-product-name">Motor Hall Sensor PCB</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ IIoT ═══ -->
+  <section class="iiot-section" id="iiot" aria-labelledby="iiot-heading">
+    <div class="container">
+      <div class="meta-line label--light" data-animate="fade-up" style="color:rgba(255,255,255,.4);margin-bottom:var(--space-8)">Industry 4.0</div>
+      <div class="iiot-inner">
+        <div>
+          <h2 class="display-md text-white" id="iiot-heading" data-animate="fade-up" style="text-transform:uppercase;margin-bottom:var(--space-10)">IIoT<br>4.0</h2>
+          <div class="iiot-flow" aria-label="IIoT data flow">
+            <div class="iiot-flow-step"><div class="iiot-flow-num">01</div><div class="iiot-flow-label">Sensing</div></div>
+            <div class="iiot-flow-step"><div class="iiot-flow-num">02</div><div class="iiot-flow-label">Data</div></div>
+            <div class="iiot-flow-step"><div class="iiot-flow-num">03</div><div class="iiot-flow-label">Analytics</div></div>
+            <div class="iiot-flow-step"><div class="iiot-flow-num">04</div><div class="iiot-flow-label">Intelligence</div></div>
+            <div class="iiot-flow-step"><div class="iiot-flow-num">05</div><div class="iiot-flow-label">Automation</div></div>
+          </div>
+          <div style="margin-top:var(--space-8)">
+            <a href="pages/iiot.html" class="btn-arrow btn-arrow--white">Explore IIoT<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+        <div class="iiot-topics" data-animate="stagger">
+          <div class="iiot-topic"><div class="iiot-topic-icon" aria-hidden="true">📡</div><div class="iiot-topic-name">IIoT</div></div>
+          <div class="iiot-topic"><div class="iiot-topic-icon" aria-hidden="true">🧠</div><div class="iiot-topic-name">Machine Learning</div></div>
+          <div class="iiot-topic"><div class="iiot-topic-icon" aria-hidden="true">🔍</div><div class="iiot-topic-name">Smart Sensing</div></div>
+          <div class="iiot-topic"><div class="iiot-topic-icon" aria-hidden="true">☁️</div><div class="iiot-topic-name">Cloud Computing</div></div>
+          <div class="iiot-topic"><div class="iiot-topic-icon" aria-hidden="true">🤖</div><div class="iiot-topic-name">Robotics</div></div>
+          <div class="iiot-topic"><div class="iiot-topic-icon" aria-hidden="true">⚙️</div><div class="iiot-topic-name">Machine Automation</div></div>
+          <div class="iiot-topic"><div class="iiot-topic-icon" aria-hidden="true">🔄</div><div class="iiot-topic-name">Digital Twins</div></div>
+          <div class="iiot-topic"><div class="iiot-topic-icon" aria-hidden="true">📊</div><div class="iiot-topic-name">Analytics</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CUSTOMERS ═══ -->
+  <section class="customers-section" id="customers" aria-labelledby="customers-heading">
+    <div class="container" style="margin-bottom:var(--space-10)">
+      <div class="meta-line" data-animate="fade-up">Trusted By</div>
+      <h2 class="display-sm text-navy" id="customers-heading" data-animate="fade-up" style="text-transform:uppercase;margin-top:var(--space-4)">Our Customers</h2>
+    </div>
+    <div class="customer-marquee" aria-label="Customer logos">
+      <div class="customer-marquee-track" aria-hidden="true">
+        <img class="customer-logo" src="assets/customers/tata.png" alt="Tata" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/mahindra.png" alt="Mahindra" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/hyundai.png" alt="Hyundai" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/ford.png" alt="Ford" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/renault.png" alt="Renault" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/john-deere.png" alt="John Deere" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/jcb.png" alt="JCB" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/fiat.png" alt="Fiat" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/hella.png" alt="Hella" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/brakes-india.png" alt="Brakes India" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/tafe.png" alt="TAFE" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/nissan.png" alt="Nissan" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/turbo.png" alt="Turbo" width="120" height="48" loading="lazy">
+        <!-- Duplicate for seamless loop -->
+        <img class="customer-logo" src="assets/customers/tata.png" alt="Tata" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/mahindra.png" alt="Mahindra" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/hyundai.png" alt="Hyundai" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/ford.png" alt="Ford" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/renault.png" alt="Renault" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/john-deere.png" alt="John Deere" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/jcb.png" alt="JCB" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/fiat.png" alt="Fiat" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/hella.png" alt="Hella" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/brakes-india.png" alt="Brakes India" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/tafe.png" alt="TAFE" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/nissan.png" alt="Nissan" width="120" height="48" loading="lazy">
+        <img class="customer-logo" src="assets/customers/turbo.png" alt="Turbo" width="120" height="48" loading="lazy">
+      </div>
+    </div>
+    <div class="container" style="margin-top:var(--space-10);text-align:center">
+      <a href="pages/customers.html" class="btn-arrow">All Customers<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-left:8px"><path d="M4 10h12M12 6l4 4-4 4"/></svg></a>
+    </div>
+  </section>
+
+  <!-- ═══ TIMELINE ═══ -->
+  <section class="timeline-section" id="journey" aria-labelledby="timeline-heading">
+    <div class="container" style="margin-bottom:var(--space-12)">
+      <div class="meta-line" data-animate="fade-up">Three Decades of Excellence</div>
+      <h2 class="display-md text-navy" id="timeline-heading" data-animate="fade-up" style="text-transform:uppercase;margin-top:var(--space-4)">Company<br>Journey</h2>
+    </div>
+    <div class="timeline-scroll-wrap" tabindex="0" aria-label="Company timeline — scroll to explore">
+      <div class="timeline-track">
+        <div class="timeline-item is-active" data-year="1911"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">1911</div><div class="timeline-event">TVS Group founded by T.V. Sundaram Iyengar</div></div>
+        <div class="timeline-item" data-year="1962"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">1962</div><div class="timeline-event">Expansion into auto components manufacturing</div></div>
+        <div class="timeline-item" data-year="1994"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">1994</div><div class="timeline-event">TVS Sensing Solutions established in Madurai</div></div>
+        <div class="timeline-item" data-year="2000"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">2000</div><div class="timeline-event">Expansion of manufacturing capabilities</div></div>
+        <div class="timeline-item" data-year="2005"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">2005</div><div class="timeline-event">Recognised as 100% Export Oriented Unit</div></div>
+        <div class="timeline-item" data-year="2008"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">2008</div><div class="timeline-event">IATF 16949 certification achieved</div></div>
+        <div class="timeline-item" data-year="2012"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">2012</div><div class="timeline-event">ISO 14001 Environmental Management certification</div></div>
+        <div class="timeline-item" data-year="2013"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">2013</div><div class="timeline-event">Expansion into EV sensing solutions</div></div>
+        <div class="timeline-item" data-year="2018"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">2018</div><div class="timeline-event">ISO 45001 Occupational Health &amp; Safety certification</div></div>
+        <div class="timeline-item" data-year="2019"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">2019</div><div class="timeline-event">Industry 4.0 / IIoT capabilities established</div></div>
+        <div class="timeline-item" data-year="2023"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">2023</div><div class="timeline-event">Advanced EV and smart sensing portfolio expansion</div></div>
+        <div class="timeline-item" data-year="2024"><div class="timeline-node" aria-hidden="true"></div><div class="timeline-year">2024</div><div class="timeline-event">Continued growth in EV and mobility technology</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CERTIFICATIONS ═══ -->
+  <section class="certifications-section" id="certifications" aria-labelledby="cert-heading">
+    <div class="container">
+      <div style="margin-bottom:var(--space-12)">
+        <div class="meta-line" data-animate="fade-up">Quality Standards</div>
+        <h2 class="display-sm text-navy" id="cert-heading" data-animate="fade-up" style="text-transform:uppercase;margin-top:var(--space-4)">Certifications</h2>
+      </div>
+      <div class="cert-grid" data-animate="stagger">
+        <div class="cert-item"><div class="cert-icon" aria-hidden="true">🏆</div><div class="cert-name">IATF 16949</div><div class="cert-standard">Automotive Quality Management</div></div>
+        <div class="cert-item"><div class="cert-icon" aria-hidden="true">✅</div><div class="cert-name">ISO 9001</div><div class="cert-standard">Quality Management System</div></div>
+        <div class="cert-item"><div class="cert-icon" aria-hidden="true">🌿</div><div class="cert-name">ISO 14001</div><div class="cert-standard">Environmental Management</div></div>
+        <div class="cert-item"><div class="cert-icon" aria-hidden="true">🛡️</div><div class="cert-name">ISO 45001</div><div class="cert-standard">Occupational Health &amp; Safety</div></div>
+        <div class="cert-item"><div class="cert-icon" aria-hidden="true">🔒</div><div class="cert-name">UL</div><div class="cert-standard">Product Safety Certification</div></div>
+        <div class="cert-item"><div class="cert-icon" aria-hidden="true">⚡</div><div class="cert-name">ATEX</div><div class="cert-standard">Explosive Atmosphere Certified</div></div>
+        <div class="cert-item"><div class="cert-icon" aria-hidden="true">🔬</div><div class="cert-name">VDE</div><div class="cert-standard">German Electrical Safety</div></div>
+        <div class="cert-item"><div class="cert-icon" aria-hidden="true">🇪🇺</div><div class="cert-name">ENEC</div><div class="cert-standard">European Safety Mark</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT CTA ═══ -->
+  <section class="contact-section" id="contact" aria-labelledby="contact-cta-heading">
+    <div class="container">
+      <div style="margin-bottom:var(--space-12)">
+        <div class="meta-line label--light" data-animate="fade-up" style="color:rgba(255,255,255,.4)">Get In Touch</div>
+        <h2 class="display-md text-white" id="contact-cta-heading" data-animate="fade-up" style="text-transform:uppercase;margin-top:var(--space-4)">Reach Us</h2>
+      </div>
+      <div class="contact-inner">
+        <form class="contact-form" action="pages/contact.html" method="get" aria-label="Contact form" novalidate>
+          <div class="form-group-row">
+            <div class="form-group"><label class="form-label" for="contact-name">Full Name</label><input class="form-input" type="text" id="contact-name" name="name" placeholder="Your full name" autocomplete="name" required></div>
+            <div class="form-group"><label class="form-label" for="contact-company">Company</label><input class="form-input" type="text" id="contact-company" name="company" placeholder="Your company" autocomplete="organization"></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="contact-email">Email Address</label><input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+          <div class="form-group"><label class="form-label" for="contact-message">Message</label><textarea class="form-textarea" id="contact-message" name="message" placeholder="How can we help you?" rows="5"></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h12M10 4l4 4-4 4"/></svg></button>
+        </form>
+        <div class="contact-info-col" data-animate="stagger">
+          <div class="contact-info-item"><div class="contact-info-label">Registered Office</div><div class="contact-info-value">TVS Sensing Solutions Private Limited<br>TVS Building, 7-B, West Veli Street,<br>Madurai – 625001, Tamilnadu, India</div></div>
+          <div class="contact-info-item"><div class="contact-info-label">Telephone</div><div class="contact-info-value"><a href="tel:04522420388">0452-2420388</a></div></div>
+          <div class="contact-info-item"><div class="contact-info-label">Email</div><div class="contact-info-value"><a href="mailto:rajaram.r@tvsss.co.in">rajaram.r@tvsss.co.in</a></div></div>
+          <div class="contact-info-item"><div class="contact-info-label">Grievance Contact</div><div class="contact-info-value">Mr R Rajaram<br><a href="tel:+919840344433">+91 9840344433</a></div></div>
+          <div class="contact-info-item"><div class="contact-info-label">CIN</div><div class="contact-info-value">U30007TN1993PTC026291</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+  <footer class="site-footer" id="footer" role="contentinfo">
+    <div class="container container--xl">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="TVS Sensing Solutions — Home">
+            <img src="assets/images/logo.png" alt="TVS Sensing Solutions" width="140" height="56">
+          </a>
+          <p class="footer-tagline">Precision sensing solutions for mobility, EV and Industry 4.0.</p>
+          <div style="margin-top:var(--space-4)">
+            <a href="../TVSSS_Catalogue.pdf" class="btn-arrow" style="font-size:.75rem;color:rgba(255,255,255,.5)" target="_blank" rel="noopener">Download Catalogue <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+        <nav class="footer-nav-cols" aria-label="Footer navigation">
+          <div>
+            <div class="footer-col-title">Solutions</div>
+            <a href="pages/sensors.html" class="footer-link">Sensors &amp; Sensing</a>
+            <a href="pages/switches-controls.html" class="footer-link">Switches &amp; Controls</a>
+            <a href="pages/solenoids.html" class="footer-link">Solenoids</a>
+            <a href="pages/electro-mechanical.html" class="footer-link">Electro Mechanical</a>
+            <a href="pages/computer-input-devices.html" class="footer-link">Computer Input Devices</a>
+            <a href="pages/ev-solutions.html" class="footer-link">EV Solutions</a>
+            <a href="pages/iot.html" class="footer-link">IoT Products</a>
+          </div>
+          <div>
+            <div class="footer-col-title">Technology</div>
+            <a href="pages/manufacturing.html" class="footer-link">Manufacturing</a>
+            <a href="pages/engineering.html" class="footer-link">Engineering</a>
+            <a href="pages/automation.html" class="footer-link">Automation</a>
+            <a href="pages/iiot.html" class="footer-link">IIoT 4.0</a>
+          </div>
+          <div>
+            <div class="footer-col-title">Company</div>
+            <a href="pages/about.html" class="footer-link">About TVSSS</a>
+            <a href="pages/media.html" class="footer-link">Media</a>
+            <a href="pages/careers.html" class="footer-link">Careers</a>
+          </div>
+          <div>
+            <div class="footer-col-title">Resources</div>
+            <a href="../TVSSS_Catalogue.pdf" class="footer-link" target="_blank" rel="noopener">Product Catalogue</a>
+            <a href="../TVSSS_CorporateProfile.pdf" class="footer-link" target="_blank" rel="noopener">Corporate Profile</a>
+            <a href="pages/customers.html" class="footer-link">Our Customers</a>
+            <a href="pages/contact.html" class="footer-link">Contact / Reach Us</a>
+          </div>
+          <div>
+            <div class="footer-col-title">Compliance</div>
+            <a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2024-25.pdf" class="footer-link" target="_blank" rel="noopener">AGM Notice 2024–25</a>
+            <a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2023_24.pdf" class="footer-link" target="_blank" rel="noopener">AGM Notice 2023–24</a>
+            <a href="../compliance/TVSSSPL_Annual_Return_Form_MGT-7- FY 2024-25.pdf" class="footer-link" target="_blank" rel="noopener">Annual Return 2024–25</a>
+            <a href="../compliance/TVSSSPL_ Annual_Return_Form_MGT-7- FY 2023-24_1.pdf" class="footer-link" target="_blank" rel="noopener">Annual Return 2023–24</a>
+            <a href="../compliance/TVSSSPL_CSR_Policy.pdf" class="footer-link" target="_blank" rel="noopener">CSR Policy</a>
+            <a href="../compliance/Letter_from_Mr_Prem_Pradeep_Director.pdf" class="footer-link" target="_blank" rel="noopener">Director Letter</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2024 TVS Sensing Solutions Private Limited. CIN: U30007TN1993PTC026291. All rights reserved.</p>
+        <div class="footer-compliance-links">
+          <a href="../compliance/TVSSSPL_CSR_Policy.pdf" class="footer-compliance-link" target="_blank" rel="noopener">CSR Policy</a>
+          <a href="pages/contact.html" class="footer-compliance-link">Grievance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/products.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/assets.js" defer></script>
+</body>
+</html>

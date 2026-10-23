@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings — TVS Sensing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <script src="/assets/js/api-client.js"></script>
+    <script src="/admin/admin-layout.js"></script>
+</head>
+<body class="admin-body">
+
+    <div class="admin-layout">
+        <div id="adminSidebarWrap"></div>
+
+        <div class="admin-main">
+            <div id="adminTopbarWrap"></div>
+
+            <main class="admin-content">
+
+                <!-- Page Header Title -->
+                <div class="page-header-box">
+                    <div>
+                        <h1 class="page-title">Settings &amp; System Health</h1>
+                        <p class="page-subtitle">Inspect backend server connectivity, MS SQL Server status, and manage administrative credentials.</p>
+                    </div>
+                </div>
+
+                <!-- Account & Connection Info Card -->
+                <div class="admin-card" style="margin-bottom: 24px;">
+                    <div class="admin-card-header">
+                        <h2 class="admin-card-title">Backend Architecture &amp; Service Status</h2>
+                    </div>
+                    <div class="admin-card-body">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+                            <div>
+                                <div class="admin-label">Active Administrator</div>
+                                <div id="settingAdminEmail" style="font-size: 1.05rem; font-weight: 700; color: #0B304A;">Loading...</div>
+                                <div style="font-size: 0.8rem; color: #64748B; margin-top: 2px;">Role: Full Access Administrator</div>
+                            </div>
+
+                            <div>
+                                <div class="admin-label">Node.js Express API</div>
+                                <div id="settingApiStatus" class="status-badge" style="background: #E2E8F0; color: #475569;">Checking...</div>
+                                <div id="settingApiEndpoint" style="font-size: 0.75rem; color: #64748B; margin-top: 4px; word-break: break-all;">-</div>
+                            </div>
+
+                            <div>
+                                <div class="admin-label">Database Connection</div>
+                                <div id="settingDbStatus" class="status-badge" style="background: #E2E8F0; color: #475569;">Checking...</div>
+                                <div id="settingDbDetails" style="font-size: 0.75rem; color: #64748B; margin-top: 4px;">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update Password Card -->
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h2 class="admin-card-title">Update Administrator Password</h2>
+                    </div>
+                    <div class="admin-card-body">
+                        <div id="passwordAlert" class="admin-alert" style="display: none; margin-bottom: 16px;"></div>
+                        <form id="passwordForm" style="max-width: 480px;">
+                            <div class="admin-form-group">
+                                <label for="newPassword" class="admin-label">New Password *</label>
+                                <input type="password" id="newPassword" class="admin-input" minlength="6" placeholder="At least 6 characters" required>
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="confirmPassword" class="admin-label">Confirm New Password *</label>
+                                <input type="password" id="confirmPassword" class="admin-input" minlength="6" placeholder="Re-enter new password" required>
+                            </div>
+                            <button type="submit" id="btnUpdatePassword" class="btn-primary-blue" style="padding: 10px 20px;">
+                                <span id="btnUpdateText">Update Password</span>
+                                <span id="btnUpdateSpinner" style="display: none;">Updating...</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            window.renderAdminLayout('settings', 'Admin Portal Settings');
+
+            var user = window.TVSS_API.getUser();
+            document.getElementById('settingAdminEmail').textContent = user.email || 'admin@tvsss.co.in';
+
+            // Check Node.js Health
+            var apiBadge = document.getElementById('settingApiStatus');
+            var apiDetail = document.getElementById('settingApiEndpoint');
+            apiDetail.textContent = window.TVSS_API.baseUrl;
+
+            try {
+                var health = await window.TVSS_API.get('/health', { timeout: 5000 });
+                if (health && health.success) {
+                    apiBadge.className = 'status-badge published';
+                    apiBadge.style.background = '#DCFCE7';
+                    apiBadge.style.color = '#15803D';
+                    apiBadge.textContent = 'Online (Port 5000)';
+                } else {
+                    throw new Error('Unhealthy status');
+                }
+            } catch (err) {
+                apiBadge.className = 'status-badge closed';
+                apiBadge.style.background = '#FEE2E2';
+                apiBadge.style.color = '#B91C1C';
+                apiBadge.textContent = 'Disconnected';
+            }
+
+            // Check Database Health
+            var dbBadge = document.getElementById('settingDbStatus');
+            var dbDetail = document.getElementById('settingDbDetails');
+            try {
+                var dbRes = await window.TVSS_API.get('/health/database', { timeout: 5000 });
+                if (dbRes && dbRes.success) {
+                    dbBadge.className = 'status-badge published';
+                    dbBadge.style.background = '#DCFCE7';
+                    dbBadge.style.color = '#15803D';
+                    dbBadge.textContent = 'MS SQL Server Connected';
+                    dbDetail.textContent = (dbRes.server || 'localhost:1433') + ' / ' + (dbRes.database || 'TVSSensingSolutionsDB');
+                } else {
+                    dbBadge.className = 'status-badge'
+                    dbBadge.style.background = '#FEF3C7';
+                    dbBadge.style.color = '#B45309';
+                    dbBadge.textContent = 'Persistent Store (Disk Backup)';
+                    dbDetail.textContent = 'Database fallback active (JSON store)';
+                }
+            } catch (err) {
+                dbBadge.className = 'status-badge closed';
+                dbBadge.style.background = '#FEE2E2';
+                dbBadge.style.color = '#B91C1C';
+                dbBadge.textContent = 'Offline';
+                dbDetail.textContent = 'Unable to reach backend database service';
+            }
+
+            // Password update form
+            var passForm = document.getElementById('passwordForm');
+            var alertBox = document.getElementById('passwordAlert');
+            var btnUpdate = document.getElementById('btnUpdatePassword');
+            var btnText = document.getElementById('btnUpdateText');
+            var spinner = document.getElementById('btnUpdateSpinner');
+
+            passForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                alertBox.style.display = 'none';
+
+                var p1 = document.getElementById('newPassword').value;
+                var p2 = document.getElementById('confirmPassword').value;
+
+                if (!p1 || p1.length < 6) {
+                    alertBox.className = 'admin-alert admin-alert-danger';
+                    alertBox.textContent = 'Password must be at least 6 characters long.';
+                    alertBox.style.display = 'flex';
+                    return;
+                }
+
+                if (p1 !== p2) {
+                    alertBox.className = 'admin-alert admin-alert-danger';
+                    alertBox.textContent = 'Passwords do not match.';
+                    alertBox.style.display = 'flex';
+                    return;
+                }
+
+                btnUpdate.disabled = true;
+                btnText.style.display = 'none';
+                spinner.style.display = 'inline';
+
+                try {
+                    var data = await window.TVSS_API.changePassword(p1);
+                    alertBox.className = 'admin-alert admin-alert-success';
+                    alertBox.textContent = data.message || 'Password updated successfully!';
+                    alertBox.style.display = 'flex';
+                    passForm.reset();
+                } catch (err) {
+                    alertBox.className = 'admin-alert admin-alert-danger';
+                    alertBox.textContent = err.message || 'Error updating password.';
+                    alertBox.style.display = 'flex';
+                } finally {
+                    btnUpdate.disabled = false;
+                    btnText.style.display = 'inline';
+                    spinner.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

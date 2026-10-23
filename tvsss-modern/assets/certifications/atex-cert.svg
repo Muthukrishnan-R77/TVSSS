@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#F7941D" stroke-width="4"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#F7941D" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <g transform="translate(100, 60)">
+    <path d="M-20,0 L0,-25 L20,0 L10,0 L10,25 L-10,25 L-10,0 Z" fill="#F7941D"/>
+  </g>
+  <text x="100" y="112" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">ATEX CERTIFIED</text>
+  <text x="100" y="132" font-family="'Inter', sans-serif" font-weight="700" font-size="8" fill="#F7941D" text-anchor="middle" letter-spacing="1.5">HAZARDOUS ATMOSPHERE</text>
+  <text x="100" y="152" font-family="'Inter', sans-serif" font-weight="600" font-size="7" fill="#8A99AD" text-anchor="middle">VERIFIED CERTIFICATION</text>
+</svg>

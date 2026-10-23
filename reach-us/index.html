@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reach Us — TVS Sensing Solutions</title>
+    <meta name="description"
+        content="Contact TVS Sensing Solutions headquarters in Madurai or regional offices in Chennai, Pune, and Noida. Inquire about automotive sensors and custom engineering.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../tvsss-design.css">
+    <link rel="stylesheet" href="../tvsss-global.css">
+    <script src="../assets/js/api-client.js"></script>
+    <style>
+        /* ── REACH TECHNICAL & SALES SPECIALISTS SECTION (REDESIGNED 2026) ── */
+        .reach-specialists-section {
+            padding: 70px 0 90px;
+            background: linear-gradient(180deg, #F5F9FE 0%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #E2E8F0;
+            margin-bottom: 80px;
+        }
+
+        .reach-header-wrap {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            margin-bottom: 48px;
+            padding: 10px 0;
+        }
+
+        /* Subtle Dotted Curved Lines Behind Heading */
+        .reach-header-bg-decor {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 1100px;
+            height: 180px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .reach-header-pill {
+            width: 42px;
+            height: 4px;
+            background: #10AEE3;
+            border-radius: 2px;
+            margin: 0 auto 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .reach-main-title {
+            font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-size: clamp(2.3rem, 3.8vw, 3.3rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.18 !important;
+            margin: 0 !important;
+            text-align: center !important;
+            letter-spacing: -0.02em !important;
+            position: relative;
+            z-index: 2;
+        }
+
+        .reach-title-dark {
+            color: #0B304A;
+            display: block;
+        }
+
+        .reach-title-cyan {
+            color: #10AEE3;
+            display: block;
+        }
+
+        /* 4 Locations Cards Grid — 1 Row Desktop */
+        .locations-grid-wrap {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 32px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .locations-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 24px !important;
+            align-items: stretch !important;
+        }
+
+        .loc-card {
+            background: #FFFFFF !important;
+            border-radius: 16px !important;
+            border: 1px solid #E1EFFE !important;
+            box-shadow: 0 10px 30px rgba(11, 48, 74, 0.05), 0 2px 6px rgba(11, 48, 74, 0.02) !important;
+            padding: 28px 24px 32px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+            position: relative !important;
+        }
+
+        .loc-card:hover {
+            transform: translateY(-4px) !important;
+            box-shadow: 0 16px 36px rgba(16, 174, 227, 0.12), 0 4px 12px rgba(11, 48, 74, 0.04) !important;
+            border-color: #10AEE3 !important;
+        }
+
+        .loc-badge {
+            display: inline-flex !important;
+            align-items: center !important;
+            align-self: flex-start !important;
+            font-size: 0.68rem !important;
+            font-weight: 800 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.06em !important;
+            background: #E1F5FD !important;
+            color: #10AEE3 !important;
+            padding: 5px 13px !important;
+            border-radius: 999px !important;
+            margin-bottom: 16px !important;
+            line-height: 1.2 !important;
+        }
+
+        .loc-title {
+            font-family: 'Outfit', 'Inter', sans-serif !important;
+            font-size: 1.45rem !important;
+            font-weight: 700 !important;
+            color: #0B304A !important;
+            line-height: 1.2 !important;
+            margin: 0 0 10px 0 !important;
+        }
+
+        .loc-divider {
+            width: 32px !important;
+            height: 3.5px !important;
+            background: #10AEE3 !important;
+            border-radius: 2px !important;
+            margin-bottom: 22px !important;
+        }
+
+        .loc-contact-list {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+        }
+
+        .loc-contact-item {
+            font-size: 0.92rem !important;
+            color: #0B304A !important;
+            margin: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 14px !important;
+            font-weight: 600 !important;
+        }
+
+        .loc-contact-item--address {
+            align-items: flex-start !important;
+        }
+
+        .loc-contact-item--address .loc-icon-circle {
+            margin-top: 2px !important;
+        }
+
+        .loc-icon-circle {
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            background: #EBF7FD !important;
+            color: #10AEE3 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+            transition: background 0.2s ease, color 0.2s ease !important;
+        }
+
+        .loc-card:hover .loc-icon-circle {
+            background: #E1F5FD !important;
+        }
+
+        .loc-phone-link {
+            color: #0B304A !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            font-size: 0.92rem !important;
+            letter-spacing: -0.01em !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .loc-phone-link:hover {
+            color: #10AEE3 !important;
+        }
+
+        .loc-email-link {
+            color: #10AEE3 !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            word-break: break-all !important;
+            transition: color 0.2s ease, text-decoration 0.2s ease !important;
+        }
+
+        .loc-email-link:hover {
+            color: #0288D1 !important;
+            text-decoration: underline !important;
+        }
+
+        .loc-address-text {
+            color: #0B304A !important;
+            font-size: 0.82rem !important;
+            font-weight: 600 !important;
+            line-height: 1.45 !important;
+            margin: 0 !important;
+        }
+
+        /* Generic contact link hover for other sections like tech-business */
+        .loc-contact-item a {
+            color: #0076BF !important;
+            text-decoration: none !important;
+            font-weight: 700 !important;
+            word-break: break-all !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .loc-contact-item a:hover {
+            color: #10AEE3 !important;
+            text-decoration: underline !important;
+        }
+
+        .loc-card .loc-contact-item a.loc-phone-link {
+            color: #0B304A !important;
+            font-weight: 600 !important;
+        }
+
+        .loc-card .loc-contact-item a.loc-phone-link:hover {
+            color: #10AEE3 !important;
+            text-decoration: none !important;
+        }
+
+        .loc-card .loc-contact-item a.loc-email-link {
+            color: #10AEE3 !important;
+            font-weight: 600 !important;
+        }
+
+        .loc-card .loc-contact-item a.loc-email-link:hover {
+            color: #0288D1 !important;
+            text-decoration: underline !important;
+        }
+
+        @media (max-width: 1180px) {
+            .locations-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 22px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .locations-grid {
+                grid-template-columns: 1fr !important;
+                gap: 18px !important;
+            }
+
+            .locations-grid-wrap {
+                padding: 0 18px;
+            }
+
+            .reach-specialists-section {
+                padding: 50px 0 60px;
+            }
+
+            .reach-header-wrap {
+                margin-bottom: 35px;
+            }
+        }
+
+        /* ── TECHNICAL & BUSINESS CONTACTS SECTION ── */
+        .tech-business-section {
+            padding: 50px 0 80px;
+            background: linear-gradient(180deg, #EBF5FF 0%, #F0F7FF 100%);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #E2E8F0;
+            margin-bottom: 70px;
+        }
+
+        .tech-business-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .tech-business-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 26px !important;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 32px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .tb-card {
+            background: #FFFFFF !important;
+            border-radius: 18px !important;
+            border: 1px solid rgba(0, 174, 239, 0.22) !important;
+            box-shadow: 0 12px 32px rgba(8, 47, 73, 0.06) !important;
+            padding: 28px 32px !important;
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 22px !important;
+            position: relative;
+            overflow: hidden !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+        }
+
+        .tb-card:hover {
+            transform: translateY(-4px) !important;
+            box-shadow: 0 18px 40px rgba(0, 174, 239, 0.14) !important;
+            border-color: #00AEEF !important;
+        }
+
+        .tb-icon-badge {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #E0F2FE;
+            color: #0066FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 6px 16px rgba(0, 174, 239, 0.15);
+        }
+
+        .tb-card-content {
+            flex: 1;
+            position: relative;
+            z-index: 3;
+        }
+
+        .tb-card-title {
+            font-family: 'Space Grotesk', 'Outfit', sans-serif !important;
+            font-size: 1.25rem !important;
+            font-weight: 800 !important;
+            color: #082F49 !important;
+            margin: 0 0 8px 0 !important;
+        }
+
+        .tb-person-name {
+            font-size: 1.05rem !important;
+            font-weight: 800 !important;
+            color: #082F49 !important;
+            margin-bottom: 2px !important;
+        }
+
+        .tb-person-role {
+            font-size: 0.85rem !important;
+            color: #64748B !important;
+            font-weight: 500 !important;
+            margin-bottom: 16px !important;
+        }
+
+        .tb-watermark {
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            width: 140px;
+            height: 140px;
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @media (max-width: 900px) {
+            .tech-business-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Form + Map Split */
+        .contact-split {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: start;
+            margin-bottom: 100px;
+        }
+
+        .form-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 44px;
+            border: 1px solid rgba(8, 127, 193, 0.15);
+            box-shadow: 0 15px 40px rgba(6, 59, 92, 0.06);
+        }
+
+        .form-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            color: var(--g-deep);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .form-card p {
+            color: var(--g-muted);
+            margin-bottom: 32px;
+            font-size: 1rem;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--g-deep);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(8, 127, 193, 0.2);
+            font-size: 0.95rem;
+            color: var(--g-text);
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--g-blue);
+            box-shadow: 0 0 0 3px rgba(8, 127, 193, 0.15);
+        }
+
+        /* Map Card */
+        .map-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(8, 127, 193, 0.15);
+            box-shadow: 0 15px 40px rgba(6, 59, 92, 0.06);
+        }
+
+        .map-iframe-wrap {
+            height: 380px;
+            width: 100%;
+            background: var(--g-pale-blue);
+        }
+
+        .map-iframe-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .map-details {
+            padding: 32px;
+            background: var(--g-pale-blue);
+        }
+
+        @media (max-width: 991px) {
+            .contact-split {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .form-card {
+                padding: 28px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .form-row-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════════════
+         0. TOP CONTACT & SOCIAL MEDIA BAR
+    ══════════════════════════════════════════════ -->
+    <div class="g-topbar" id="gTopbar">
+        <div class="g-topbar__inner">
+            <div class="g-topbar__social">
+                <a href="https://www.facebook.com/TVS-Sensing-Solutions-Private-Limited-102082955438831" target="_blank"
+                    rel="noopener noreferrer" class="g-topbar__social-link" aria-label="Facebook">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://twitter.com/TVSSS3" target="_blank" rel="noopener noreferrer"
+                    class="g-topbar__social-link" aria-label="Twitter">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/tvs-sensing-solutions/" target="_blank"
+                    rel="noopener noreferrer" class="g-topbar__social-link" aria-label="LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="g-topbar__contact">
+                <a href="tel:+914522911444" class="g-topbar__link" aria-label="Call TVS Sensing Solutions">
+                    <span class="g-topbar__label">Office:</span> <span class="g-topbar__value">+91 452-2911444</span>
+                </a>
+                <span class="g-topbar__divider" aria-hidden="true">|</span>
+                <a href="mailto:contact@tvsss.co.in" class="g-topbar__link" aria-label="Email TVS Sensing Solutions">
+                    <span class="g-topbar__label">Mail Id:</span> <span
+                        class="g-topbar__value">contact@tvsss.co.in</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         1. MAIN WHITE NAVIGATION BAR (86px)
+    ══════════════════════════════════════════════ -->
+    <header class="g-header" id="gHeader">
+        <div class="g-header__inner">
+            <a href="../index.html" class="g-logo" aria-label="TVS Sensing Solutions Home">
+                <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo">
+                <div class="g-brand-lockup">
+                    <span class="g-brand-name">TVS SENSING SOLUTIONS</span>
+                    <span class="g-brand-tagline">A TVS GROUP COMPANY</span>
+                </div>
+            </a>
+
+            <nav class="g-nav" aria-label="Main Navigation">
+                <a href="../about-us/index.html" class="g-nav__link">About Us</a>
+                <a href="../tvs-group/index.html" class="g-nav__link">TVS Group</a>
+                <a href="../products/index.html" class="g-nav__link">Products &amp; Solutions</a>
+                <a href="../automations/index.html" class="g-nav__link">Automations</a>
+                <a href="../iiot/index.html" class="g-nav__link">IIoT 4.0</a>
+                <a href="../manufacturing-excellence/index.html" class="g-nav__link">Manufacturing Excellence</a>
+                <a href="../media/index.html" class="g-nav__link">Media-TVSS</a>
+                <a href="../customers/index.html" class="g-nav__link">Customers</a>
+                <a href="../careers/index.html" class="g-nav__link">Careers</a>
+                <a href="index.html" class="g-nav__link active">Reach Us</a>
+            </nav>
+
+            <button class="g-ham" id="gHam" aria-label="Toggle Navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <nav class="g-mobile-nav" id="gMobileNav" aria-label="Mobile Navigation">
+            <a href="../about-us/index.html" class="g-nav__link">About Us</a>
+            <a href="../tvs-group/index.html" class="g-nav__link">TVS Group</a>
+            <a href="../products/index.html" class="g-nav__link">Products &amp; Solutions</a>
+            <a href="../automations/index.html" class="g-nav__link">Automations</a>
+            <a href="../iiot/index.html" class="g-nav__link">IIoT 4.0</a>
+            <a href="../manufacturing-excellence/index.html" class="g-nav__link">Manufacturing Excellence</a>
+            <a href="../media/index.html" class="g-nav__link">Media-TVSS</a>
+            <a href="../customers/index.html" class="g-nav__link">Customers</a>
+            <a href="../careers/index.html" class="g-nav__link">Careers</a>
+            <a href="index.html" class="g-nav__link active">Reach Us</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- REACH TECHNICAL & SALES SPECIALISTS SECTION (REDESIGNED 2026) -->
+        <section class="reach-specialists-section">
+            <!-- Header Title -->
+            <div class="reach-header-wrap" data-g-reveal>
+                <!-- Subtle Decorative Dotted Curved Lines Behind Heading -->
+                <svg class="reach-header-bg-decor" viewBox="0 0 1100 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- Gentle Arcing Dotted Lines -->
+                    <path d="M 90 150 C 320 25, 780 25, 1010 150" stroke="#10AEE3" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.4" />
+                    <path d="M 190 135 C 380 60, 720 60, 910 135" stroke="#10AEE3" stroke-width="0.9" stroke-dasharray="2 3" opacity="0.22" />
+
+                    <!-- Delicate Connector Rays -->
+                    <line x1="240" y1="108" x2="280" y2="130" stroke="#10AEE3" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.25" />
+                    <line x1="820" y1="130" x2="860" y2="108" stroke="#10AEE3" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.25" />
+
+                    <!-- Outer Left Dot -->
+                    <circle cx="125" cy="142" r="3" fill="#10AEE3" opacity="0.5" />
+
+                    <!-- Mid Left Node Dot -->
+                    <circle cx="240" cy="108" r="7" fill="#10AEE3" opacity="0.12" />
+                    <circle cx="240" cy="108" r="3.5" fill="#10AEE3" />
+
+                    <!-- Top Left Node Dot -->
+                    <circle cx="435" cy="44" r="6" fill="#10AEE3" opacity="0.15" />
+                    <circle cx="435" cy="44" r="3" fill="#10AEE3" />
+
+                    <!-- Top Right Node Dot -->
+                    <circle cx="665" cy="44" r="6" fill="#10AEE3" opacity="0.15" />
+                    <circle cx="665" cy="44" r="3" fill="#10AEE3" />
+
+                    <!-- Mid Right Node Dot -->
+                    <circle cx="860" cy="108" r="7" fill="#10AEE3" opacity="0.12" />
+                    <circle cx="860" cy="108" r="3.5" fill="#10AEE3" />
+
+                    <!-- Outer Right Dot -->
+                    <circle cx="975" cy="142" r="3" fill="#10AEE3" opacity="0.5" />
+                </svg>
+
+                <div class="reach-header-pill"></div>
+                <h1 class="reach-main-title">
+                    <span class="reach-title-dark">Innovation That Moves</span>
+                    <span class="reach-title-cyan">Industries Forward.</span>
+                </h1>
+            </div>
+
+            <!-- 4 Location Cards Grid -->
+            <div class="locations-grid-wrap">
+                <div class="locations-grid">
+
+                    <!-- Card 1 – Madurai (Ho) -->
+                    <div class="loc-card" data-g-reveal>
+                        <span class="loc-badge">HEADQUARTERS &amp; PLANT</span>
+                        <h3 class="loc-title">Madurai (Ho)</h3>
+                        <div class="loc-divider"></div>
+                        <div class="loc-contact-list">
+                            <div class="loc-contact-item">
+                                <div class="loc-icon-circle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <a href="tel:+919382863778" class="loc-phone-link">+91 9382863778</a>
+                            </div>
+                            <div class="loc-contact-item">
+                                <div class="loc-icon-circle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                    </svg>
+                                </div>
+                                <a href="mailto:contact@tvsss.co.in" class="loc-email-link">contact@tvsss.co.in</a>
+                            </div>
+                            <div class="loc-contact-item loc-contact-item--address">
+                                <div class="loc-icon-circle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="loc-address-text">
+                                    Madurai-Melur Road, Vellaripatti,<br>Madurai – 625 122, Tamil Nadu, India
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 – Chennai -->
+                    <div class="loc-card" data-g-reveal>
+                        <span class="loc-badge">SOUTHERN REGION</span>
+                        <h3 class="loc-title">Chennai</h3>
+                        <div class="loc-divider"></div>
+                        <div class="loc-contact-list">
+                            <div class="loc-contact-item">
+                                <div class="loc-icon-circle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <a href="tel:+919176100041" class="loc-phone-link">+91 9176100041</a>
+                            </div>
+                            <div class="loc-contact-item">
+                                <div class="loc-icon-circle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                    </svg>
+                                </div>
+                                <a href="mailto:vasanthakumar.s@tvsss.co.in" class="loc-email-link">vasanthakumar.s@tvsss.co.in</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 – Pune -->
+                    <div class="loc-card" data-g-reveal>
+                        <span class="loc-badge">WESTERN REGION</span>
+                        <h3 class="loc-title">Pune</h3>
+                        <div class="loc-divider"></div>
+                        <div class="loc-contact-list">
+                            <div class="loc-contact-item">
+                                <div class="loc-icon-circle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <a href="tel:+919322120926" class="loc-phone-link">+91 9322120926</a>
+                            </div>
+                            <div class="loc-contact-item">
+                                <div class="loc-icon-circle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                    </svg>
+                                </div>
+                                <a href="mailto:anish.d@tvsss.co.in" class="loc-email-link">anish.d@tvsss.co.in</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 – Noida / Delhi -->
+                    <div class="loc-card" data-g-reveal>
+                        <span class="loc-badge">NORTHERN REGION</span>
+                        <h3 class="loc-title">Noida / Delhi</h3>
+                        <div class="loc-divider"></div>
+                        <div class="loc-contact-list">
+                            <div class="loc-contact-item">
+                                <div class="loc-icon-circle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <a href="tel:+919313370317" class="loc-phone-link">+91 9313370317</a>
+                            </div>
+                            <div class="loc-contact-item">
+                                <div class="loc-icon-circle">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                    </svg>
+                                </div>
+                                <a href="mailto:delhi@tvsss.co.in" class="loc-email-link">delhi@tvsss.co.in</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL & BUSINESS CONTACTS SECTION -->
+        <section class="tech-business-section">
+            <!-- Background Silhouette SVG Graphic -->
+            <svg class="tech-business-bg" viewBox="0 0 1200 400" fill="none" preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 400 L0 280 L50 280 L50 200 L100 200 L100 280 L180 280 L180 150 L240 150 L240 280 L350 280 L350 180 L420 180 L420 280 L550 280 L550 120 L620 120 L620 280 L750 280 L750 190 L820 190 L820 280 L950 280 L950 160 L1020 160 L1020 280 L1200 280 L1200 400 Z"
+                    fill="#00AEEF" opacity="0.12" />
+                <circle cx="200" cy="100" r="150" fill="#00AEEF" opacity="0.05" />
+                <circle cx="950" cy="80" r="180" fill="#0066FF" opacity="0.04" />
+                <path d="M 0 350 Q 600 100 1200 350" stroke="#00AEEF" stroke-width="1.8" stroke-dasharray="4 4"
+                    opacity="0.35" />
+            </svg>
+
+            <!-- Header Title -->
+            <div class="reach-header-wrap" data-g-reveal style="margin-bottom: 38px;">
+                <div class="reach-header-pill"></div>
+                <h2 class="reach-main-title">
+                    <span class="reach-title-dark" style="display: inline;">Technical &amp; </span>
+                    <span class="reach-title-cyan" style="display: inline;">Business Contacts</span>
+                </h2>
+            </div>
+
+            <!-- 2 Business Cards Grid -->
+            <div class="tech-business-grid">
+
+                <!-- 1. BUSINESS DEVELOPMENT -->
+                <div class="tb-card" data-g-reveal>
+
+                    <div class="tb-icon-badge">
+                        <svg width="26" height="26" fill="none" stroke="#0066FF" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M18 20V10M12 20V4M6 20v-6" />
+                        </svg>
+                    </div>
+                    <div class="tb-card-content">
+                        <h3 class="tb-card-title">Business Development</h3>
+                        <div class="tb-person-name">Mohan Kumar R</div>
+                        <div class="tb-person-role">Deputy Manager &ndash; Business Development</div>
+
+                        <div class="loc-contact-item">
+                            <div class="loc-icon-circle">
+                                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <a href="tel:+919994673093">+91 999 467 3093</a>
+                        </div>
+                        <div class="loc-contact-item" style="margin-bottom: 0;">
+                            <div class="loc-icon-circle">
+                                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <a href="mailto:mohankumar.r@tvsss.co.in">mohankumar.r@tvsss.co.in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. PROCESS ENGINEERING -->
+                <div class="tb-card" data-g-reveal>
+
+                    <div class="tb-icon-badge">
+                        <svg width="26" height="26" fill="none" stroke="#0066FF" stroke-width="2" viewBox="0 0 24 24">
+                            <path
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </div>
+                    <div class="tb-card-content">
+                        <h3 class="tb-card-title">Process Engineering</h3>
+                        <div class="tb-person-name">Soundhrapandi K</div>
+                        <div class="tb-person-role">Process Engineering</div>
+
+                        <div class="loc-contact-item">
+                            <div class="loc-icon-circle">
+                                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <a href="tel:+919600878134">+91 960 087 8134</a>
+                        </div>
+                        <div class="loc-contact-item" style="margin-bottom: 0;">
+                            <div class="loc-icon-circle">
+                                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <a href="mailto:soundhrapandi.k@tvsss.co.in">soundhrapandi.k@tvsss.co.in</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FORM & MAP SPLIT -->
+        <div class="g-container">
+            <div class="contact-split">
+                <!-- FORM -->
+                <div class="form-card" data-g-reveal>
+                    <h2>Send Us an Enquiry</h2>
+                    <p>Submit your component specifications or partnership proposal. We respond promptly with
+                        technical appraisal.</p>
+
+                    <!-- Success / Error Alert -->
+                    <div id="reachUsAlert"
+                        style="display: none; padding: 14px; border-radius: 8px; margin-bottom: 20px; font-weight: 500;">
+                    </div>
+
+                    <form id="reachUsForm" novalidate>
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="fname" class="form-label">First Name *</label>
+                                <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name"
+                                    required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="lname" class="form-label">Last Name *</label>
+                                <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name"
+                                    required aria-required="true">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyname" class="form-label">Company Name *</label>
+                            <input type="text" name="companyname" id="companyname" class="form-control"
+                                placeholder="Organization / OEM Name" required aria-required="true">
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Work Email *</label>
+                                <input type="email" name="email" id="email" class="form-control"
+                                    placeholder="name@company.com" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" name="phone" id="phone" class="form-control"
+                                    placeholder="+91 XXXXX XXXXX" required aria-required="true">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Inquiry Message *</label>
+                            <textarea name="message" id="message" rows="5" class="form-control"
+                                placeholder="Describe your sensor requirement, solenoid specification, target volumes, or automation project..."
+                                required aria-required="true"></textarea>
+                        </div>
+
+                        <button type="submit" id="reachUsSubmitBtn" class="g-btn g-btn-primary"
+                            style="width: 100%; justify-content: center; padding: 14px;">
+                            Send Message &rarr;
+                        </button>
+                    </form>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var form = document.getElementById('reachUsForm');
+                            if (!form) return;
+
+                            form.addEventListener('submit', async function (e) {
+                                e.preventDefault();
+
+                                var alertBox = document.getElementById('reachUsAlert');
+                                alertBox.style.display = 'none';
+
+                                var fname = document.getElementById('fname').value.trim();
+                                var lname = document.getElementById('lname').value.trim();
+                                var company = document.getElementById('companyname').value.trim();
+                                var email = document.getElementById('email').value.trim();
+                                var phone = document.getElementById('phone').value.trim();
+                                var message = document.getElementById('message').value.trim();
+
+                                if (!fname || !email || !message) {
+                                    alertBox.style.background = '#FEE2E2';
+                                    alertBox.style.color = '#991B1B';
+                                    alertBox.textContent = 'Please complete all required fields.';
+                                    alertBox.style.display = 'block';
+                                    return;
+                                }
+
+                                var fullName = (fname + ' ' + lname).trim();
+                                var payload = {
+                                    name: fullName,
+                                    email: email,
+                                    phone: phone,
+                                    company: company,
+                                    subject: 'Public Website Inquiry (' + (company || 'General') + ')',
+                                    message: message
+                                };
+
+                                var submitBtn = document.getElementById('reachUsSubmitBtn');
+                                submitBtn.disabled = true;
+                                submitBtn.textContent = 'Sending Enquiry...';
+
+                                try {
+                                    var data;
+                                    if (window.TVSS_API && window.TVSS_API.post) {
+                                        data = await window.TVSS_API.post('/enquiries', payload);
+                                    } else {
+                                        var apiBase = (!window.location.origin || window.location.origin === 'null' || window.location.protocol === 'file:' || window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1'))
+                                            ? (window.location.port === '5000' ? '' : 'http://localhost:5000')
+                                            : '';
+                                        var res = await fetch(apiBase + '/api/enquiries', {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify(payload)
+                                        });
+                                        data = await res.json();
+                                    }
+
+                                    if (data && data.success) {
+                                        alertBox.style.background = '#D1FAE5';
+                                        alertBox.style.color = '#065F46';
+                                        alertBox.textContent = data.message || 'Thank you! Your enquiry has been received successfully.';
+                                        alertBox.style.display = 'block';
+                                        form.reset();
+                                    } else {
+                                        throw new Error((data && data.message) || 'Failed to submit enquiry');
+                                    }
+                                } catch (err) {
+                                    console.error('Enquiry submission error:', err);
+                                    alertBox.style.background = '#FEE2E2';
+                                    alertBox.style.color = '#991B1B';
+                                    alertBox.textContent = err.isNetworkError
+                                        ? 'Unable to connect to backend server. Please verify Node.js server is running on http://localhost:5000.'
+                                        : (err.message || 'Unable to send message at this time. Please try again or email us directly.');
+                                    alertBox.style.display = 'block';
+                                } finally {
+                                    submitBtn.disabled = false;
+                                    submitBtn.textContent = 'Send Message \u2192';
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+
+                <!-- MAP & HEADQUARTERS DETAILS -->
+                <div class="map-card" data-g-reveal>
+                    <div class="map-iframe-wrap">
+                        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                            src="https://maps.google.com/maps?q=TVS%20Sensing%20Solutions%20Private%20Limited&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
+                            title="TVS Sensing Solutions Map Location"></iframe>
+                    </div>
+                    <div class="map-details">
+                        <h3
+                            style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; color: var(--g-deep); font-weight: 700; margin-bottom: 12px;">
+                            Corporate Headquarters &amp; Manufacturing Facility</h3>
+                        <p style="color: var(--g-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                            Located along the industrial manufacturing corridor of Madurai-Melur Road, our
+                            state-of-the-art facility houses our cleanroom assembly, SMT lines, tooling shop, and
+                            central validation labs.
+                        </p>
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <a href="../TVSSS_Catalogue.pdf" class="g-btn g-btn-primary" download
+                                target="_blank">Download Product Catalogue</a>
+                            <a href="../products/index.html" class="g-btn g-btn-outline">Browse Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- GLOBAL FOOTER (No Black, Deep Blue #063B5C) -->
+    <!-- GLOBAL FOOTER (Structured, Balanced, Professional — #063B5C) -->
+    <footer class="g-footer" id="site-footer">
+        <div class="g-container">
+            <!-- TOP: Logo + Company Statement -->
+            <div class="g-footer-top">
+                <div class="g-footer-brand">
+                    <a href="../index.html" class="g-footer-logo-link">
+                        <img src="../wp-content/uploads/2022/01/tvs-logo-300x150.png" alt="TVS Sensing Solutions Logo"
+                            class="g-footer-logo">
+                    </a>
+                    <p class="g-footer-statement">
+                        TVS Sensing Solutions Private Limited is a global pioneer in precision automotive sensors,
+                        custom solenoids, electro-mechanical switches, and Industry 4.0 smart factory technologies.
+                        Established in 1994, Madurai, India.
+                    </p>
+                </div>
+            </div>
+
+            <!-- MIDDLE: 5 Structured Columns -->
+            <div class="g-footer-nav-grid">
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Solutions</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../products/index.html">EV Solutions</a></li>
+                        <li><a href="../products/index.html">Sensors &amp; Sensing</a></li>
+                        <li><a href="../products/index.html">Solenoids &amp; Actuators</a></li>
+                        <li><a href="../products/index.html">Electro-Mechanical</a></li>
+                        <li><a href="../products/index.html">Switches &amp; Controls</a></li>
+                        <li><a href="../products/index.html">IIoT 4.0 Products</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Technology</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../manufacturing-excellence/index.html">Class 10k Cleanrooms</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">SMT Component Placement</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Micro-Injection Molding</a></li>
+                        <li><a href="../automations/index.html">Automated Test Benches</a></li>
+                        <li><a href="../iiot/index.html">FOSS IIoT Architecture</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Company</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../about-us/index.html">About Us</a></li>
+                        <li><a href="../tvs-group/index.html">TVS Group</a></li>
+                        <li><a href="../manufacturing-excellence/index.html">Manufacturing</a></li>
+                        <li><a href="../media/index.html">Media-TVS</a></li>
+                        <li><a href="../customers/index.html">Customers</a></li>
+                        <li><a href="../careers/index.html">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Resources</h4>
+                    <ul class="g-footer-list">
+                        <li><a href="../TVSSS_Catalogue.pdf" download target="_blank">Product Catalogue (PDF)</a></li>
+                        <li><a href="../products/index.html">Engineering Datasheets</a></li>
+                        <li><a href="../automations/index.html">Automation Case Studies</a></li>
+                        <li><a href="../reach-us/index.html">Application Engineering</a></li>
+                        <li><a href="../reach-us/index.html">Request Quotation</a></li>
+                    </ul>
+                </div>
+
+                <div class="g-footer-col">
+                    <h4 class="g-footer-heading">Compliance</h4>
+                    <div class="g-compliance-wrap">
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">General Meeting Notice</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2024-25.pdf" target="_blank" rel="noopener noreferrer">FY 2024&ndash;25</a></li>
+                                <li><a href="../compliance/TVSSSPL_Annual_General_Meeting_Notice_FY_2023_24.pdf" target="_blank" rel="noopener noreferrer">FY 2023&ndash;24</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">Annual Return</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_Annual_Return_Form_MGT-7-%20FY%202024-25.pdf" target="_blank" rel="noopener noreferrer">FY 2024&ndash;25</a></li>
+                                <li><a href="../compliance/TVSSSPL_%20Annual_Return_Form_MGT-7-%20FY%202023-24_1.pdf" target="_blank" rel="noopener noreferrer">FY 2023&ndash;24</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">Director Resignation Notice</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/Letter_from_Mr_Prem_Pradeep_Director.pdf" target="_blank" rel="noopener noreferrer">Letter from Mr. Prem Pradeep</a></li>
+                            </ul>
+                        </div>
+                        <div class="g-compliance-group">
+                            <span class="g-compliance-subheading">CSR (Corporate Social Responsibility)</span>
+                            <ul class="g-compliance-links">
+                                <li><a href="../compliance/TVSSSPL_CSR_Policy.pdf" target="_blank" rel="noopener noreferrer">CSR Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT ROW -->
+            <div class="g-footer-contact-row">
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Headquarters &amp; Plant</span>
+                    <div>Melur Road, Vellaripatti, Madurai &ndash; 625 122, Tamil Nadu, India</div>
+                    <div>Tel: <a href="tel:+914522911444">+91 452-2911444</a> | Email: <a
+                            href="mailto:contact@tvsss.co.in">contact@tvsss.co.in</a></div>
+                </div>
+                <div class="g-footer-contact-item">
+                    <span class="g-footer-contact-badge">Regional Offices</span>
+                    <div>Chennai: <a href="tel:+914428420384">+91-44-28420384</a> | Noida / Delhi: <a
+                            href="tel:+919313370317">+91 9313370317</a></div>
+                    <div>Pune: <a href="mailto:pune@tvsss.co.in">pune@tvsss.co.in</a> | HR Desk: <a
+                            href="tel:+918925094815">+91 89250 94815</a></div>
+                </div>
+                <div class="g-footer-contact-item g-footer-action-wrap">
+                    <a href="../reach-us/index.html" class="g-btn g-btn-primary">Reach Us &rarr;</a>
+                </div>
+            </div>
+
+            <!-- BOTTOM: Copyright & Certifications -->
+            <div class="g-footer-bottom">
+                <div>&copy; 2026 TVS Sensing Solutions Private Limited. All Rights Reserved.</div>
+                <div class="g-footer-cert-tags">
+                    <span class="g-cert-tag">IATF 16949</span>
+                    <span class="g-cert-tag">ISO 9001:2015</span>
+                    <span class="g-cert-tag">ISO 14001:2015</span>
+                    <span class="g-cert-tag">ISO 45001:2018</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../tvsss-global.js"></script>
+</body>
+
+</html>

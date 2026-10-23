@@ -1,0 +1,202 @@
+/* ============================================================
+   TVSSS MODERN — ANIMATION STYLES
+   (GSAP-driven animations are initialized in animations.js)
+   ============================================================ */
+
+/* ── Page load reveal ── */
+.js-loaded .page-intro {
+  animation: pageIntro 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes pageIntro {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Text split animation (line by line) ── */
+.split-text-reveal .word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.split-text-reveal .char {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform var(--transition-slower) cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.split-text-reveal.is-visible .char {
+  transform: translateY(0);
+}
+
+/* ── Stagger delay for chars ── */
+.split-text-reveal .char:nth-child(1)  { transition-delay: 0.00s; }
+.split-text-reveal .char:nth-child(2)  { transition-delay: 0.02s; }
+.split-text-reveal .char:nth-child(3)  { transition-delay: 0.04s; }
+.split-text-reveal .char:nth-child(4)  { transition-delay: 0.06s; }
+.split-text-reveal .char:nth-child(5)  { transition-delay: 0.08s; }
+.split-text-reveal .char:nth-child(6)  { transition-delay: 0.10s; }
+.split-text-reveal .char:nth-child(7)  { transition-delay: 0.12s; }
+.split-text-reveal .char:nth-child(8)  { transition-delay: 0.14s; }
+.split-text-reveal .char:nth-child(9)  { transition-delay: 0.16s; }
+.split-text-reveal .char:nth-child(10) { transition-delay: 0.18s; }
+
+/* ── Fade-up blocks ── */
+[data-animate="fade-up"] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+
+[data-animate="fade-up"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Staggered children ── */
+[data-animate="stagger"] > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+
+[data-animate="stagger"].is-visible > *:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:0.00s; }
+[data-animate="stagger"].is-visible > *:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:0.08s; }
+[data-animate="stagger"].is-visible > *:nth-child(3) { opacity:1; transform:translateY(0); transition-delay:0.16s; }
+[data-animate="stagger"].is-visible > *:nth-child(4) { opacity:1; transform:translateY(0); transition-delay:0.24s; }
+[data-animate="stagger"].is-visible > *:nth-child(5) { opacity:1; transform:translateY(0); transition-delay:0.32s; }
+[data-animate="stagger"].is-visible > *:nth-child(6) { opacity:1; transform:translateY(0); transition-delay:0.40s; }
+[data-animate="stagger"].is-visible > *:nth-child(7) { opacity:1; transform:translateY(0); transition-delay:0.48s; }
+[data-animate="stagger"].is-visible > *:nth-child(8) { opacity:1; transform:translateY(0); transition-delay:0.56s; }
+
+/* ── Clip reveal (image mask) ── */
+[data-animate="clip-reveal"] {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.9s cubic-bezier(0.76,0,0.24,1);
+}
+
+[data-animate="clip-reveal"].is-visible {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* ── Scale reveal ── */
+[data-animate="scale-in"] {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+
+[data-animate="scale-in"].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Stat number count-up pulse ── */
+.stat-number.is-counting {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+/* ── Timeline node pulse ── */
+@keyframes node-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0, 118, 185, 0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(0, 118, 185, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 118, 185, 0); }
+}
+
+.timeline-item.is-active .timeline-node {
+  animation: node-pulse 2s ease-out infinite;
+}
+
+/* ── IIoT data line animation ── */
+.iiot-data-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw-line 1.5s ease forwards;
+}
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── Hero image Ken Burns zoom ── */
+.hero-slide.is-active img {
+  animation: ken-burns 8s ease-out forwards;
+}
+
+@keyframes ken-burns {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.06); }
+}
+
+/* ── Product image hover overlay lines ── */
+.product-cat-image::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  z-index: 3;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-category-item:hover .product-cat-image::before {
+  width: 100%;
+}
+
+/* ── Section heading reveal line ── */
+.section-heading-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-heading-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.76,0,0.24,1);
+}
+
+.section-heading-wrap.is-visible::after {
+  transform: scaleX(1);
+}
+
+/* ── MFG panel active state ── */
+.mfg-panel.is-hovered .mfg-panel-title {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+/* ── Focus visible for accessibility ── */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Skip nav link ── */
+.skip-nav {
+  position: absolute;
+  top: -100px;
+  left: var(--space-4);
+  z-index: var(--z-top);
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: 2px;
+  transition: top 0.2s ease;
+}
+
+.skip-nav:focus {
+  top: var(--space-4);
+}
